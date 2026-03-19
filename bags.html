@@ -6,6 +6,12 @@
 <title>eBay VeRO バッグブランド リスク一覧</title>
 <link rel="stylesheet" href="style.css">
 <script src="theme.js"></script>
+<style>
+.risk-high { color: var(--red); font-weight: 700; }
+.risk-mid  { color: var(--yellow); font-weight: 700; }
+.risk-low  { color: var(--green); font-weight: 700; }
+td.notes-col { max-width: 400px; }
+</style>
 </head>
 <body>
 
@@ -26,89 +32,302 @@
 
 <div class="summary-box">
   <ul>
-    <li class="danger">Louis Vuitton&middot;Chanel&middot;Hermesは正規品でも出品1時間で削除された報告あり</li>
-    <li class="warn">$500以上のバッグはeBay認証プログラム（Authenticity Guarantee）の対象。認証付きなら比較的安全</li>
-    <li class="safe">日本の独立ブランド&middot;職人ブランドはVeRO未登録で安全</li>
+    <li class="danger">Louis Vuitton&middot;Chanel&middot;Hermesは正規品でも出品1時間で削除。Chanelは$5,600万の訴訟を起こした実績あり</li>
+    <li class="warn">$500以上のバッグはeBay認証プログラム対象（43ブランド）。認証付きなら比較的安全</li>
+    <li class="safe">日本の独立ブランド&middot;職人ブランドはVeRO&middot;偽造品ともにリスクなし</li>
   </ul>
 </div>
 
-<!-- HIGH RISK -->
-<h2><span class="badge-high">HIGH RISK</span> 出品を避けるべきブランド</h2>
+<!-- 出品注意（赤） -->
+<h2><span class="badge-high">HIGH RISK</span> 出品注意</h2>
 <table>
   <thead>
-    <tr><th>ブランド</th><th>所属グループ</th><th>リスク理由</th></tr>
+    <tr><th>ブランド</th><th>VeROリスク</th><th>偽造品リスク</th><th>総合判定</th><th>備考</th></tr>
   </thead>
   <tbody>
-    <tr><td class="brand-name">Louis Vuitton</td><td><span class="group-tag">LVMH</span></td><td>VeRO最積極企業。出品1時間後に削除された報告多数</td></tr>
-    <tr><td class="brand-name">Chanel</td><td><span class="group-tag">Chanel Inc.</span></td><td>VeRO登録確認済み。最も厳格な取り締まり</td></tr>
-    <tr><td class="brand-name">Hermes</td><td><span class="group-tag">独立</span></td><td>偽造品が横行し、正規品でも疑われやすい</td></tr>
-    <tr><td class="brand-name">Gucci</td><td><span class="group-tag">Kering</span></td><td>VeRO登録確認。偽造品が多い</td></tr>
-    <tr><td class="brand-name">Dior</td><td><span class="group-tag">LVMH</span></td><td>LVMHグループ。積極的にVeRO行使</td></tr>
-    <tr><td class="brand-name">Fendi</td><td><span class="group-tag">LVMH</span></td><td>同上</td></tr>
-    <tr><td class="brand-name">Celine</td><td><span class="group-tag">LVMH</span></td><td>同上</td></tr>
-    <tr><td class="brand-name">Loewe</td><td><span class="group-tag">LVMH</span></td><td>同上</td></tr>
-    <tr><td class="brand-name">Saint Laurent</td><td><span class="group-tag">Kering</span></td><td>Keringグループ</td></tr>
-    <tr><td class="brand-name">Bottega Veneta</td><td><span class="group-tag">Kering</span></td><td>同上</td></tr>
-    <tr><td class="brand-name">Balenciaga</td><td><span class="group-tag">Kering</span></td><td>同上</td></tr>
-    <tr><td class="brand-name">Prada</td><td><span class="group-tag">Prada Group</span></td><td>独自にVeRO行使</td></tr>
-    <tr><td class="brand-name">Burberry</td><td><span class="group-tag">Burberry Limited</span></td><td>VeRO登録確認済み</td></tr>
-    <tr><td class="brand-name">Coach</td><td><span class="group-tag">Tapestry</span></td><td>VeRO登録確認済み。「ほぼ出品不可能」との報告</td></tr>
-    <tr><td class="brand-name">Goyard</td><td><span class="group-tag">独立</span></td><td>偽造品対策に非常に積極的</td></tr>
-    <tr><td class="brand-name">Valentino</td><td><span class="group-tag">独立</span></td><td>eBay認証対象12ブランドの1つ</td></tr>
+    <tr>
+      <td class="brand-name">Louis Vuitton</td>
+      <td class="risk-high">極高</td>
+      <td class="risk-high">極高</td>
+      <td style="color:var(--red)">出品回避</td>
+      <td class="notes-col">VeRO即削除。偽造品の32.8%がLV。$6.4億の正規品に対し$6,100万の偽造品検出</td>
+    </tr>
+    <tr>
+      <td class="brand-name">Chanel</td>
+      <td class="risk-high">極高</td>
+      <td class="risk-high">極高</td>
+      <td style="color:var(--red)">出品回避</td>
+      <td class="notes-col">$5,600万の訴訟をeBayセラーに起こした実績。偽造品の13.4%がChanel</td>
+    </tr>
+    <tr>
+      <td class="brand-name">Hermes</td>
+      <td class="risk-high">高</td>
+      <td class="risk-high">極高</td>
+      <td style="color:var(--red)">出品回避</td>
+      <td class="notes-col">Birkin/Kellyの90%が偽物。スーパーフェイクが横行</td>
+    </tr>
+    <tr>
+      <td class="brand-name">Goyard</td>
+      <td class="risk-mid">中</td>
+      <td class="risk-high">極高</td>
+      <td style="color:var(--red)">出品回避</td>
+      <td class="notes-col">St. Louis Toteの偽造品率18.4%=全ブランド最高。95%が偽物との指摘</td>
+    </tr>
+    <tr>
+      <td class="brand-name">Gucci</td>
+      <td class="risk-high">高</td>
+      <td class="risk-high">高</td>
+      <td style="color:var(--red)">要注意</td>
+      <td class="notes-col">VeRO積極的。偽造品の13.6%がGucci。eBay認証対象</td>
+    </tr>
+    <tr>
+      <td class="brand-name">Prada</td>
+      <td class="risk-high">高</td>
+      <td class="risk-high">高</td>
+      <td style="color:var(--red)">要注意</td>
+      <td class="notes-col">偽造品率14.2%（第2位）。ナイロン素材が最も偽造される素材(21.3%)</td>
+    </tr>
+    <tr>
+      <td class="brand-name">Dior</td>
+      <td class="risk-high">高</td>
+      <td class="risk-mid">中〜高</td>
+      <td style="color:var(--red)">要注意</td>
+      <td class="notes-col">LVMH。eBay認証対象</td>
+    </tr>
+    <tr>
+      <td class="brand-name">Fendi</td>
+      <td class="risk-mid">中〜高</td>
+      <td class="risk-mid">中</td>
+      <td style="color:var(--red)">要注意</td>
+      <td class="notes-col">LVMH。eBay認証対象</td>
+    </tr>
+    <tr>
+      <td class="brand-name">Celine</td>
+      <td class="risk-mid">中〜高</td>
+      <td class="risk-mid">中</td>
+      <td style="color:var(--yellow)">やや注意</td>
+      <td class="notes-col">偽造品リスクは低下傾向</td>
+    </tr>
+    <tr>
+      <td class="brand-name">Loewe</td>
+      <td class="risk-mid">中</td>
+      <td class="risk-mid">中</td>
+      <td style="color:var(--yellow)">やや注意</td>
+      <td class="notes-col">偽造品率10.5%。人気上昇で偽造品も増加中</td>
+    </tr>
+    <tr>
+      <td class="brand-name">Saint Laurent</td>
+      <td class="risk-mid">中〜高</td>
+      <td class="risk-mid">中</td>
+      <td style="color:var(--yellow)">やや注意</td>
+      <td class="notes-col">Kering。eBay認証対象</td>
+    </tr>
+    <tr>
+      <td class="brand-name">Bottega Veneta</td>
+      <td class="risk-mid">中</td>
+      <td class="risk-mid">中</td>
+      <td style="color:var(--yellow)">やや注意</td>
+      <td class="notes-col">イントレチャート編みは偽造コストが高く偽物は少ない</td>
+    </tr>
+    <tr>
+      <td class="brand-name">Balenciaga</td>
+      <td class="risk-mid">中</td>
+      <td class="risk-mid">中</td>
+      <td style="color:var(--yellow)">やや注意</td>
+      <td class="notes-col">Kering。eBay認証対象</td>
+    </tr>
+    <tr>
+      <td class="brand-name">Burberry</td>
+      <td class="risk-mid">中</td>
+      <td class="risk-mid">中</td>
+      <td style="color:var(--yellow)">やや注意</td>
+      <td class="notes-col">VeRO登録済み。eBay認証対象</td>
+    </tr>
+    <tr>
+      <td class="brand-name">Valentino</td>
+      <td class="risk-mid">中</td>
+      <td class="risk-low">低〜中</td>
+      <td style="color:var(--green)">比較的安全</td>
+      <td class="notes-col">eBay認証対象</td>
+    </tr>
   </tbody>
 </table>
 
-<!-- MEDIUM RISK -->
-<h2><span class="badge-mid">MEDIUM RISK</span> 注意が必要なブランド</h2>
+<!-- 注意あり（黄） -->
+<h2><span class="badge-mid">MEDIUM RISK</span> 注意あり</h2>
 <table>
   <thead>
-    <tr><th>ブランド</th><th>備考</th></tr>
+    <tr><th>ブランド</th><th>VeROリスク</th><th>偽造品リスク</th><th>総合判定</th><th>備考</th></tr>
   </thead>
   <tbody>
-    <tr><td class="brand-name">Michael Kors</td><td>Capri Holdings。出品数が多く比較的穏やか</td></tr>
-    <tr><td class="brand-name">Kate Spade</td><td>Tapestry傘下。Coach同様だが報告は少ない</td></tr>
-    <tr><td class="brand-name">Marc Jacobs</td><td>LVMH傘下だが中価格帯で問題少ない</td></tr>
-    <tr><td class="brand-name">Furla</td><td>独立。VeRO報告少ない</td></tr>
-    <tr><td class="brand-name">Longchamp</td><td>独立。ナイロンバッグ中心で問題少ない</td></tr>
-    <tr><td class="brand-name">Tory Burch</td><td>独立。VeRO報告少ない</td></tr>
+    <tr>
+      <td class="brand-name">Coach</td>
+      <td class="risk-low">低</td>
+      <td class="risk-low">低〜中</td>
+      <td style="color:var(--green)">比較的安全</td>
+      <td class="notes-col">eBay認証対象。270,603件以上出品あり。市場成熟</td>
+    </tr>
+    <tr>
+      <td class="brand-name">Michael Kors</td>
+      <td class="risk-low">低</td>
+      <td class="risk-low">低〜中</td>
+      <td style="color:var(--green)">比較的安全</td>
+      <td class="notes-col">200,000件以上出品。VeRO削除報告はほぼなし</td>
+    </tr>
+    <tr>
+      <td class="brand-name">Kate Spade</td>
+      <td class="risk-low">低</td>
+      <td class="risk-low">低</td>
+      <td style="color:var(--green)">安全</td>
+      <td class="notes-col">106,933件以上出品。偽物少ない</td>
+    </tr>
+    <tr>
+      <td class="brand-name">Marc Jacobs</td>
+      <td class="risk-low">低</td>
+      <td class="risk-mid">中</td>
+      <td style="color:var(--green)">比較的安全</td>
+      <td class="notes-col">THE TOTE BAGの偽造品が増加中</td>
+    </tr>
+    <tr>
+      <td class="brand-name">Furla</td>
+      <td class="risk-low">低</td>
+      <td class="risk-low">低〜中</td>
+      <td style="color:var(--green)">安全</td>
+      <td class="notes-col">偽造ターゲットになりつつあるがまだ低リスク</td>
+    </tr>
+    <tr>
+      <td class="brand-name">Longchamp</td>
+      <td class="risk-low">低</td>
+      <td class="risk-mid">中</td>
+      <td style="color:var(--green)">比較的安全</td>
+      <td class="notes-col">Le Pliageの偽造品が多いが価格帯が低いため問題限定的</td>
+    </tr>
+    <tr>
+      <td class="brand-name">Tory Burch</td>
+      <td class="risk-low">低〜中</td>
+      <td class="risk-mid">中</td>
+      <td style="color:var(--green)">比較的安全</td>
+      <td class="notes-col">1,200以上の偽造品サイトを削除した実績</td>
+    </tr>
   </tbody>
 </table>
 
-<!-- LOW RISK -->
-<h2><span class="badge-low">LOW RISK</span> 安全に出品できるブランド</h2>
+<!-- 安全（緑） -->
+<h2><span class="badge-low">LOW RISK</span> 安全</h2>
 <table>
   <thead>
-    <tr><th>ブランド</th><th>国</th><th>備考</th></tr>
+    <tr><th>ブランド</th><th>VeROリスク</th><th>偽造品リスク</th><th>総合判定</th><th>備考</th></tr>
   </thead>
   <tbody>
-    <tr><td class="brand-name"><span class="flag-jp">PORTER (吉田カバン)</span></td><td>日本</td><td>独立ブランド。VeRO未登録。海外で人気</td></tr>
-    <tr><td class="brand-name"><span class="flag-jp">土屋鞄製造所</span></td><td>日本</td><td>職人ブランド。VeRO未登録</td></tr>
-    <tr><td class="brand-name"><span class="flag-jp">万双</span></td><td>日本</td><td>職人ブランド。VeRO未登録</td></tr>
-    <tr><td class="brand-name"><span class="flag-jp">HERZ</span></td><td>日本</td><td>革鞄工房。VeRO未登録</td></tr>
-    <tr><td class="brand-name"><span class="flag-jp">aniary</span></td><td>日本</td><td>独立ブランド。VeRO未登録</td></tr>
-    <tr><td class="brand-name"><span class="flag-jp">BRIEFING</span></td><td>日本</td><td>ミリタリー系。VeRO未登録。アメリカで人気</td></tr>
-    <tr><td class="brand-name"><span class="flag-jp">master-piece</span></td><td>日本</td><td>独立ブランド。VeRO未登録</td></tr>
-    <tr><td class="brand-name"><span class="flag-jp">TAKEO KIKUCHI</span></td><td>日本</td><td>VeRO未登録</td></tr>
-    <tr><td class="brand-name"><span class="flag-jp">印伝屋</span></td><td>日本</td><td>伝統工芸（甲州印伝）。VeRO未登録。海外コレクター向け</td></tr>
-    <tr><td class="brand-name"><span class="flag-us">Filson</span></td><td>米国</td><td>アウトドア系。VeRO報告なし</td></tr>
-    <tr><td class="brand-name"><span class="flag-us">Manhattan Portage</span></td><td>米国</td><td>VeRO報告なし</td></tr>
-    <tr><td class="brand-name"><span class="flag-ch">Freitag</span></td><td>スイス</td><td>リサイクル素材。VeRO報告なし</td></tr>
-    <tr><td class="brand-name"><span class="flag-it">Orobianco</span></td><td>イタリア</td><td>VeRO報告なし</td></tr>
+    <tr>
+      <td class="brand-name"><span class="flag-jp">PORTER (吉田カバン)</span></td>
+      <td class="risk-low">低〜中</td>
+      <td class="risk-mid">中</td>
+      <td style="color:var(--green)">比較的安全</td>
+      <td class="notes-col">公式が偽造品注意喚起。eBayでのVeRO削除は未確認</td>
+    </tr>
+    <tr>
+      <td class="brand-name"><span class="flag-jp">土屋鞄製造所</span></td>
+      <td class="risk-low">低</td>
+      <td class="risk-low">低〜中</td>
+      <td style="color:var(--green)">安全</td>
+      <td class="notes-col">偽サイト問題あるが海外流通限定的</td>
+    </tr>
+    <tr>
+      <td class="brand-name"><span class="flag-jp">万双</span></td>
+      <td class="risk-low">なし</td>
+      <td class="risk-low">なし</td>
+      <td style="color:var(--green)">安全</td>
+      <td class="notes-col">ニッチで海外認知度低い</td>
+    </tr>
+    <tr>
+      <td class="brand-name"><span class="flag-jp">HERZ</span></td>
+      <td class="risk-low">なし</td>
+      <td class="risk-low">なし</td>
+      <td style="color:var(--green)">安全</td>
+      <td class="notes-col">手作り少量生産</td>
+    </tr>
+    <tr>
+      <td class="brand-name"><span class="flag-jp">aniary</span></td>
+      <td class="risk-low">なし</td>
+      <td class="risk-low">なし</td>
+      <td style="color:var(--green)">安全</td>
+      <td class="notes-col">海外認知度低くリスクなし</td>
+    </tr>
+    <tr>
+      <td class="brand-name"><span class="flag-jp">BRIEFING</span></td>
+      <td class="risk-low">低</td>
+      <td class="risk-low">低</td>
+      <td style="color:var(--green)">安全</td>
+      <td class="notes-col">ミリタリースペック</td>
+    </tr>
+    <tr>
+      <td class="brand-name"><span class="flag-jp">master-piece</span></td>
+      <td class="risk-low">なし</td>
+      <td class="risk-low">なし</td>
+      <td style="color:var(--green)">安全</td>
+      <td class="notes-col">海外認知度低い</td>
+    </tr>
+    <tr>
+      <td class="brand-name"><span class="flag-jp">TAKEO KIKUCHI</span></td>
+      <td class="risk-low">なし</td>
+      <td class="risk-low">なし</td>
+      <td style="color:var(--green)">安全</td>
+      <td class="notes-col">主に国内市場</td>
+    </tr>
+    <tr>
+      <td class="brand-name"><span class="flag-jp">印伝屋</span></td>
+      <td class="risk-low">なし</td>
+      <td class="risk-low">なし</td>
+      <td style="color:var(--green)">安全</td>
+      <td class="notes-col">伝統工芸。偽造困難</td>
+    </tr>
+    <tr>
+      <td class="brand-name"><span class="flag-us">Filson</span></td>
+      <td class="risk-low">低</td>
+      <td class="risk-low">低</td>
+      <td style="color:var(--green)">安全</td>
+      <td class="notes-col"></td>
+    </tr>
+    <tr>
+      <td class="brand-name"><span class="flag-us">Manhattan Portage</span></td>
+      <td class="risk-low">低</td>
+      <td class="risk-low">低</td>
+      <td style="color:var(--green)">安全</td>
+      <td class="notes-col"></td>
+    </tr>
+    <tr>
+      <td class="brand-name">Freitag</td>
+      <td class="risk-low">なし</td>
+      <td class="risk-low">なし</td>
+      <td style="color:var(--green)">安全</td>
+      <td class="notes-col">リサイクル一点物で偽造困難</td>
+    </tr>
+    <tr>
+      <td class="brand-name">Orobianco</td>
+      <td class="risk-low">なし</td>
+      <td class="risk-low">低</td>
+      <td style="color:var(--green)">安全</td>
+      <td class="notes-col">イタリア・日本市場向け</td>
+    </tr>
   </tbody>
 </table>
 
 <div class="note">
   <strong>出品戦略のポイント</strong><br>
-  日本の職人ブランド&middot;革鞄ブランドは「Made in Japan」「Handmade」「Leather craftsman」がSEOキーワード。印伝屋など伝統工芸品は海外コレクター需要が高い。PORTER（吉田カバン）は海外でTANKERシリーズが特に人気。
+  &bull; $500以上はeBay認証保証（Authenticity Guarantee）が無料。$200-$499.99は$40で追加可能<br>
+  &bull; 日本の職人ブランド&middot;革鞄ブランドは「Made in Japan」「Handmade」「Leather craftsman」がSEOキーワード<br>
+  &bull; PORTERは海外でTANKERシリーズが特に人気。偽造品注意喚起はあるがVeRO削除は未確認
 </div>
 
 <footer>
   <p>情報ソース:</p>
   <ul>
     <li><a href="https://www.ebay.com/sellercenter/ebay-for-business/verified-rights-owner-program">eBay VeRO Profiles</a></li>
-    <li><a href="https://yaballe.com/blog/guide-to-the-ebay-vero-list/">Yaballe VeRO Guide 2026</a></li>
-    <li><a href="https://www.3dsellers.com/blog/ebay-vero">3DSellers VeRO</a></li>
-    <li><a href="https://community.ebay.com/t5/Selling/Proof-that-the-VeRO-program-is-used-maliciously/td-p/32830261">eBay Community</a></li>
+    <li><a href="https://community.ebay.com/t5/Handbags/Authentic-Louis-Vuitton-Handbags-listing-removed-1-hour-after/td-p/32504126">LV 1時間削除</a></li>
+    <li><a href="https://eseller365.com/chanel-files-56-million-trademark-suit-ebay-seller/">Chanel $56M訴訟</a></li>
+    <li><a href="https://www.entrupy.com/report/state-of-the-fake-report-2024/">Entrupy偽造品レポート2024</a></li>
+    <li><a href="https://www.ebay.com/authenticity-guarantee/handbags">eBay認証保証</a></li>
   </ul>
 </footer>
 

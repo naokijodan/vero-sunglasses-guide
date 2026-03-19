@@ -3,9 +3,29 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>eBay VeRO 時計ブランド リスク一覧</title>
+<title>eBay VeRO 時計ブランド リスク一覧（2軸分析）</title>
 <link rel="stylesheet" href="style.css">
 <script src="theme.js"></script>
+<style>
+.risk-table { width: 100%; border-collapse: collapse; margin-bottom: 24px; font-size: 0.9em; }
+.risk-table th { background: var(--th-bg); text-align: left; padding: 8px 10px; border-bottom: 2px solid var(--border); font-size: 0.85em; }
+.risk-table td { padding: 7px 10px; border-bottom: 1px solid var(--border); vertical-align: top; }
+.risk-table tr:hover { background: var(--card-hover); }
+.r-high { color: var(--red); font-weight: 700; }
+.r-mid  { color: var(--yellow); font-weight: 700; }
+.r-low  { color: var(--green); font-weight: 700; }
+.r-none { color: var(--muted); font-weight: 400; }
+.verdict-red    { background: rgba(220,53,69,0.15); border-left: 4px solid var(--red); padding: 2px 8px; border-radius: 4px; }
+.verdict-yellow { background: rgba(255,193,7,0.12); border-left: 4px solid var(--yellow); padding: 2px 8px; border-radius: 4px; }
+.verdict-green  { background: rgba(40,167,69,0.12); border-left: 4px solid var(--green); padding: 2px 8px; border-radius: 4px; }
+.detail-box { background: var(--card); border: 1px solid var(--border); border-radius: 8px; padding: 16px; margin: 16px 0 28px; }
+.detail-box h3 { color: var(--heading); font-size: 1em; margin-bottom: 8px; }
+.detail-box ul { margin-left: 18px; }
+.detail-box li { margin-bottom: 4px; font-size: 0.9em; }
+.category-label { font-size: 1.1em; font-weight: 700; color: var(--heading); margin: 28px 0 12px; padding-bottom: 6px; border-bottom: 2px solid var(--border); }
+.sources { font-size: 0.8em; color: var(--muted); margin-top: 32px; }
+.sources a { color: var(--link); }
+</style>
 </head>
 <body>
 
@@ -21,331 +41,423 @@
   <button class="theme-toggle" id="themeToggle"></button>
 </div>
 
-<h1>eBay VeRO 時計ブランド リスク一覧</h1>
-<p class="subtitle">調査日: 2026-03-19</p>
+<h1>eBay 時計ブランド リスク一覧（2軸分析）</h1>
+<p class="subtitle">調査日: 2026-03-19 &mdash; VeROリスク + 偽造品リスクの2軸で評価</p>
 
+<!-- ===== SUMMARY ===== -->
 <div class="summary-box">
-  <h2>サマリー</h2>
+  <h2>調査サマリー</h2>
   <ul>
-    <li class="danger">Rolexは法務部が最も積極的。正規品でも弁護士レターが届いた報告あり</li>
-    <li class="warn">$2,000以上の時計はeBay認証プログラムの対象。認証付きなら比較的安全</li>
-    <li class="safe">日本製ブランド（セイコー系・カシオ系）とドイツ独立ブランドはVeRO未登録で安全</li>
+    <li class="danger"><strong>Rolexは最危険</strong>: 偽物市場の50%を占め、VeRO法務部も最も積極的。改造品の販売でも訴訟・永久差止命令の事例あり</li>
+    <li class="danger"><strong>Seiko MOD品は要注意</strong>: 2025年10月にSeiko本社が公式警告を発表。偽ブランドダイヤルを使ったMOD品は商標侵害で削除対象</li>
+    <li class="danger"><strong>G-Shock偽物が氾濫</strong>: GA-100、GA-2100（CasiOak）、MudMasterなど人気モデルの偽物がeBayに大量出回り。報告してもeBayが対応しないケースが多い</li>
+    <li class="warn"><strong>$2,000以上</strong>はeBay認証プログラム（Authenticity Guarantee）が自動適用。$500-$1,999は任意（$80）</li>
+    <li class="warn"><strong>MoonSwatch偽物</strong>: 中国製コピーが$15程度で製造され、eBayで10倍の価格で販売中</li>
+    <li class="safe"><strong>日本ブランド正規品</strong>はVeROリスクがほぼゼロ。ただし偽物混在リスクはSeiko/Casioで中程度</li>
+    <li class="safe"><strong>ドイツ独立ブランド</strong>（Nomos, Junghans, Zeppelin）はVeRO・偽造品ともに低リスク</li>
   </ul>
 </div>
 
-<!-- ========== HIGH RISK ========== -->
-<div class="section">
-  <div class="section-header">
-    <span class="badge badge-high">HIGH</span>
-    <h2>高リスク</h2>
-  </div>
-  <table>
-    <thead>
-      <tr>
-        <th>ブランド</th>
-        <th>所属グループ</th>
-        <th>リスク理由</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td class="brand-name">Rolex</td>
-        <td><span class="group-tag">Rolex SA</span></td>
-        <td>VeRO登録済み。弁護士から$350請求+商品没収のレターが届いた報告あり</td>
-      </tr>
-      <tr>
-        <td class="brand-name">Cartier</td>
-        <td><span class="group-tag">Richemont</span></td>
-        <td>VeRO登録確認済み（eBay公式ページ）</td>
-      </tr>
-      <tr>
-        <td class="brand-name">Patek Philippe</td>
-        <td><span class="group-tag">独立</span></td>
-        <td>超高級ブランド。偽造品対策に非常に積極的</td>
-      </tr>
-      <tr>
-        <td class="brand-name">Audemars Piguet</td>
-        <td><span class="group-tag">独立</span></td>
-        <td>超高級ブランド。偽造品対策に非常に積極的</td>
-      </tr>
-      <tr>
-        <td class="brand-name">Chanel</td>
-        <td><span class="group-tag">Chanel Inc.</span></td>
-        <td>VeRO登録確認済み</td>
-      </tr>
-      <tr>
-        <td class="brand-name">Hublot</td>
-        <td><span class="group-tag">LVMH</span></td>
-        <td>LVMHグループ。積極的にVeRO行使</td>
-      </tr>
-      <tr>
-        <td class="brand-name">TAG Heuer</td>
-        <td><span class="group-tag">LVMH</span></td>
-        <td>LVMHグループ。積極的にVeRO行使</td>
-      </tr>
-      <tr>
-        <td class="brand-name">Bulgari</td>
-        <td><span class="group-tag">LVMH</span></td>
-        <td>LVMHグループ。積極的にVeRO行使</td>
-      </tr>
-      <tr>
-        <td class="brand-name">Louis Vuitton</td>
-        <td><span class="group-tag">LVMH</span></td>
-        <td>VeRO最積極企業の一つ</td>
-      </tr>
-      <tr>
-        <td class="brand-name">Gucci</td>
-        <td><span class="group-tag">Kering</span></td>
-        <td>VeRO登録確認済み</td>
-      </tr>
-      <tr>
-        <td class="brand-name">Breitling</td>
-        <td><span class="group-tag">CVC Capital</span></td>
-        <td>偽造品が多く取り締まりに積極的</td>
-      </tr>
-      <tr>
-        <td class="brand-name">Omega</td>
-        <td><span class="group-tag">Swatch Group</span></td>
-        <td>高級ラインは取り締まりあり</td>
-      </tr>
-      <tr>
-        <td class="brand-name">IWC</td>
-        <td><span class="group-tag">Richemont</span></td>
-        <td>Richemontグループ</td>
-      </tr>
-      <tr>
-        <td class="brand-name">Panerai</td>
-        <td><span class="group-tag">Richemont</span></td>
-        <td>Richemontグループ</td>
-      </tr>
-      <tr>
-        <td class="brand-name">Piaget</td>
-        <td><span class="group-tag">Richemont</span></td>
-        <td>Richemontグループ</td>
-      </tr>
-      <tr>
-        <td class="brand-name">Jaeger-LeCoultre</td>
-        <td><span class="group-tag">Richemont</span></td>
-        <td>Richemontグループ</td>
-      </tr>
-      <tr>
-        <td class="brand-name">Vacheron Constantin</td>
-        <td><span class="group-tag">Richemont</span></td>
-        <td>Richemontグループ</td>
-      </tr>
-    </tbody>
-  </table>
+<!-- ===== LEGEND ===== -->
+<div class="note" style="margin-bottom:24px;">
+  <strong>判定基準</strong><br>
+  <strong>VeROリスク</strong>: ブランド側がeBayのVeROプログラムで出品を削除する可能性（高/中/低/なし）<br>
+  <strong>偽造品リスク</strong>: 偽物が市場に多く出回り、正規品でも疑われたりカテゴリ監視が強化されるリスク（高/中/低/なし）<br>
+  <strong>総合判定</strong>: <span class="r-high">出品注意(赤)</span> = 出品非推奨 / <span class="r-mid">注意あり(黄)</span> = 条件付きで可 / <span class="r-low">安全(緑)</span> = 問題なし
 </div>
 
-<!-- ========== MEDIUM RISK ========== -->
-<div class="section">
-  <div class="section-header">
-    <span class="badge badge-mid">MEDIUM</span>
-    <h2>中リスク</h2>
-  </div>
-  <table>
-    <thead>
-      <tr>
-        <th>ブランド</th>
-        <th>備考</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td class="brand-name">Tudor</td>
-        <td>Rolex傘下だが、VeRO報告は少ない</td>
-      </tr>
-      <tr>
-        <td class="brand-name">Longines</td>
-        <td>Swatch Group。中価格帯で比較的穏やか</td>
-      </tr>
-      <tr>
-        <td class="brand-name">Tissot</td>
-        <td>Swatch Group。出品数が多く問題は少ない</td>
-      </tr>
-      <tr>
-        <td class="brand-name">Rado</td>
-        <td>Swatch Group。出品数が多く問題は少ない</td>
-      </tr>
-      <tr>
-        <td class="brand-name">Hamilton</td>
-        <td>Swatch Group。出品数が多く問題は少ない</td>
-      </tr>
-      <tr>
-        <td class="brand-name">Frederique Constant</td>
-        <td>Citizen傘下。VeRO報告少ない</td>
-      </tr>
-      <tr>
-        <td class="brand-name">Oris</td>
-        <td>独立。中価格帯で問題少ない</td>
-      </tr>
-      <tr>
-        <td class="brand-name">Ball Watch</td>
-        <td>独立。VeRO報告なし</td>
-      </tr>
-    </tbody>
-  </table>
+<!-- ==================== HIGH-END SWISS ==================== -->
+<div class="category-label">高級スイスブランド</div>
+<table class="risk-table">
+  <thead>
+    <tr>
+      <th style="width:16%">ブランド</th>
+      <th style="width:10%">VeRO</th>
+      <th style="width:10%">偽造品</th>
+      <th style="width:12%">総合判定</th>
+      <th>根拠・備考</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td class="brand-name">Rolex</td>
+      <td class="r-high">高</td>
+      <td class="r-high">高</td>
+      <td><span class="verdict-red">出品注意</span></td>
+      <td>VeRO登録済み。弁護士レター($350請求+商品没収)の報告あり。改造品販売で永久差止命令の判例(BeckerTime訴訟)。偽物は全世界の偽造時計市場の<strong>50%</strong>を占める。年間4000万本の偽造時計のうち半数がRolex</td>
+    </tr>
+    <tr>
+      <td class="brand-name">Omega</td>
+      <td class="r-high">高</td>
+      <td class="r-high">高</td>
+      <td><span class="verdict-red">出品注意</span></td>
+      <td>Swatch Group。VeRO積極行使。偽造品ランキングで世界3位。Speedmaster, Seamasterの偽物が特に多い。MoonSwatch偽物問題も波及</td>
+    </tr>
+    <tr>
+      <td class="brand-name">Cartier</td>
+      <td class="r-high">高</td>
+      <td class="r-high">高</td>
+      <td><span class="verdict-red">出品注意</span></td>
+      <td>Richemontグループ。VeRO登録確認済み（eBay公式ページ）。偽造品ランキング世界2位。Tankシリーズの偽物が多い</td>
+    </tr>
+    <tr>
+      <td class="brand-name">Patek Philippe</td>
+      <td class="r-high">高</td>
+      <td class="r-high">高</td>
+      <td><span class="verdict-red">出品注意</span></td>
+      <td>独立。超高額ブランド($2万〜数百万$)。偽造品対策に非常に積極的。不審な出品は即座に「extreme prejudice」で削除された報告あり</td>
+    </tr>
+    <tr>
+      <td class="brand-name">Audemars Piguet</td>
+      <td class="r-high">高</td>
+      <td class="r-high">高</td>
+      <td><span class="verdict-red">出品注意</span></td>
+      <td>独立。Royal Oakの偽物が特に多い。高需要+高価格=偽造品のターゲット。レプリカサイトで大量に販売されている</td>
+    </tr>
+    <tr>
+      <td class="brand-name">Hublot</td>
+      <td class="r-high">高</td>
+      <td class="r-high">高</td>
+      <td><span class="verdict-red">出品注意</span></td>
+      <td>LVMHグループ。VeRO積極行使。Big Bangの偽物が多い</td>
+    </tr>
+    <tr>
+      <td class="brand-name">TAG Heuer</td>
+      <td class="r-high">高</td>
+      <td class="r-high">高</td>
+      <td><span class="verdict-red">出品注意</span></td>
+      <td>LVMHグループ。VeRO積極行使。偽造品ランキング上位常連。Carrera, Monacoの偽物が多い</td>
+    </tr>
+    <tr>
+      <td class="brand-name">Breitling</td>
+      <td class="r-high">高</td>
+      <td class="r-high">高</td>
+      <td><span class="verdict-red">出品注意</span></td>
+      <td>CVC Capital傘下。偽造品が市場に氾濫。専門家は「eBayでの購入を避けるべき」と推奨するほど。Navitimer, Superoceanが主な対象</td>
+    </tr>
+    <tr>
+      <td class="brand-name">IWC</td>
+      <td class="r-mid">中</td>
+      <td class="r-high">高</td>
+      <td><span class="verdict-red">出品注意</span></td>
+      <td>Richemontグループ。産業規模で偽造されるブランドの一つ。Portugieser, Pilot Watchが主なターゲット</td>
+    </tr>
+    <tr>
+      <td class="brand-name">Panerai</td>
+      <td class="r-mid">中</td>
+      <td class="r-high">高</td>
+      <td><span class="verdict-red">出品注意</span></td>
+      <td>Richemontグループ。Luminorの偽物が「産業規模」で製造されている。シンプルなデザインのため偽造しやすい</td>
+    </tr>
+    <tr>
+      <td class="brand-name">Piaget</td>
+      <td class="r-mid">中</td>
+      <td class="r-mid">中</td>
+      <td><span class="verdict-yellow">注意あり</span></td>
+      <td>Richemontグループ。高額だが流通量が少ないため偽造品も比較的少ない</td>
+    </tr>
+    <tr>
+      <td class="brand-name">Jaeger-LeCoultre</td>
+      <td class="r-mid">中</td>
+      <td class="r-mid">中</td>
+      <td><span class="verdict-yellow">注意あり</span></td>
+      <td>Richemontグループ。偽物の見分け方: 正規品はすべて機械式。クォーツや「Japanese Movt」表記があれば確実に偽物</td>
+    </tr>
+    <tr>
+      <td class="brand-name">Vacheron Constantin</td>
+      <td class="r-mid">中</td>
+      <td class="r-mid">中</td>
+      <td><span class="verdict-yellow">注意あり</span></td>
+      <td>Richemontグループ。「最も偽造される高級時計の一つ」とされる。ただし流通量自体が少ないためeBayでの問題は限定的</td>
+    </tr>
+    <tr>
+      <td class="brand-name">Bulgari</td>
+      <td class="r-high">高</td>
+      <td class="r-mid">中</td>
+      <td><span class="verdict-red">出品注意</span></td>
+      <td>LVMHグループ。VeRO積極行使。ロゴは必ず「BVLGARI」（ローマ字表記）。これ以外は偽物</td>
+    </tr>
+  </tbody>
+</table>
+
+<!-- ===== DETAIL: ROLEX ===== -->
+<div class="detail-box">
+  <h3>Rolex 詳細リスク情報</h3>
+  <ul>
+    <li>2025年、Rolexは複数のオンライン販売業者を提訴。「100%正規品」と謳いながら非Rolex部品を含む時計を販売していたことが発覚し、1件あたり<strong>$200万</strong>の損害賠償を請求</li>
+    <li>裁判所は「改造されたRolexは、オリジナルのRolexとは実質的に異なる製品」と判断（BeckerTime判決）。改造品にRolexの名前を使うこと自体が商標侵害</li>
+    <li>eBayのAI自動審査では偽Rolexを検出できていないとの報告あり（LuxuryBazaar調査）。報告しても「ポリシー違反なし」と判定されるケースが100%</li>
+    <li>正規品を出品する場合: 購入証明・保証書・シリアルナンバーの写真を必ず掲載すること</li>
+  </ul>
 </div>
 
-<!-- ========== LOW RISK ========== -->
-<div class="section">
-  <div class="section-header">
-    <span class="badge badge-low">LOW</span>
-    <h2>低リスク</h2>
-  </div>
+<!-- ==================== MID-RANGE SWISS ==================== -->
+<div class="category-label">中価格帯スイスブランド</div>
+<table class="risk-table">
+  <thead>
+    <tr>
+      <th style="width:16%">ブランド</th>
+      <th style="width:10%">VeRO</th>
+      <th style="width:10%">偽造品</th>
+      <th style="width:12%">総合判定</th>
+      <th>根拠・備考</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td class="brand-name">Tudor</td>
+      <td class="r-mid">中</td>
+      <td class="r-mid">中</td>
+      <td><span class="verdict-yellow">注意あり</span></td>
+      <td>Rolex傘下。偽物が市場に「浸透」しており、初心者からコレクターまでがターゲット。Black Bay, Pelagosが主な対象。Rolex系列のためVeRO連動の可能性あり</td>
+    </tr>
+    <tr>
+      <td class="brand-name">Longines</td>
+      <td class="r-low">低</td>
+      <td class="r-mid">中</td>
+      <td><span class="verdict-yellow">注意あり</span></td>
+      <td>Swatch Group。中価格帯だが偽造品は存在する。VeRO報告は少ないが、Swatch Groupとして一括対応の可能性</td>
+    </tr>
+    <tr>
+      <td class="brand-name">Tissot</td>
+      <td class="r-low">低</td>
+      <td class="r-mid">中</td>
+      <td><span class="verdict-yellow">注意あり</span></td>
+      <td>Swatch Group。公式サイトに「Stop Fake」専用ページを設置。「市場に偽物が溢れている」と公式が認めるレベル。極端な低価格出品に注意</td>
+    </tr>
+    <tr>
+      <td class="brand-name">Rado</td>
+      <td class="r-low">低</td>
+      <td class="r-mid">中</td>
+      <td><span class="verdict-yellow">注意あり</span></td>
+      <td>Swatch Group。インドからの偽物出品が定期的に報告されている</td>
+    </tr>
+    <tr>
+      <td class="brand-name">Hamilton</td>
+      <td class="r-low">低</td>
+      <td class="r-mid">中</td>
+      <td><span class="verdict-yellow">注意あり</span></td>
+      <td>Swatch Group。偽Hamilton Khakiが出回っている。中国製偽ムーブメント（2824-2のコピー）使用。eBay・Etsyで報告あり</td>
+    </tr>
+    <tr>
+      <td class="brand-name">Oris</td>
+      <td class="r-low">低</td>
+      <td class="r-mid">中</td>
+      <td><span class="verdict-yellow">注意あり</span></td>
+      <td>独立。Oris Aquisの偽物が問題。$2,000以下で認証プログラム対象外のため、偽物が混入しやすい</td>
+    </tr>
+    <tr>
+      <td class="brand-name">Frederique Constant</td>
+      <td class="r-low">低</td>
+      <td class="r-low">低</td>
+      <td><span class="verdict-green">安全</span></td>
+      <td>Citizen傘下。レプリカサイトにリストされているが、実際の偽物報告は少ない</td>
+    </tr>
+    <tr>
+      <td class="brand-name">Swatch</td>
+      <td class="r-low">低</td>
+      <td class="r-high">高</td>
+      <td><span class="verdict-yellow">注意あり</span></td>
+      <td>MoonSwatchの偽物が深刻。中国製コピーが$15で製造され、eBayで$150前後で販売。eBayに報告しても対応されにくい。通常のSwatchは問題なし</td>
+    </tr>
+  </tbody>
+</table>
 
-  <!-- Japanese brands -->
-  <h3 style="color: var(--heading); font-size: 1em; margin: 16px 0 8px;">&#x1F1EF;&#x1F1F5; 日本ブランド</h3>
-  <table>
-    <thead>
-      <tr>
-        <th>ブランド</th>
-        <th>国</th>
-        <th>備考</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td class="brand-name">Seiko <span style="font-weight:400; color:var(--muted); font-size:0.85em;">(含Grand Seiko, Credor等)</span></td>
-        <td>日本</td>
-        <td>世界最大級の時計メーカー。VeRO未登録。中古市場活発</td>
-      </tr>
-      <tr>
-        <td class="brand-name">Casio <span style="font-weight:400; color:var(--muted); font-size:0.85em;">(含G-Shock等)</span></td>
-        <td>日本</td>
-        <td>VeRO未登録。G-Shockコレクター市場が巨大</td>
-      </tr>
-      <tr>
-        <td class="brand-name">Citizen <span style="font-weight:400; color:var(--muted); font-size:0.85em;">(含The Citizen等)</span></td>
-        <td>日本</td>
-        <td>VeRO未登録。エコドライブが海外で人気</td>
-      </tr>
-      <tr>
-        <td class="brand-name">Orient</td>
-        <td>日本</td>
-        <td>VeRO未登録。Bambinoが海外で人気</td>
-      </tr>
-      <tr>
-        <td class="brand-name">Minase</td>
-        <td>日本</td>
-        <td>独立ブランド。VeRO未登録</td>
-      </tr>
-      <tr>
-        <td class="brand-name">Knot</td>
-        <td>日本</td>
-        <td>独立ブランド。VeRO未登録</td>
-      </tr>
-      <tr>
-        <td class="brand-name">Kurono Tokyo</td>
-        <td>日本</td>
-        <td>独立ブランド。コレクター人気高い</td>
-      </tr>
-    </tbody>
-  </table>
-
-  <!-- German brands -->
-  <h3 style="color: var(--heading); font-size: 1em; margin: 16px 0 8px;">&#x1F1E9;&#x1F1EA; ドイツブランド</h3>
-  <table>
-    <thead>
-      <tr>
-        <th>ブランド</th>
-        <th>国</th>
-        <th>備考</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td class="brand-name">Junghans</td>
-        <td>ドイツ</td>
-        <td>独立ブランド。VeRO報告なし</td>
-      </tr>
-      <tr>
-        <td class="brand-name">Nomos</td>
-        <td>ドイツ</td>
-        <td>独立ブランド。VeRO報告なし</td>
-      </tr>
-      <tr>
-        <td class="brand-name">Zeppelin</td>
-        <td>ドイツ</td>
-        <td>独立ブランド。VeRO報告なし</td>
-      </tr>
-    </tbody>
-  </table>
-
-  <!-- US brands -->
-  <h3 style="color: var(--heading); font-size: 1em; margin: 16px 0 8px;">&#x1F1FA;&#x1F1F8; 米国ブランド</h3>
-  <table>
-    <thead>
-      <tr>
-        <th>ブランド</th>
-        <th>国</th>
-        <th>備考</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td class="brand-name">Bulova</td>
-        <td>米国</td>
-        <td>Citizen傘下。VeRO報告なし</td>
-      </tr>
-      <tr>
-        <td class="brand-name">Timex</td>
-        <td>米国</td>
-        <td>VeRO未登録。ヴィンテージ市場あり</td>
-      </tr>
-      <tr>
-        <td class="brand-name">Nixon</td>
-        <td>米国</td>
-        <td>VeRO報告なし</td>
-      </tr>
-      <tr>
-        <td class="brand-name">Garmin</td>
-        <td>米国</td>
-        <td>スマートウォッチ。VeRO報告なし</td>
-      </tr>
-      <tr>
-        <td class="brand-name">Luminox</td>
-        <td>米国</td>
-        <td>VeRO報告なし</td>
-      </tr>
-      <tr>
-        <td class="brand-name">Shinola</td>
-        <td>米国</td>
-        <td>VeRO報告なし</td>
-      </tr>
-    </tbody>
-  </table>
-
-  <!-- Swiss independent -->
-  <h3 style="color: var(--heading); font-size: 1em; margin: 16px 0 8px;">&#x1F1E8;&#x1F1ED; スイス独立ブランド</h3>
-  <table>
-    <thead>
-      <tr>
-        <th>ブランド</th>
-        <th>国</th>
-        <th>備考</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td class="brand-name">Swatch</td>
-        <td>スイス</td>
-        <td>Swatch Group本体。出品数多く問題なし</td>
-      </tr>
-      <tr>
-        <td class="brand-name">Edox</td>
-        <td>スイス</td>
-        <td>独立。VeRO報告なし</td>
-      </tr>
-    </tbody>
-  </table>
+<!-- ===== DETAIL: MOONSWATCH ===== -->
+<div class="detail-box">
+  <h3>MoonSwatch 偽物問題の詳細</h3>
+  <ul>
+    <li>中国の工場で大量生産された偽MoonSwatchが$11〜$15で製造されている</li>
+    <li>偽物の見分け方: プラスチック製で光沢がある（本物はバイオセラミックでマット）。クロノグラフの秒針がスイープ（本物はクォーツのステップ運針）</li>
+    <li>特にSnoopy MoonSwatchの偽物が多い。$35/$44以下の出品は偽物の可能性が極めて高い</li>
+    <li>eBayへの報告は効果が薄く、Swatch本社に直接報告するのが有効</li>
+  </ul>
 </div>
 
+<!-- ==================== JAPANESE ==================== -->
+<div class="category-label">日本ブランド</div>
+<table class="risk-table">
+  <thead>
+    <tr>
+      <th style="width:16%">ブランド</th>
+      <th style="width:10%">VeRO</th>
+      <th style="width:10%">偽造品</th>
+      <th style="width:12%">総合判定</th>
+      <th>根拠・備考</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td class="brand-name">Seiko<br><small style="color:var(--muted)">Grand Seiko, Credor含む</small></td>
+      <td class="r-mid">中</td>
+      <td class="r-mid">中</td>
+      <td><span class="verdict-yellow">注意あり</span></td>
+      <td><strong>2025年10月にSeiko本社が公式警告を発表。</strong>MOD品・偽造品への取り締まり強化を宣言。偽Seikoダイヤル（インド製が多い）がeBayに日常的に出品。Grand Seikoの偽物も出現し始めている</td>
+    </tr>
+    <tr>
+      <td class="brand-name">Casio<br><small style="color:var(--muted)">G-Shock含む</small></td>
+      <td class="r-low">低</td>
+      <td class="r-high">高</td>
+      <td><span class="verdict-yellow">注意あり</span></td>
+      <td>VeRO報告は少ないが、<strong>G-Shockの偽物はeBayに「常に数十件」出品</strong>されている状態。Casioは中国に専門チームを配置し工場摘発を実施。GA-100、GA-2100（CasiOak）、MudMasterが主な偽造対象</td>
+    </tr>
+    <tr>
+      <td class="brand-name">Citizen<br><small style="color:var(--muted)">The Citizen含む</small></td>
+      <td class="r-low">低</td>
+      <td class="r-mid">中</td>
+      <td><span class="verdict-yellow">注意あり</span></td>
+      <td>VeRO未登録。ただし偽Eco-Drive（インド発送）がeBayコミュニティで繰り返し報告されている。「毎日40本前後の偽Citizen」がインドから出品されるとの報告</td>
+    </tr>
+    <tr>
+      <td class="brand-name">Orient</td>
+      <td class="r-none">なし</td>
+      <td class="r-low">低</td>
+      <td><span class="verdict-green">安全</span></td>
+      <td>VeRO未登録。偽物は存在するが少数（ロゴの精密さで判別可能）。Bambino等は海外需要が高く、出品に適している</td>
+    </tr>
+  </tbody>
+</table>
+
+<!-- ===== DETAIL: SEIKO MOD ===== -->
+<div class="detail-box">
+  <h3>Seiko MOD品問題 - 詳細</h3>
+  <ul>
+    <li><strong>2025年10月6日</strong>: Seiko Watch Corporation が公式サイトで「Important Notice regarding Counterfeit and Modified SEIKO watches」を発表</li>
+    <li>ターゲット: Seikoロゴ入りの偽ダイヤル・偽ケースを使った商業的MOD販売者。「Seiko Rolex」ハイブリッド、ベゼル交換品を「アップグレード品」として販売するケース</li>
+    <li><strong>合法的なMOD品</strong>: Seikoブランドのロゴ・名前を一切使わず、アンブランドのアフターマーケットパーツのみを使い、「カスタムウォッチ」として自分のブランド名で販売する場合は合法</li>
+    <li><strong>違法なMOD品</strong>: 偽Seiko「S」ウェーブロゴやSeiko名を表示したアフターマーケットダイヤルを使用した時計。これは商標侵害であり、eBay・Etsy・Amazonで削除対象</li>
+    <li>eBay出品時の注意: 「Seiko mod」というキーワード自体は現在もeBayで検索・出品可能だが、Seikoブランドの偽パーツを含む場合は削除リスクあり</li>
+    <li><strong>Seiko正規品の出品は問題なし</strong>。Grand Seiko、King Seiko、Lord Marvel等のヴィンテージ品は海外コレクター需要が高い</li>
+  </ul>
+</div>
+
+<!-- ===== DETAIL: G-SHOCK ===== -->
+<div class="detail-box">
+  <h3>G-Shock 偽造品問題 - 詳細</h3>
+  <ul>
+    <li>G-Shockは世界的人気により偽造品の主要ターゲット。eBayコミュニティでは「巨大な問題」（huge problem）と表現されている</li>
+    <li><strong>eBayの対応は不十分</strong>: 偽物を報告しても削除されないケースが常態化。「一日中報告しても1つも削除されない」との証言</li>
+    <li><strong>偽物の見分け方</strong>: 3ボタンテスト（左上+左下+右上を同時押し → 本物は「CASIO」表示、偽物は無反応）</li>
+    <li>特に偽物が多いモデル: GA-100、GA-2100（CasiOak）、MudMaster、限定コラボモデル</li>
+    <li>Casioは2005年から中国に専門チームを配置。工場摘発・税関差押え・訴訟などの対策を実施中</li>
+    <li><strong>正規品出品時の対策</strong>: 購入証明・箱・タグの写真を掲載し、3ボタンテストの動画/写真を含めると信頼性が上がる</li>
+  </ul>
+</div>
+
+<!-- ===== DETAIL: GRAND SEIKO ===== -->
+<div class="detail-box">
+  <h3>Grand Seiko 偽造品問題 - 詳細</h3>
+  <ul>
+    <li>Grand Seikoの偽物は「始まっている」（IT HAS BEGUN）とコレクターコミュニティで警戒されている</li>
+    <li>AliExpressで偽Grand Seikoダイヤルやブランドパーツが販売されている</li>
+    <li>ザラツ研磨やスプリングドライブは現時点では偽造が極めて困難だが、CNC技術の進歩により将来は判別が難しくなる可能性</li>
+    <li>eBayは過去1年で<strong>8,800万件</strong>の違反出品を削除しているが、新規偽物出品者は常に現れる</li>
+    <li><strong>出品時の対策</strong>: 9Fクォーツムーブメントの確認写真、ケースバックのシリアル、保証書の写真を必ず掲載</li>
+  </ul>
+</div>
+
+<!-- ==================== OTHERS ==================== -->
+<div class="category-label">その他のブランド</div>
+<table class="risk-table">
+  <thead>
+    <tr>
+      <th style="width:16%">ブランド</th>
+      <th style="width:10%">VeRO</th>
+      <th style="width:10%">偽造品</th>
+      <th style="width:12%">総合判定</th>
+      <th>根拠・備考</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td class="brand-name">Timex</td>
+      <td class="r-none">なし</td>
+      <td class="r-low">低</td>
+      <td><span class="verdict-green">安全</span></td>
+      <td>VeRO未登録。低価格帯のため偽造のインセンティブが低い。ヴィンテージ市場あり</td>
+    </tr>
+    <tr>
+      <td class="brand-name">Bulova</td>
+      <td class="r-none">なし</td>
+      <td class="r-mid">中</td>
+      <td><span class="verdict-yellow">注意あり</span></td>
+      <td>Citizen傘下。ヴィンテージBulovaの偽物（偽ダイヤル・偽ケース）がeBayに存在。Lunar Pilotの偽物も確認。1-800-A-BULOVAでシリアル確認可能</td>
+    </tr>
+    <tr>
+      <td class="brand-name">Nixon</td>
+      <td class="r-none">なし</td>
+      <td class="r-low">低</td>
+      <td><span class="verdict-green">安全</span></td>
+      <td>高級ブランドではないが偽物は存在。箱のロゴ（本物は凹み、偽物はフラット印刷）で判別可能</td>
+    </tr>
+    <tr>
+      <td class="brand-name">Garmin</td>
+      <td class="r-none">なし</td>
+      <td class="r-low">低</td>
+      <td><span class="verdict-green">安全</span></td>
+      <td>スマートウォッチ。VeRO報告なし。偽造品の報告もほぼなし</td>
+    </tr>
+    <tr>
+      <td class="brand-name">Luminox</td>
+      <td class="r-none">なし</td>
+      <td class="r-mid">中</td>
+      <td><span class="verdict-yellow">注意あり</span></td>
+      <td>偽物が出回っている。シリアルが削られている、保証書がない場合は偽物の可能性。正規品出品時は保証書を掲載</td>
+    </tr>
+    <tr>
+      <td class="brand-name">Shinola</td>
+      <td class="r-none">なし</td>
+      <td class="r-none">なし</td>
+      <td><span class="verdict-green">安全</span></td>
+      <td>米国ブランド。偽造品の報告なし。eBayでの中古転売に問題なし</td>
+    </tr>
+    <tr>
+      <td class="brand-name">Nomos</td>
+      <td class="r-none">なし</td>
+      <td class="r-mid">中</td>
+      <td><span class="verdict-yellow">注意あり</span></td>
+      <td>ドイツ独立ブランド。偽Nomosが存在（「OMO」「OMOS」「NOWOS」ブランド名を使った偽物）。eBayでクォーツの偽Nomosが目立つ（正規品は全て機械式）</td>
+    </tr>
+    <tr>
+      <td class="brand-name">Junghans</td>
+      <td class="r-none">なし</td>
+      <td class="r-low">低</td>
+      <td><span class="verdict-green">安全</span></td>
+      <td>ドイツ独立ブランド。偽物は少数。VeRO報告なし</td>
+    </tr>
+    <tr>
+      <td class="brand-name">Zeppelin</td>
+      <td class="r-none">なし</td>
+      <td class="r-low">低</td>
+      <td><span class="verdict-green">安全</span></td>
+      <td>ドイツ。偽造者は「あまり時間をかけない」ブランド。知名度が低いため偽造のインセンティブが小さい</td>
+    </tr>
+  </tbody>
+</table>
+
+<!-- ===== STRATEGY ===== -->
 <div class="note">
   <strong>出品戦略のポイント</strong><br>
-  $2,000以上はeBay認証プログラム（Authenticity Guarantee）が適用される。<br>
-  日本製ヴィンテージ時計（King Seiko, Lord Marvel等）は海外コレクター需要が高く、VeROリスクゼロ。<br>
-  G-Shockの限定モデルやコラボモデルは回転が速い。
+  <ul style="margin-left:18px; margin-top:8px;">
+    <li><strong>$2,000以上</strong>はeBay Authenticity Guarantee（認証プログラム）が自動適用される。認証通過後は偽物疑惑リスクが大幅に下がる</li>
+    <li><strong>$500〜$1,999</strong>は買い手が任意で認証を追加可能（$80）。この価格帯のブランド時計は認証を推奨</li>
+    <li><strong>「Customized」表示の時計は認証対象外</strong>。MOD品やカスタム品はAuthenticity Guaranteeを受けられない</li>
+    <li>日本製ヴィンテージ時計（King Seiko, Lord Marvel, Grand Seiko等）は海外コレクター需要が高く、VeROリスクが極めて低い</li>
+    <li>G-Shockの限定モデルやコラボモデルは回転が速いが、偽物リスクも高いため正規品の証拠を必ず掲載</li>
+    <li>Seiko MOD品を出品する場合、Seikoブランド名・ロゴを一切使わず「custom watch」として出品すること</li>
+  </ul>
+</div>
+
+<!-- ===== eBay AUTHENTICATION ===== -->
+<div class="detail-box">
+  <h3>eBay Authenticity Guarantee（時計認証）の仕組み</h3>
+  <ul>
+    <li>$2,000以上: 自動的に認証プログラムが適用される。売れた時計は独立認証機関に送付され、鑑定後に買い手に届く</li>
+    <li>$500〜$1,999: 買い手がチェックアウト時に$80で認証を追加可能</li>
+    <li>オークション形式で$2,000以下で落札された場合は認証対象外になる可能性あり</li>
+    <li>スマートウォッチ、時計パーツ、アクセサリーは対象外</li>
+    <li>「Customized」（カスタム品）は認証対象外。ただし一般的な交換部品（ストラップ、ブレスレット、風防、バネ棒、ガスケット）の交換は許容</li>
+  </ul>
 </div>
 
 <footer>
@@ -353,8 +465,27 @@
     VeRO登録状況は変動します。出品前に
     <a href="https://www.ebay.com/sellercenter/ebay-for-business/verified-rights-owner-program">eBayの最新VeROリスト</a>を確認してください。<br>
     参考: <a href="https://www.rolexforums.com/">Rolex Forums</a> |
-    <a href="https://community.ebay.com/">eBay Community</a>
+    <a href="https://community.ebay.com/">eBay Community</a> |
+    <a href="https://www.watchuseek.com/">WatchUSeek</a>
   </p>
+
+  <div class="sources">
+    <strong>調査ソース:</strong><br>
+    <a href="https://www.luxurybazaar.com/grey-market/ebay-fake-rolex-listings/">eBay No Longer Removes Counterfeit Rolex Listings (Luxury Bazaar)</a> |
+    <a href="https://www.seikowatches.com/us-en/news/2025/importantnotice/20251006">Seiko Official Notice on Counterfeits and Mods (2025)</a> |
+    <a href="https://community.ebay.com/t5/Watches-watches-and-more-watches/Counterfeit-Casio-G-Shocks-on-Ebay-huge-problem/td-p/29049930">Counterfeit G-Shocks on eBay (eBay Community)</a> |
+    <a href="https://www.watchuseek.com/threads/it-has-begun-fake-grand-seiko.5120253/">Fake Grand Seiko Discussion (WatchUSeek)</a> |
+    <a href="https://www.thefashionlaw.com/rolex-prevails-in-trademark-lawsuit-over-modified-watches/">Rolex Wins Modified Watch Trademark Lawsuit (The Fashion Law)</a> |
+    <a href="https://www.ebay.com/authenticity-guarantee/watches">eBay Authenticity Guarantee for Watches</a> |
+    <a href="https://nomods.co/blogs/the-seiko-modding-blog/are-seiko-mods-illegal-modding-selling-safe-options">Are Seiko Mods Illegal? (NoMods)</a> |
+    <a href="https://www.fratellowatches.com/fake-omega-x-swatch-speedmaster-moonswatches/">Fake MoonSwatch Warning (Fratello)</a> |
+    <a href="https://robbreport.com/lifestyle/news/counterfeit-rolex-watches-replica-market-1234864485/">Fake Rolexes Make Up 50% of Counterfeit Market (Robb Report)</a> |
+    <a href="https://instantwatchbuyer.com/unveiling-the-most-counterfeited-watch-brands/">Most Counterfeited Watch Brands (Instant Watch Buyer)</a> |
+    <a href="https://world.casio.com/csr/social/property/">Casio IP Initiatives</a> |
+    <a href="https://www.tissotwatches.com/en-us/stop-fake">Tissot Stop Fake</a> |
+    <a href="https://mybulova.com/forums/warning-fake-bulova-watches-sale-ebay">Fake Bulova on eBay (myBulova)</a> |
+    <a href="https://www.watchuseek.com/threads/caution-fake-moonswatches-for-sale-on-ebay.5577447/">Fake MoonSwatches on eBay (WatchUSeek)</a>
+  </div>
 </footer>
 
 </body>

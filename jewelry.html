@@ -6,6 +6,20 @@
 <title>eBay VeRO ジュエリーブランド リスク一覧</title>
 <link rel="stylesheet" href="style.css">
 <script src="theme.js"></script>
+<style>
+.risk-table { width: 100%; border-collapse: collapse; margin-bottom: 24px; font-size: 0.9em; }
+.risk-table th { background: var(--th-bg); text-align: left; padding: 8px 10px; border-bottom: 2px solid var(--border); font-size: 0.85em; }
+.risk-table td { padding: 7px 10px; border-bottom: 1px solid var(--border); vertical-align: top; }
+.risk-table tr:hover { background: var(--card-hover); }
+.r-high { color: var(--red); font-weight: 700; }
+.r-mid  { color: var(--yellow); font-weight: 700; }
+.r-low  { color: var(--green); font-weight: 700; }
+.r-none { color: var(--muted); font-weight: 400; }
+.verdict-red    { background: rgba(220,53,69,0.15); border-left: 4px solid var(--red); padding: 2px 8px; border-radius: 4px; }
+.verdict-yellow { background: rgba(255,193,7,0.12); border-left: 4px solid var(--yellow); padding: 2px 8px; border-radius: 4px; }
+.verdict-green  { background: rgba(40,167,69,0.12); border-left: 4px solid var(--green); padding: 2px 8px; border-radius: 4px; }
+.category-label { font-size: 1.1em; font-weight: 700; color: var(--heading); margin: 28px 0 12px; padding-bottom: 6px; border-bottom: 2px solid var(--border); }
+</style>
 </head>
 <body>
 
@@ -24,78 +38,305 @@
 <h1>eBay VeRO ジュエリーブランド リスク一覧</h1>
 <p class="subtitle">調査日: 2026-03-19</p>
 
+<!-- ===== SUMMARY ===== -->
 <div class="summary-box">
   <ul>
-    <li class="danger">Tiffany vs eBay訴訟（2008年）の前例あり。高級ジュエリーブランドはVeRO積極的</li>
-    <li class="warn">$500以上のジュエリーはeBay認証プログラム（GIA鑑定士）の対象</li>
-    <li class="safe">日本の作家物・伝統工芸ジュエリーはVeRO未登録で安全。利益率も高い</li>
+    <li class="danger">Tiffany vs eBay訴訟(2008年)の前例あり。Van Cleef偽物が$150で大量出品中</li>
+    <li class="warn">$500以上はGIA鑑定必須。正規品でも認証に落ちるケースあり（Cartierリング事例）</li>
+    <li class="safe">日本の作家物・伝統工芸ジュエリーはVeRO・偽造品ともにリスクゼロ</li>
   </ul>
 </div>
 
-<!-- HIGH RISK -->
-<h2><span class="badge-high">HIGH RISK</span> 出品を避けるべきブランド</h2>
-<table>
+<!-- ==================== HIGH RISK ==================== -->
+<h2><span class="badge-high">HIGH RISK</span> 出品注意（赤）</h2>
+<table class="risk-table">
   <thead>
-    <tr><th>ブランド</th><th>所属グループ</th><th>リスク理由</th></tr>
+    <tr>
+      <th style="width:16%">ブランド</th>
+      <th style="width:10%">VeROリスク</th>
+      <th style="width:10%">偽造品リスク</th>
+      <th style="width:12%">総合判定</th>
+      <th>備考</th>
+    </tr>
   </thead>
   <tbody>
-    <tr><td class="brand-name">Tiffany &amp; Co.</td><td><span class="group-tag">LVMH</span></td><td>VeRO登録確認済み。2008年にeBayを訴訟した前例あり</td></tr>
-    <tr><td class="brand-name">Cartier</td><td><span class="group-tag">Richemont</span></td><td>VeRO登録確認済み（eBay公式ページ）</td></tr>
-    <tr><td class="brand-name">Van Cleef &amp; Arpels</td><td><span class="group-tag">Richemont</span></td><td>偽造品が横行（$150で偽物出品される）。取り締まり積極的</td></tr>
-    <tr><td class="brand-name">Bulgari</td><td><span class="group-tag">LVMH</span></td><td>LVMHグループ</td></tr>
-    <tr><td class="brand-name">Chanel</td><td><span class="group-tag">Chanel Inc.</span></td><td>VeRO登録確認済み</td></tr>
-    <tr><td class="brand-name">Hermes</td><td><span class="group-tag">独立</span></td><td>ジュエリーでもVeRO行使</td></tr>
-    <tr><td class="brand-name">Chrome Hearts</td><td><span class="group-tag">独立</span></td><td>偽造品が非常に多く、取り締まり最厳格</td></tr>
-    <tr><td class="brand-name">Gucci</td><td><span class="group-tag">Kering</span></td><td>VeRO登録確認</td></tr>
-    <tr><td class="brand-name">Louis Vuitton</td><td><span class="group-tag">LVMH</span></td><td>ジュエリーラインもVeRO対象</td></tr>
-    <tr><td class="brand-name">Chaumet</td><td><span class="group-tag">LVMH</span></td><td>同上</td></tr>
-    <tr><td class="brand-name">Boucheron</td><td><span class="group-tag">Kering</span></td><td>Keringグループ</td></tr>
+    <tr>
+      <td class="brand-name">Tiffany &amp; Co.</td>
+      <td class="r-high">極高</td>
+      <td class="r-high">極高</td>
+      <td><span style="color:var(--red)">出品回避</span></td>
+      <td>2004年にeBayを提訴。$500以上はGIA認証必須</td>
+    </tr>
+    <tr>
+      <td class="brand-name">Cartier</td>
+      <td class="r-high">極高</td>
+      <td class="r-high">極高</td>
+      <td><span style="color:var(--red)">出品回避</span></td>
+      <td>米税関が偽Love Bracelet 700本以上押収。$10M超の偽Cartier押収。認証で正規品が「偽」判定された事例あり</td>
+    </tr>
+    <tr>
+      <td class="brand-name">Van Cleef &amp; Arpels</td>
+      <td class="r-high">極高</td>
+      <td class="r-high">極高</td>
+      <td><span style="color:var(--red)">出品回避</span></td>
+      <td>Alhambra偽物が$150-$450で大量出品（正規$3,500-$4,500）。$500未満は認証スルー。$25M偽造品押収</td>
+    </tr>
+    <tr>
+      <td class="brand-name">Chrome Hearts</td>
+      <td class="r-mid">中〜高</td>
+      <td class="r-high">極高</td>
+      <td><span style="color:var(--red)">出品回避</span></td>
+      <td>10-15個に1個が偽物=全ブランド最高の偽造率。eBayが偽物のホットスポット</td>
+    </tr>
+    <tr>
+      <td class="brand-name">Chanel</td>
+      <td class="r-high">極高</td>
+      <td class="r-high">高</td>
+      <td><span style="color:var(--red)">出品回避</span></td>
+      <td>リメイクジュエリーにも商標訴訟</td>
+    </tr>
+    <tr>
+      <td class="brand-name">Hermes</td>
+      <td class="r-high">極高</td>
+      <td class="r-mid">中〜高</td>
+      <td><span style="color:var(--yellow)">要注意</span></td>
+      <td>VeRO即座にクレーム</td>
+    </tr>
+    <tr>
+      <td class="brand-name">Gucci</td>
+      <td class="r-high">高</td>
+      <td class="r-high">高</td>
+      <td><span style="color:var(--yellow)">要注意</span></td>
+      <td>VeRO積極的。正規品と知りつつ削除した事例</td>
+    </tr>
+    <tr>
+      <td class="brand-name">Louis Vuitton</td>
+      <td class="r-high">極高</td>
+      <td class="r-high">高</td>
+      <td><span style="color:var(--yellow)">要注意</span></td>
+      <td>VeRO即時対応</td>
+    </tr>
+    <tr>
+      <td class="brand-name">Bulgari</td>
+      <td class="r-high">高</td>
+      <td class="r-high">高</td>
+      <td><span style="color:var(--yellow)">注意</span></td>
+      <td>VeRO登録あり。苦情確認時は比較的早く撤回する傾向</td>
+    </tr>
+    <tr>
+      <td class="brand-name">Pandora</td>
+      <td class="r-high">高</td>
+      <td class="r-high">極高</td>
+      <td><span style="color:var(--red)">出品回避</span></td>
+      <td>正規品1個に偽物数千個。eBay販売を一切承認していない。Swarovskiクリスタル使用品は全て偽物</td>
+    </tr>
+    <tr>
+      <td class="brand-name">Boucheron</td>
+      <td class="r-low">低〜中</td>
+      <td class="r-low">低</td>
+      <td><span style="color:var(--green)">比較的安全</span></td>
+      <td>Kering傘下だがニッチ</td>
+    </tr>
+    <tr>
+      <td class="brand-name">Chaumet</td>
+      <td class="r-low">低〜中</td>
+      <td class="r-low">低</td>
+      <td><span style="color:var(--green)">比較的安全</span></td>
+      <td>LVMH傘下だが出品量少ない</td>
+    </tr>
   </tbody>
 </table>
 
-<!-- MEDIUM RISK -->
-<h2><span class="badge-mid">MEDIUM RISK</span> 注意が必要なブランド</h2>
-<table>
+<!-- ==================== MEDIUM RISK ==================== -->
+<h2><span class="badge-mid">MEDIUM RISK</span> 注意あり（黄）</h2>
+<table class="risk-table">
   <thead>
-    <tr><th>ブランド</th><th>備考</th></tr>
+    <tr>
+      <th style="width:16%">ブランド</th>
+      <th style="width:10%">VeROリスク</th>
+      <th style="width:10%">偽造品リスク</th>
+      <th style="width:12%">総合判定</th>
+      <th>備考</th>
+    </tr>
   </thead>
   <tbody>
-    <tr><td class="brand-name">David Yurman</td><td>独立。eBay認証対象ブランド。認証付きなら安全</td></tr>
-    <tr><td class="brand-name">Chopard</td><td>独立。高級だがVeRO報告は少ない</td></tr>
-    <tr><td class="brand-name">Mikimoto</td><td>日本。高級パールブランド。VeRO報告少ない</td></tr>
-    <tr><td class="brand-name">TASAKI</td><td>日本。高級パールブランド。VeRO報告少ない</td></tr>
-    <tr><td class="brand-name">Swarovski</td><td>独立。中価格帯でVeRO報告少ない</td></tr>
-    <tr><td class="brand-name">Pandora</td><td>独立。出品数が多く問題少ない</td></tr>
+    <tr>
+      <td class="brand-name">David Yurman</td>
+      <td class="r-mid">中〜高</td>
+      <td class="r-high">高</td>
+      <td><span style="color:var(--yellow)">注意</span></td>
+      <td>公式に不正品報告フォームあり。$215の偽18Kブレスレットが大量出品</td>
+    </tr>
+    <tr>
+      <td class="brand-name">Mikimoto</td>
+      <td class="r-mid">中</td>
+      <td class="r-high">高</td>
+      <td><span style="color:var(--yellow)">注意</span></td>
+      <td>偽物の特徴: 14Kクラスプ(正規は750=18K)、MII刻印(正規はM+貝殻)。Mikimotoのみ鑑定可能</td>
+    </tr>
+    <tr>
+      <td class="brand-name">Swarovski</td>
+      <td class="r-mid">中</td>
+      <td class="r-high">高</td>
+      <td><span style="color:var(--yellow)">注意</span></td>
+      <td>偽造コスト低く偽物多い。単価低いため$500認証対象外が多い</td>
+    </tr>
+    <tr>
+      <td class="brand-name">Chopard</td>
+      <td class="r-mid">中</td>
+      <td class="r-low">低〜中</td>
+      <td><span style="color:var(--green)">比較的安全</span></td>
+      <td>$500以上はGIA認証</td>
+    </tr>
+    <tr>
+      <td class="brand-name">TASAKI</td>
+      <td class="r-low">低〜中</td>
+      <td class="r-mid">中</td>
+      <td><span style="color:var(--green)">比較的安全</span></td>
+      <td>Mikimotoほど偽造市場大きくない</td>
+    </tr>
+    <tr>
+      <td class="brand-name">Thomas Sabo</td>
+      <td class="r-low">低〜中</td>
+      <td class="r-mid">中</td>
+      <td><span style="color:var(--yellow)">やや注意</span></td>
+      <td>偽物はシルバーでなく安価素材→肌荒れ報告あり</td>
+    </tr>
   </tbody>
 </table>
 
-<!-- LOW RISK -->
-<h2><span class="badge-low">LOW RISK</span> 安全に出品できるブランド</h2>
-<table>
+<!-- ==================== LOW RISK ==================== -->
+<h2><span class="badge-low">LOW RISK</span> 安全（緑）</h2>
+
+<div class="category-label">日本ブランド</div>
+<table class="risk-table">
   <thead>
-    <tr><th>ブランド</th><th>国</th><th>備考</th></tr>
+    <tr>
+      <th style="width:16%">ブランド</th>
+      <th style="width:10%">VeROリスク</th>
+      <th style="width:10%">偽造品リスク</th>
+      <th style="width:12%">総合判定</th>
+      <th>備考</th>
+    </tr>
   </thead>
   <tbody>
-    <tr><td class="brand-name"><span class="flag-jp">4&#8451; (ヨンドシー)</span></td><td>日本</td><td>独立ブランド。VeRO未登録</td></tr>
-    <tr><td class="brand-name"><span class="flag-jp">agete (アガット)</span></td><td>日本</td><td>独立ブランド。VeRO未登録</td></tr>
-    <tr><td class="brand-name"><span class="flag-jp">AHKAH (アーカー)</span></td><td>日本</td><td>独立ブランド。VeRO未登録</td></tr>
-    <tr><td class="brand-name"><span class="flag-jp">ete (エテ)</span></td><td>日本</td><td>独立ブランド。VeRO未登録</td></tr>
-    <tr><td class="brand-name"><span class="flag-jp">STAR JEWELRY</span></td><td>日本</td><td>独立ブランド。VeRO未登録</td></tr>
-    <tr><td class="brand-name"><span class="flag-jp">K.UNO (ケイウノ)</span></td><td>日本</td><td>オーダーメイドジュエリー。VeRO未登録</td></tr>
-    <tr><td class="brand-name"><span class="flag-jp">京都オパール</span></td><td>日本</td><td>伝統工芸。VeRO未登録。海外コレクター需要あり</td></tr>
-    <tr><td class="brand-name"><span class="flag-jp">七宝焼きジュエリー</span></td><td>日本</td><td>伝統工芸。VeRO未登録</td></tr>
-    <tr><td class="brand-name"><span class="flag-jp">彫金作家物</span></td><td>日本</td><td>作家物。VeRO未登録。一点物で高値</td></tr>
-    <tr><td class="brand-name"><span class="flag-dk">Georg Jensen</span></td><td>デンマーク</td><td>独立ブランド。VeRO報告なし。ヴィンテージ人気</td></tr>
-    <tr><td class="brand-name"><span class="flag-dk">Trollbeads</span></td><td>デンマーク</td><td>VeRO報告なし</td></tr>
-    <tr><td class="brand-name"><span class="flag-de">Thomas Sabo</span></td><td>ドイツ</td><td>VeRO報告なし</td></tr>
-    <tr><td class="brand-name"><span class="flag-uk">Monica Vinader</span></td><td>英国</td><td>VeRO報告なし</td></tr>
-    <tr><td class="brand-name"><span class="flag-uk">Alex Monroe</span></td><td>英国</td><td>VeRO報告なし</td></tr>
+    <tr>
+      <td class="brand-name"><span class="flag-jp">4&#8451; (ヨンドシー)</span></td>
+      <td class="r-none">なし</td>
+      <td class="r-none">なし</td>
+      <td><span style="color:var(--green)">安全</span></td>
+      <td>日本国内ブランド。海外偽造品なし</td>
+    </tr>
+    <tr>
+      <td class="brand-name"><span class="flag-jp">agete</span></td>
+      <td class="r-none">なし</td>
+      <td class="r-none">なし</td>
+      <td><span style="color:var(--green)">安全</span></td>
+      <td>日本国内ブランド。海外偽造品なし</td>
+    </tr>
+    <tr>
+      <td class="brand-name"><span class="flag-jp">AHKAH</span></td>
+      <td class="r-none">なし</td>
+      <td class="r-none">なし</td>
+      <td><span style="color:var(--green)">安全</span></td>
+      <td>日本国内ブランド。海外偽造品なし</td>
+    </tr>
+    <tr>
+      <td class="brand-name"><span class="flag-jp">ete</span></td>
+      <td class="r-none">なし</td>
+      <td class="r-none">なし</td>
+      <td><span style="color:var(--green)">安全</span></td>
+      <td>日本国内ブランド。海外偽造品なし</td>
+    </tr>
+    <tr>
+      <td class="brand-name"><span class="flag-jp">STAR JEWELRY</span></td>
+      <td class="r-none">なし</td>
+      <td class="r-none">なし</td>
+      <td><span style="color:var(--green)">安全</span></td>
+      <td>eBay出品あるがリスクなし</td>
+    </tr>
+    <tr>
+      <td class="brand-name"><span class="flag-jp">K.UNO</span></td>
+      <td class="r-none">なし</td>
+      <td class="r-none">なし</td>
+      <td><span style="color:var(--green)">安全</span></td>
+      <td>Pokemon/Disneyコラボが海外流通</td>
+    </tr>
+    <tr>
+      <td class="brand-name"><span class="flag-jp">京都オパール</span></td>
+      <td class="r-none">なし</td>
+      <td class="r-none">なし</td>
+      <td><span style="color:var(--green)">安全</span></td>
+      <td>伝統工芸。海外コレクター需要あり</td>
+    </tr>
+    <tr>
+      <td class="brand-name"><span class="flag-jp">七宝焼きジュエリー</span></td>
+      <td class="r-none">なし</td>
+      <td class="r-none">なし</td>
+      <td><span style="color:var(--green)">安全</span></td>
+      <td>伝統工芸</td>
+    </tr>
+    <tr>
+      <td class="brand-name"><span class="flag-jp">彫金作家物</span></td>
+      <td class="r-none">なし</td>
+      <td class="r-none">なし</td>
+      <td><span style="color:var(--green)">安全</span></td>
+      <td>一点物で高値</td>
+    </tr>
   </tbody>
 </table>
 
+<div class="category-label">その他</div>
+<table class="risk-table">
+  <thead>
+    <tr>
+      <th style="width:16%">ブランド</th>
+      <th style="width:10%">VeROリスク</th>
+      <th style="width:10%">偽造品リスク</th>
+      <th style="width:12%">総合判定</th>
+      <th>備考</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td class="brand-name">Georg Jensen</td>
+      <td class="r-low">低</td>
+      <td class="r-low">低〜中</td>
+      <td><span style="color:var(--green)">比較的安全</span></td>
+      <td>デンマーク老舗。ヴィンテージ人気</td>
+    </tr>
+    <tr>
+      <td class="brand-name"><span class="flag-uk">Monica Vinader</span></td>
+      <td class="r-low">低</td>
+      <td class="r-low">低</td>
+      <td><span style="color:var(--green)">安全</span></td>
+      <td>英国</td>
+    </tr>
+    <tr>
+      <td class="brand-name"><span class="flag-uk">Alex Monroe</span></td>
+      <td class="r-low">低</td>
+      <td class="r-low">低</td>
+      <td><span style="color:var(--green)">安全</span></td>
+      <td>英国</td>
+    </tr>
+    <tr>
+      <td class="brand-name">Trollbeads</td>
+      <td class="r-low">低</td>
+      <td class="r-low">低</td>
+      <td><span style="color:var(--green)">安全</span></td>
+      <td>デンマーク</td>
+    </tr>
+  </tbody>
+</table>
+
+<!-- ===== NOTE ===== -->
 <div class="note">
   <strong>出品戦略のポイント</strong><br>
-  $500以上のジュエリーはeBay認証プログラム（GIA鑑定士による鑑定）が利用可能。日本の伝統工芸ジュエリー（七宝焼き・彫金・京都オパール）は「Japanese traditional craft」「Handmade」がSEOキーワード。作家物の一点物は海外コレクターに刺さる。
+  <ul style="margin-left:18px; margin-top:8px;">
+    <li>$500以上はGIA鑑定士による認証が必須。$200-$499.99は$40で任意認証可</li>
+    <li>Van Cleef偽物は$500未満で認証スルーのため要注意</li>
+    <li>日本の伝統工芸ジュエリー（七宝焼き・彫金・京都オパール）は「Japanese traditional craft」「Handmade」がSEOキーワード</li>
+  </ul>
 </div>
 
 <footer>
@@ -104,7 +345,7 @@
     <li><a href="https://www.ebay.com/sellercenter/ebay-for-business/verified-rights-owner-program">eBay VeRO Profiles</a></li>
     <li><a href="https://en.wikipedia.org/wiki/Tiffany_(NJ)_Inc._v._eBay_Inc.">Tiffany vs eBay訴訟</a></li>
     <li><a href="https://www.ebay.com/authenticity-guarantee/jewelry">eBay Jewelry Authentication</a></li>
-    <li><a href="https://community.ebay.com/t5/Selling/Proof-that-the-VeRO-program-is-used-maliciously/td-p/32830261">eBay Community</a></li>
+    <li><a href="https://community.ebay.com/t5/Ask-a-Mentor/Clearly-FAKE-Van-Cleef-amp-Arpel-bracelet-listings-that-Ebay-CS/td-p/34720085">Van Cleef &amp; Arpels偽物問題</a></li>
   </ul>
 </footer>
 

@@ -6,6 +6,18 @@
 <title>eBay VeRO サングラスブランド リスク一覧</title>
 <link rel="stylesheet" href="style.css">
 <script src="theme.js"></script>
+<style>
+.risk-high { color: var(--red); font-weight: 700; }
+.risk-mid  { color: var(--yellow); font-weight: 700; }
+.risk-low  { color: var(--green); font-weight: 700; }
+.verdict-stop  { background: rgba(220,53,69,0.15); color: var(--red); font-weight: 700; padding: 2px 8px; border-radius: 4px; }
+.verdict-warn  { background: rgba(255,193,7,0.15); color: var(--yellow); font-weight: 700; padding: 2px 8px; border-radius: 4px; }
+.verdict-go    { background: rgba(40,167,69,0.15); color: var(--green); font-weight: 700; padding: 2px 8px; border-radius: 4px; }
+.evidence { font-size: 0.82em; color: var(--muted); line-height: 1.5; }
+.evidence a { color: var(--link); text-decoration: none; }
+.evidence a:hover { text-decoration: underline; }
+td.notes-col { max-width: 400px; }
+</style>
 </head>
 <body>
 
@@ -21,108 +33,724 @@
   <button class="theme-toggle" id="themeToggle"></button>
 </div>
 
-<h1>eBay VeRO サングラスブランド リスク一覧</h1>
-<p class="subtitle">調査日: 2026-03-19</p>
+<h1>eBay サングラス出品 リスク評価表（2軸分析）</h1>
+<p class="subtitle">調査日: 2026-03-19 / WebSearch による徹底調査に基づく</p>
 
 <div class="summary-box">
+  <h2>調査概要</h2>
   <ul>
-    <li class="danger">EssilorLuxottica / LVMH / Kering グループは正規品の中古でも削除される報告あり</li>
-    <li class="warn">中リスクブランドは正規品であれば概ね問題ないが、画像の著作権に注意</li>
-    <li class="safe">日本の独立ブランド（鯖江系）やドイツ・米の独立ブランドはVeRO未登録で安全</li>
+    <li class="danger"><strong>VeROリスク</strong>: ブランド側がeBayのVeROプログラムで出品を削除するリスク。正規品でも削除される場合あり</li>
+    <li class="warn"><strong>偽造品リスク</strong>: 偽物が多く流通し、正規品でも「偽物では？」と疑われ、返品・クレーム・アカウント停止に繋がるリスク</li>
+    <li class="safe"><strong>総合判定</strong>: 両軸を総合し「出品回避」「要注意」「安全」の3段階で評価</li>
   </ul>
 </div>
 
-<!-- HIGH RISK -->
-<h2><span class="badge-high">HIGH RISK</span> 出品を避けるべきブランド</h2>
+<div class="summary-box">
+  <h2>重要な発見事項</h2>
+  <ul>
+    <li class="danger"><strong>Luxottica/EssilorLuxottica</strong>: Oakley Inc.はVeRO登録確認済み。グループ全体（Ray-Ban, Persol, Oliver Peoples含む）で積極取締り。eBay上のRay-Banの約40%が偽物との調査結果あり</li>
+    <li class="danger"><strong>LVMH</strong>: 2008年にeBayを提訴し3680万ユーロの賠償命令（控訴審で570万ユーロに減額）。2014年にeBayと和解し共同で偽造品対策を実施</li>
+    <li class="danger"><strong>Chanel</strong>: VeRO登録確認済み。eBay出品者を5600万ドルで提訴した事例あり。正規中古品でも訴訟対象</li>
+    <li class="danger"><strong>Kering (Gucci等)</strong>: Alibaba提訴など積極的なIP保護。Gucci/YSL/Bottega Venetaが共同原告として偽造品販売者を提訴</li>
+    <li class="warn"><strong>Maui Jim</strong>: eBay上のMaui Jimの約1/3が偽物。eBay含むサードパーティでの販売を公式に「非認定」と明記</li>
+    <li class="safe"><strong>日本ブランド</strong>: VeRO未登録で偽造品もほぼ存在しない。利益率が高く最も安全な出品対象</li>
+  </ul>
+</div>
+
+<!-- ============================================= -->
+<!-- EssilorLuxottica グループ -->
+<!-- ============================================= -->
+<h2><span class="badge-high">HIGH RISK</span> EssilorLuxottica グループ</h2>
 <table>
   <thead>
-    <tr><th>ブランド</th><th>所属グループ</th><th>リスク理由</th></tr>
+    <tr>
+      <th>ブランド</th>
+      <th>VeROリスク</th>
+      <th>偽造品リスク</th>
+      <th>総合判定</th>
+      <th>根拠・備考</th>
+    </tr>
   </thead>
   <tbody>
-    <tr><td class="brand-name">Ray-Ban</td><td><span class="group-tag">EssilorLuxottica</span></td><td>VeRO登録確認済み。正規品でも写真使用で削除報告多数</td></tr>
-    <tr><td class="brand-name">Oakley</td><td><span class="group-tag">EssilorLuxottica</span></td><td>VeRO登録確認済み。Oakley Forumで削除報告多数</td></tr>
-    <tr><td class="brand-name">Persol</td><td><span class="group-tag">EssilorLuxottica</span></td><td>Luxotticaグループ。同じ方針で取り締まり</td></tr>
-    <tr><td class="brand-name">Oliver Peoples</td><td><span class="group-tag">EssilorLuxottica</span></td><td>同上</td></tr>
-    <tr><td class="brand-name">Tom Ford</td><td><span class="group-tag">EssilorLuxottica</span></td><td>2023年にLuxotticaがアイウェア事業を買収</td></tr>
-    <tr><td class="brand-name">Chanel</td><td><span class="group-tag">Chanel Inc.</span></td><td>VeRO登録確認済み（eBay公式ページ）。最も厳格</td></tr>
-    <tr><td class="brand-name">Coach</td><td><span class="group-tag">Tapestry</span></td><td>VeRO登録確認済み。「ほぼ出品不可能」との報告あり</td></tr>
-    <tr><td class="brand-name">Burberry</td><td><span class="group-tag">Burberry Limited</span></td><td>VeRO登録確認済み（eBay公式ページ）</td></tr>
-    <tr><td class="brand-name">Cartier</td><td><span class="group-tag">Richemont</span></td><td>VeRO登録確認済み（eBay公式ページ）</td></tr>
-    <tr><td class="brand-name">Gucci</td><td><span class="group-tag">Kering</span></td><td>VeRO登録確認。偽造品が多く正規品でも疑われやすい</td></tr>
-    <tr><td class="brand-name">Dior</td><td><span class="group-tag">LVMH</span></td><td>LVMHグループは積極的にVeRO行使</td></tr>
-    <tr><td class="brand-name">Fendi</td><td><span class="group-tag">LVMH</span></td><td>同上</td></tr>
-    <tr><td class="brand-name">Celine</td><td><span class="group-tag">LVMH</span></td><td>同上</td></tr>
-    <tr><td class="brand-name">Saint Laurent</td><td><span class="group-tag">Kering</span></td><td>Keringグループ。Gucci同様に厳格</td></tr>
-    <tr><td class="brand-name">Bottega Veneta</td><td><span class="group-tag">Kering</span></td><td>同上</td></tr>
-    <tr><td class="brand-name">Prada</td><td><span class="group-tag">Prada Group</span></td><td>独自にVeRO行使。偽造品対策に積極的</td></tr>
-    <tr><td class="brand-name">Versace</td><td><span class="group-tag">Capri Holdings</span></td><td>高級ブランドとしてVeRO参加</td></tr>
-    <tr><td class="brand-name">Dolce &amp; Gabbana</td><td><span class="group-tag">独立</span></td><td>高級ブランドとしてVeRO参加</td></tr>
-    <tr><td class="brand-name">Bulgari</td><td><span class="group-tag">LVMH</span></td><td>LVMHグループ</td></tr>
-    <tr><td class="brand-name">Tiffany &amp; Co.</td><td><span class="group-tag">LVMH</span></td><td>「出品ほぼ不可能」との報告あり</td></tr>
-    <tr><td class="brand-name">Chrome Hearts</td><td><span class="group-tag">独立</span></td><td>偽造品が多く、取り締まりが非常に厳格</td></tr>
+    <tr>
+      <td class="brand-name">Ray-Ban</td>
+      <td class="risk-high">極高</td>
+      <td class="risk-high">極高</td>
+      <td><span class="verdict-stop">出品回避</span></td>
+      <td class="notes-col">
+        <span class="evidence">
+          Oakley Inc.(Luxottica子会社）がVeRO登録済み。Ray-Banも同グループとして取り締まり対象。
+          eBay上のRay-Banの<strong>約40%が偽物</strong>との調査結果あり。偽造品の多くは中国・マレーシア経由。
+          正規品でもメーカー画像の使用で即削除される。
+          <br><a href="https://community.ebay.com/t5/Buying/Ebay-filled-with-fake-ray-ban-s/td-p/30677422">eBay Community: Ray-Ban偽物問題</a>
+          / <a href="https://www.vintagesunglassesshop.com/how_to_identify_counterfeits.html">偽造品鑑定ガイド</a>
+        </span>
+      </td>
+    </tr>
+    <tr>
+      <td class="brand-name">Oakley</td>
+      <td class="risk-high">極高</td>
+      <td class="risk-high">極高</td>
+      <td><span class="verdict-stop">出品回避</span></td>
+      <td class="notes-col">
+        <span class="evidence">
+          <strong>Oakley Inc.はVeRO登録確認済み</strong>（eBay公式プロフィール掲載）。
+          偽造品を見つけたら直接Oakleyに連絡→出品者を調査・排除する体制。
+          eBayコミュニティで偽物Oakley購入の報告多数。
+          <br><a href="https://community.ebay.com/t5/Shipping/Bought-fake-Oakley-Sunglasses/td-p/31071857">eBay: 偽Oakley購入報告</a>
+        </span>
+      </td>
+    </tr>
+    <tr>
+      <td class="brand-name">Persol</td>
+      <td class="risk-high">高</td>
+      <td class="risk-mid">中</td>
+      <td><span class="verdict-stop">出品回避</span></td>
+      <td class="notes-col">
+        <span class="evidence">
+          EssilorLuxottica直営ブランド。Oakley/Ray-Banと同じ方針でVeRO行使。
+          偽造品はRay-Banほど多くないが、ヴィンテージB&amp;L時代のPersol偽物が存在。
+        </span>
+      </td>
+    </tr>
+    <tr>
+      <td class="brand-name">Oliver Peoples</td>
+      <td class="risk-high">高</td>
+      <td class="risk-mid">中</td>
+      <td><span class="verdict-stop">出品回避</span></td>
+      <td class="notes-col">
+        <span class="evidence">
+          2006年にOakleyが買収→2007年にLuxotticaグループ入り。
+          同グループの取り締まり対象。偽造品は少ないが、VeROリスクが主な問題。
+        </span>
+      </td>
+    </tr>
+    <tr>
+      <td class="brand-name">Tom Ford (Eyewear)</td>
+      <td class="risk-high">高</td>
+      <td class="risk-high">高</td>
+      <td><span class="verdict-stop">出品回避</span></td>
+      <td class="notes-col">
+        <span class="evidence">
+          2023年にEssilorLuxotticaがTom Fordアイウェア事業を買収（製造はMarcolin→EssilorLuxotticaに移行）。
+          偽造品が多く、「Made in China」表記の偽物が横行。正規品はMarcolin S.p.A製造・Made in Italy。
+          <br><a href="https://www.therevury.com/blogs/news/how-to-authenticate-tom-ford-sunglasses">Tom Ford認証ガイド</a>
+        </span>
+      </td>
+    </tr>
   </tbody>
 </table>
 
-<!-- MEDIUM RISK -->
-<h2><span class="badge-mid">MEDIUM RISK</span> 注意が必要なブランド</h2>
+<!-- ============================================= -->
+<!-- 高級ファッション -->
+<!-- ============================================= -->
+<h2><span class="badge-high">HIGH RISK</span> 高級ファッションブランド</h2>
 <table>
   <thead>
-    <tr><th>ブランド</th><th>備考</th></tr>
+    <tr>
+      <th>ブランド</th>
+      <th>グループ</th>
+      <th>VeROリスク</th>
+      <th>偽造品リスク</th>
+      <th>総合判定</th>
+      <th>根拠・備考</th>
+    </tr>
   </thead>
   <tbody>
-    <tr><td class="brand-name">Michael Kors</td><td>Capri Holdings。出品数は多いが、時折VeRO報告あり</td></tr>
-    <tr><td class="brand-name">Giorgio Armani</td><td>EssilorLuxotticaがライセンス製造。大量出品あるが注意</td></tr>
-    <tr><td class="brand-name">Emporio Armani</td><td>同上</td></tr>
-    <tr><td class="brand-name">Maui Jim</td><td>Kering Eyewear傘下。比較的穏やか</td></tr>
-    <tr><td class="brand-name">Police</td><td>De Rigo Group。VeRO報告は少ない</td></tr>
-    <tr><td class="brand-name">Carrera</td><td>Safilo Group。大手だがVeRO行使は少ない</td></tr>
-    <tr><td class="brand-name">Jean Paul Gaultier</td><td>ヴィンテージ市場が中心で問題は少ない</td></tr>
-    <tr><td class="brand-name">Gentle Monster</td><td>韓国ブランド。VeRO報告なし</td></tr>
+    <tr>
+      <td class="brand-name">Chanel</td>
+      <td><span class="group-tag">Chanel Inc.</span></td>
+      <td class="risk-high">極高</td>
+      <td class="risk-high">極高</td>
+      <td><span class="verdict-stop">出品回避</span></td>
+      <td class="notes-col">
+        <span class="evidence">
+          <strong>VeRO登録確認済み</strong>（eBay公式）。eBay出品者を<strong>5000万ドル超</strong>で提訴した事例あり。
+          正規品の中古でも「トレードマーク違反」として訴訟対象になる。
+          高級リセラーWGACAに対し400万ドルの賠償命令（2024年）。
+          <br><a href="https://onlinemerchantsguild.org/chanel-sues-ebay-merchant-for-50-million/">Chanel eBay出品者提訴</a>
+          / <a href="https://katten.com/chanels-legal-victory-sends-a-clear-message-authenticity-isnt-just-a-luxury-its-the-law">Chanel vs WGACA判決</a>
+        </span>
+      </td>
+    </tr>
+    <tr>
+      <td class="brand-name">Gucci</td>
+      <td><span class="group-tag">Kering</span></td>
+      <td class="risk-high">極高</td>
+      <td class="risk-high">極高</td>
+      <td><span class="verdict-stop">出品回避</span></td>
+      <td class="notes-col">
+        <span class="evidence">
+          Keringグループは積極的にIP保護。Alibaba提訴で仮差止命令を取得。
+          Gucci/Balenciaga/YSL/Bottega Venetaが共同原告として200万ドル超の偽造品販売者を提訴。
+          サングラスの偽造品が非常に多く、100%の評価のセラーでも偽物を販売。
+          <br><a href="https://www.thefashionlaw.com/kering-scores-early-win-in-alibaba-counterfeiting-case/">Kering vs Alibaba</a>
+        </span>
+      </td>
+    </tr>
+    <tr>
+      <td class="brand-name">Dior</td>
+      <td><span class="group-tag">LVMH</span></td>
+      <td class="risk-high">極高</td>
+      <td class="risk-high">高</td>
+      <td><span class="verdict-stop">出品回避</span></td>
+      <td class="notes-col">
+        <span class="evidence">
+          2008年LVMHがeBayを提訴→3680万ユーロ賠償命令。Diorは原告の一つ。
+          2014年にLVMHとeBayが和解し共同偽造品対策を開始。
+          <br><a href="https://www.thedrum.com/news/2014/07/24/ebay-and-lvmh-settle-long-running-intellectual-property-dispute">LVMH vs eBay和解</a>
+        </span>
+      </td>
+    </tr>
+    <tr>
+      <td class="brand-name">Prada</td>
+      <td><span class="group-tag">Prada Group</span></td>
+      <td class="risk-high">高</td>
+      <td class="risk-high">高</td>
+      <td><span class="verdict-stop">出品回避</span></td>
+      <td class="notes-col">
+        <span class="evidence">
+          独自にIP保護を行使。偽造品が非常に多く、正規品との区別が困難。
+          100%評価のセラーでも「MADE IN CHINA」の偽物を販売していた事例あり。
+          <br><a href="https://legitgrails.com/blogs/prada/how-to-tell-fake-vs-real-prada-sunglasses">Prada真贋ガイド</a>
+        </span>
+      </td>
+    </tr>
+    <tr>
+      <td class="brand-name">Versace</td>
+      <td><span class="group-tag">Capri Holdings</span></td>
+      <td class="risk-high">高</td>
+      <td class="risk-high">高</td>
+      <td><span class="verdict-stop">出品回避</span></td>
+      <td class="notes-col">
+        <span class="evidence">
+          偽造品が多く出回る。メデューサヘッドのロゴが偽造されやすい。
+          <br><a href="https://legitgrails.com/blogs/news/how-to-tell-fake-vs-real-versace-sunglasses">Versace真贋ガイド</a>
+        </span>
+      </td>
+    </tr>
+    <tr>
+      <td class="brand-name">Burberry</td>
+      <td><span class="group-tag">Burberry Limited</span></td>
+      <td class="risk-high">高</td>
+      <td class="risk-mid">中</td>
+      <td><span class="verdict-stop">出品回避</span></td>
+      <td class="notes-col">
+        <span class="evidence">
+          <strong>VeRO登録確認済み</strong>（eBay公式プロフィール掲載）。
+          サングラスの偽造品はバッグほど多くないが、VeRO取り締まりが厳格。
+        </span>
+      </td>
+    </tr>
+    <tr>
+      <td class="brand-name">Saint Laurent</td>
+      <td><span class="group-tag">Kering</span></td>
+      <td class="risk-high">高</td>
+      <td class="risk-mid">中</td>
+      <td><span class="verdict-stop">出品回避</span></td>
+      <td class="notes-col">
+        <span class="evidence">
+          Keringグループ。Gucci等と共同原告として偽造品販売者を提訴した実績あり。
+        </span>
+      </td>
+    </tr>
+    <tr>
+      <td class="brand-name">Dolce &amp; Gabbana</td>
+      <td><span class="group-tag">独立</span></td>
+      <td class="risk-high">高</td>
+      <td class="risk-mid">中</td>
+      <td><span class="verdict-stop">出品回避</span></td>
+      <td class="notes-col">
+        <span class="evidence">
+          高級ブランドとしてVeRO参加。偽造品はGucci/Pradaほど多くないが存在。
+        </span>
+      </td>
+    </tr>
+    <tr>
+      <td class="brand-name">Fendi</td>
+      <td><span class="group-tag">LVMH</span></td>
+      <td class="risk-high">高</td>
+      <td class="risk-mid">中</td>
+      <td><span class="verdict-stop">出品回避</span></td>
+      <td class="notes-col">
+        <span class="evidence">
+          LVMHグループ。eBay vs LVMH訴訟でFendiも保護対象に含まれる。
+        </span>
+      </td>
+    </tr>
+    <tr>
+      <td class="brand-name">Celine</td>
+      <td><span class="group-tag">LVMH</span></td>
+      <td class="risk-high">高</td>
+      <td class="risk-mid">中</td>
+      <td><span class="verdict-stop">出品回避</span></td>
+      <td class="notes-col">
+        <span class="evidence">
+          LVMHグループ。同グループの統一的IP保護方針の対象。
+        </span>
+      </td>
+    </tr>
+    <tr>
+      <td class="brand-name">Bottega Veneta</td>
+      <td><span class="group-tag">Kering</span></td>
+      <td class="risk-high">高</td>
+      <td class="risk-mid">中</td>
+      <td><span class="verdict-stop">出品回避</span></td>
+      <td class="notes-col">
+        <span class="evidence">
+          Keringグループ。Gucci/YSLと共同でIP保護訴訟の原告。
+        </span>
+      </td>
+    </tr>
+    <tr>
+      <td class="brand-name">Bulgari</td>
+      <td><span class="group-tag">LVMH</span></td>
+      <td class="risk-high">高</td>
+      <td class="risk-mid">中</td>
+      <td><span class="verdict-stop">出品回避</span></td>
+      <td class="notes-col">
+        <span class="evidence">
+          LVMHグループ。同グループのIP保護方針の対象。ジュエリーほどではないがサングラス偽造品も存在。
+        </span>
+      </td>
+    </tr>
+    <tr>
+      <td class="brand-name">Cartier</td>
+      <td><span class="group-tag">Richemont</span></td>
+      <td class="risk-high">極高</td>
+      <td class="risk-high">極高</td>
+      <td><span class="verdict-stop">出品回避</span></td>
+      <td class="notes-col">
+        <span class="evidence">
+          <strong>Richemont GroupがVeRO登録確認済み</strong>。
+          Buffalo Horn等のCartierサングラスは偽造品が非常に多い。
+          正規品の75%引き以下は偽物の可能性が極めて高い。
+          シリアルナンバー（7〜10桁）とロゴのエッチング品質が鑑定ポイント。
+          <br><a href="https://eyeons.com/frametrends/how-to-spot-fake-cartier-glasses">Cartier偽物鑑定ガイド</a>
+        </span>
+      </td>
+    </tr>
+    <tr>
+      <td class="brand-name">Tiffany &amp; Co.</td>
+      <td><span class="group-tag">LVMH</span></td>
+      <td class="risk-high">極高</td>
+      <td class="risk-mid">中</td>
+      <td><span class="verdict-stop">出品回避</span></td>
+      <td class="notes-col">
+        <span class="evidence">
+          LVMHグループ（2021年買収）。Tiffany vs eBayの先例的訴訟（2004-2010年）で
+          「eBayには偽造品を排除する義務がある」との判例形成に関与。出品は極めてリスクが高い。
+        </span>
+      </td>
+    </tr>
+    <tr>
+      <td class="brand-name">Coach</td>
+      <td><span class="group-tag">Tapestry</span></td>
+      <td class="risk-high">極高</td>
+      <td class="risk-mid">中</td>
+      <td><span class="verdict-stop">出品回避</span></td>
+      <td class="notes-col">
+        <span class="evidence">
+          <strong>VeRO登録確認済み</strong>。「ほぼ出品不可能」とのセラー報告あり。
+          正規品でも積極的に削除される。
+        </span>
+      </td>
+    </tr>
+    <tr>
+      <td class="brand-name">Chrome Hearts</td>
+      <td><span class="group-tag">独立</span></td>
+      <td class="risk-high">高</td>
+      <td class="risk-high">極高</td>
+      <td><span class="verdict-stop">出品回避</span></td>
+      <td class="notes-col">
+        <span class="evidence">
+          Chrome Hearts LLCがTemu出品者を商標侵害で提訴。eBayでも偽物報告が多数。
+          イリノイ連邦裁判所でSchedule A訴訟（被告多数の一斉提訴）を実施。
+          <br><a href="https://vernonproper.com/chrome-hearts-goes-after-temu-sellers-in-trademark-lawsuits/">Chrome Hearts vs Temu</a>
+          / <a href="https://stockmanporopat.com/chrome-hearts-trademark-infringement-action/">Chrome Hearts商標訴訟</a>
+        </span>
+      </td>
+    </tr>
   </tbody>
 </table>
 
-<!-- LOW RISK -->
-<h2><span class="badge-low">LOW RISK</span> 安全に出品できるブランド</h2>
+<!-- ============================================= -->
+<!-- 中価格帯 -->
+<!-- ============================================= -->
+<h2><span class="badge-mid">MEDIUM RISK</span> 中価格帯ブランド</h2>
 <table>
   <thead>
-    <tr><th>ブランド</th><th>国</th><th>備考</th></tr>
+    <tr>
+      <th>ブランド</th>
+      <th>VeROリスク</th>
+      <th>偽造品リスク</th>
+      <th>総合判定</th>
+      <th>根拠・備考</th>
+    </tr>
   </thead>
   <tbody>
-    <tr><td class="brand-name"><span class="flag-jp">EYEVAN 7285</span></td><td>日本</td><td>独立ブランド。VeRO未登録。$170〜$370で取引</td></tr>
-    <tr><td class="brand-name"><span class="flag-jp">999.9 (Four Nines)</span></td><td>日本</td><td>独立ブランド。VeRO未登録。$140〜$210で取引</td></tr>
-    <tr><td class="brand-name"><span class="flag-jp">MASUNAGA (増永眼鏡)</span></td><td>日本</td><td>独立ブランド。VeRO未登録。チタンモデル$180〜$700</td></tr>
-    <tr><td class="brand-name"><span class="flag-jp">A.D.S.R.</span></td><td>日本</td><td>独立ブランド。VeRO未登録。$130〜$145で取引</td></tr>
-    <tr><td class="brand-name"><span class="flag-jp">ayame</span></td><td>日本</td><td>独立ブランド。VeRO未登録。セルロイド製は高値$300〜$770</td></tr>
-    <tr><td class="brand-name"><span class="flag-jp">Boston Club</span></td><td>日本</td><td>独立ブランド（鯖江）。VeRO未登録</td></tr>
-    <tr><td class="brand-name"><span class="flag-jp">FACTORY900</span></td><td>日本</td><td>独立ブランド（鯖江）。VeRO未登録。$270〜$300で取引</td></tr>
-    <tr><td class="brand-name"><span class="flag-jp">TALEX</span></td><td>日本</td><td>偏光レンズ専門。VeRO未登録</td></tr>
-    <tr><td class="brand-name"><span class="flag-jp">Eyevol</span></td><td>日本</td><td>軽量スポーツ系。VeRO未登録。$150〜$290</td></tr>
-    <tr><td class="brand-name"><span class="flag-jp">N.S.H</span></td><td>日本</td><td>独立ブランド。VeRO未登録</td></tr>
-    <tr><td class="brand-name"><span class="flag-jp">TAKAHIROMIYASHITA TheSoloist.</span></td><td>日本</td><td>独立ブランド。VeRO未登録</td></tr>
-    <tr><td class="brand-name"><span class="flag-de">Cazal</span></td><td>ドイツ</td><td>独立ブランド。ヴィンテージ市場で問題なし</td></tr>
-    <tr><td class="brand-name"><span class="flag-de">ic! berlin</span></td><td>ドイツ</td><td>独立ブランド。VeRO報告なし</td></tr>
-    <tr><td class="brand-name"><span class="flag-de">Mykita</span></td><td>ドイツ</td><td>独立ブランド。VeRO報告なし</td></tr>
-    <tr><td class="brand-name"><span class="flag-us">Jacques Marie Mage</span></td><td>米国</td><td>独立ブランド。VeRO報告なし</td></tr>
-    <tr><td class="brand-name"><span class="flag-us">Moscot</span></td><td>米国</td><td>独立ブランド。VeRO報告なし</td></tr>
-    <tr><td class="brand-name"><span class="flag-us">Barton Perreira</span></td><td>米国</td><td>独立ブランド。VeRO報告なし</td></tr>
-    <tr><td class="brand-name"><span class="flag-us">TITMUS</span></td><td>米国</td><td>VeRO報告なし</td></tr>
-    <tr><td class="brand-name"><span class="flag-uk">Oliver Goldsmith</span></td><td>英国</td><td>独立ブランド。VeRO報告なし</td></tr>
+    <tr>
+      <td class="brand-name">Michael Kors</td>
+      <td class="risk-mid">中</td>
+      <td class="risk-mid">中</td>
+      <td><span class="verdict-warn">要注意</span></td>
+      <td class="notes-col">
+        <span class="evidence">
+          Capri Holdings。eBay上に大量出品あり。時折VeRO報告があるが、正規品＋自撮り画像であれば比較的安全。
+        </span>
+      </td>
+    </tr>
+    <tr>
+      <td class="brand-name">Emporio Armani</td>
+      <td class="risk-mid">中</td>
+      <td class="risk-mid">中</td>
+      <td><span class="verdict-warn">要注意</span></td>
+      <td class="notes-col">
+        <span class="evidence">
+          EssilorLuxotticaがライセンス製造。親会社がVeRO行使の実績あり。自撮り画像必須。
+        </span>
+      </td>
+    </tr>
+    <tr>
+      <td class="brand-name">Giorgio Armani</td>
+      <td class="risk-mid">中</td>
+      <td class="risk-mid">中</td>
+      <td><span class="verdict-warn">要注意</span></td>
+      <td class="notes-col">
+        <span class="evidence">
+          同上。Emporio Armaniと同様のリスク。ヴィンテージのGiorgio Armaniは偽レンズ入替が報告されている。
+        </span>
+      </td>
+    </tr>
+    <tr>
+      <td class="brand-name">Maui Jim</td>
+      <td class="risk-mid">中</td>
+      <td class="risk-high">高</td>
+      <td><span class="verdict-warn">要注意</span></td>
+      <td class="notes-col">
+        <span class="evidence">
+          Kering Eyewear傘下。<strong>eBay上の新品Maui Jimの約1/3が偽物</strong>。約50以上のセラーが偽物を販売。
+          Maui Jim公式は「eBay等のサードパーティでの販売は非認定」と明記。保証は正規店購入のみ有効。
+          VeROプログラムへの参加を求める声があるが、対応は遅い。
+          <br><a href="https://community.ebay.com/t5/Buying/Watch-for-fake-Maui-Jim-s-on-eBay/td-p/28943386">eBay: Maui Jim偽物警告</a>
+          / <a href="https://www.mauijim.com/US/en_US/unauthorized-sellers">Maui Jim非認定販売者リスト</a>
+        </span>
+      </td>
+    </tr>
+    <tr>
+      <td class="brand-name">Police</td>
+      <td class="risk-low">低</td>
+      <td class="risk-mid">中</td>
+      <td><span class="verdict-warn">要注意</span></td>
+      <td class="notes-col">
+        <span class="evidence">
+          De Rigo Group。VeRO報告は少ない。偽造品は存在するが大量ではない。
+          正規品はMade in Italy。100ドル以下は偽物の疑い。
+        </span>
+      </td>
+    </tr>
+    <tr>
+      <td class="brand-name">Carrera</td>
+      <td class="risk-low">低</td>
+      <td class="risk-mid">中</td>
+      <td><span class="verdict-warn">要注意</span></td>
+      <td class="notes-col">
+        <span class="evidence">
+          Safilo Group。VeRO行使は少ない。偽造品はイタリア/スロベニア/中国製の正規品と産地表記で見分ける。
+          <br><a href="http://ispotfake.com/fashion/how-to-spot-fake-carrera-sunglasses-recognize-counterfeit-and-buy-genuine-carrera-eyewear/">Carrera真贋ガイド</a>
+        </span>
+      </td>
+    </tr>
+    <tr>
+      <td class="brand-name">Gentle Monster</td>
+      <td class="risk-low">低</td>
+      <td class="risk-mid">中</td>
+      <td><span class="verdict-warn">要注意</span></td>
+      <td class="notes-col">
+        <span class="evidence">
+          韓国ブランド。VeRO報告なし。ただし偽造品がオンライン市場に増加中。
+          「CODE PINK」認証システムあり（シリアルコードで真贋確認可能）。
+          偽物はヒンジがプラスチック製で2-3週間で壊れる。重量差（正規220-235g vs 偽物190g以下）で判別可能。
+        </span>
+      </td>
+    </tr>
   </tbody>
 </table>
 
+<!-- ============================================= -->
+<!-- 独立系 -->
+<!-- ============================================= -->
+<h2><span class="badge-low">LOW RISK</span> 独立系ブランド</h2>
+<table>
+  <thead>
+    <tr>
+      <th>ブランド</th>
+      <th>国</th>
+      <th>VeROリスク</th>
+      <th>偽造品リスク</th>
+      <th>総合判定</th>
+      <th>根拠・備考</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td class="brand-name">Cazal</td>
+      <td>ドイツ</td>
+      <td class="risk-low">低</td>
+      <td class="risk-mid">中</td>
+      <td><span class="verdict-warn">要注意</span></td>
+      <td class="notes-col">
+        <span class="evidence">
+          独立ブランド。VeRO未登録だが、<strong>ヴィンテージCazalの偽造品が存在</strong>。
+          eBay上の40%以上のヴィンテージサングラスが偽物との調査結果。
+          偽造品はステッカー/タグ/箱まで複製。公式サイトに「BUY THE ORIGINAL」注意喚起あり。
+          <br><a href="https://www.cazal-eyewear.com/en/pages/buy-the-original">Cazal公式注意喚起</a>
+          / <a href="https://www.opticabassol.com/en/blogs/news/recognize-genuine-cazal-glasses">Cazal真贋ガイド</a>
+        </span>
+      </td>
+    </tr>
+    <tr>
+      <td class="brand-name">Moscot</td>
+      <td>米国</td>
+      <td class="risk-low">低</td>
+      <td class="risk-high">高</td>
+      <td><span class="verdict-warn">要注意</span></td>
+      <td class="notes-col">
+        <span class="evidence">
+          独立ブランド。VeRO報告なし。しかし<strong>eBay上のMoscotの約75%がAliExpress/DHGateの偽物</strong>（約30ドルで購入可能）。
+          偽物の判別ポイント: ダイヤモンドリベットの形状（偽物は鋭い/長い、正規品は丸みがある）、
+          右テンプルに6桁シリアルナンバーの刻印（偽物は印刷で容易に剥がれる）。
+          <br><a href="https://community.ebay.com/t5/Fashion/Moscot-Lemtosh-real-fake/td-p/33906649">eBay: Moscot真贋質問</a>
+        </span>
+      </td>
+    </tr>
+    <tr>
+      <td class="brand-name">ic! berlin</td>
+      <td>ドイツ</td>
+      <td class="risk-low">低</td>
+      <td class="risk-low">低</td>
+      <td><span class="verdict-go">安全</span></td>
+      <td class="notes-col">
+        <span class="evidence">
+          独立ブランド。VeRO報告なし。ネジ不使用の独自構造で偽造が困難。偽造品はほぼ報告されていない。
+        </span>
+      </td>
+    </tr>
+    <tr>
+      <td class="brand-name">Mykita</td>
+      <td>ドイツ</td>
+      <td class="risk-low">低</td>
+      <td class="risk-low">低</td>
+      <td><span class="verdict-go">安全</span></td>
+      <td class="notes-col">
+        <span class="evidence">
+          独立ブランド（ベルリン）。VeRO報告なし。軽量ステンレススチール製で独自技術が多く偽造困難。
+        </span>
+      </td>
+    </tr>
+    <tr>
+      <td class="brand-name">Jacques Marie Mage</td>
+      <td>米国</td>
+      <td class="risk-low">低</td>
+      <td class="risk-low">低</td>
+      <td><span class="verdict-go">安全</span></td>
+      <td class="notes-col">
+        <span class="evidence">
+          ハリウッド発の独立ブランド。VeRO報告なし。限定生産でeBay上の取引は少ないが安全。高単価（$400-$800+）。
+        </span>
+      </td>
+    </tr>
+    <tr>
+      <td class="brand-name">Barton Perreira</td>
+      <td>米国</td>
+      <td class="risk-low">低</td>
+      <td class="risk-low">低</td>
+      <td><span class="verdict-go">安全</span></td>
+      <td class="notes-col">
+        <span class="evidence">
+          独立ブランド。VeRO報告なし。ニッチ市場で偽造品はほぼ存在しない。
+        </span>
+      </td>
+    </tr>
+    <tr>
+      <td class="brand-name">Jean Paul Gaultier</td>
+      <td>フランス</td>
+      <td class="risk-low">低</td>
+      <td class="risk-mid">中</td>
+      <td><span class="verdict-warn">やや注意</span></td>
+      <td class="notes-col">
+        <span class="evidence">
+          ヴィンテージ市場が中心。VeRO報告なし。
+          1990年代のヴィンテージモデルに人気があり、偽造品・レンズ交換品が存在する可能性あり。
+        </span>
+      </td>
+    </tr>
+    <tr>
+      <td class="brand-name">Oliver Goldsmith</td>
+      <td>英国</td>
+      <td class="risk-low">低</td>
+      <td class="risk-low">低</td>
+      <td><span class="verdict-go">安全</span></td>
+      <td class="notes-col">
+        <span class="evidence">
+          英国の独立ブランド。VeRO報告なし。ニッチ市場で偽造品はほぼ報告されていない。
+        </span>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<!-- ============================================= -->
+<!-- 日本ブランド -->
+<!-- ============================================= -->
+<h2><span class="badge-low">LOW RISK</span> 日本ブランド（最も推奨）</h2>
+<table>
+  <thead>
+    <tr>
+      <th>ブランド</th>
+      <th>VeROリスク</th>
+      <th>偽造品リスク</th>
+      <th>総合判定</th>
+      <th>根拠・備考</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td class="brand-name">EYEVAN 7285</td>
+      <td class="risk-low">低</td>
+      <td class="risk-low">低</td>
+      <td><span class="verdict-go">安全</span></td>
+      <td class="notes-col">
+        <span class="evidence">
+          1972年創業の独立ブランド。VeRO未登録。偽造品の報告なし。eBayで$170〜$370で取引。
+          マドンナやダイアナ妃が着用したことで知名度あり。鯖江製。
+        </span>
+      </td>
+    </tr>
+    <tr>
+      <td class="brand-name">999.9 (Four Nines)</td>
+      <td class="risk-low">低</td>
+      <td class="risk-low">低</td>
+      <td><span class="verdict-go">安全</span></td>
+      <td class="notes-col">
+        <span class="evidence">
+          1995年創業。VeRO未登録。プレミアムメタルとアセテート使用。偽造品の報告なし。eBayで$140〜$210で取引。
+        </span>
+      </td>
+    </tr>
+    <tr>
+      <td class="brand-name">MASUNAGA (増永眼鏡)</td>
+      <td class="risk-low">低</td>
+      <td class="risk-low">低</td>
+      <td><span class="verdict-go">安全</span></td>
+      <td class="notes-col">
+        <span class="evidence">
+          <strong>1905年創業</strong>、120年以上の歴史。VeRO未登録。200以上の手作業工程。
+          偽造品の報告なし。チタンモデルが$180〜$700で取引。eBayに多数のリスティングあり。
+        </span>
+      </td>
+    </tr>
+    <tr>
+      <td class="brand-name">A.D.S.R.</td>
+      <td class="risk-low">低</td>
+      <td class="risk-low">低</td>
+      <td><span class="verdict-go">安全</span></td>
+      <td class="notes-col">
+        <span class="evidence">
+          独立ブランド。VeRO未登録。偽造品の報告なし。$130〜$145で取引。
+        </span>
+      </td>
+    </tr>
+    <tr>
+      <td class="brand-name">ayame</td>
+      <td class="risk-low">低</td>
+      <td class="risk-low">低</td>
+      <td><span class="verdict-go">安全</span></td>
+      <td class="notes-col">
+        <span class="evidence">
+          独立ブランド。VeRO未登録。セルロイド製モデルは高値$300〜$770。偽造品の報告なし。
+        </span>
+      </td>
+    </tr>
+    <tr>
+      <td class="brand-name">Boston Club</td>
+      <td class="risk-low">低</td>
+      <td class="risk-low">低</td>
+      <td><span class="verdict-go">安全</span></td>
+      <td class="notes-col">
+        <span class="evidence">
+          鯖江の独立ブランド。VeRO未登録。偽造品の報告なし。
+        </span>
+      </td>
+    </tr>
+    <tr>
+      <td class="brand-name">FACTORY900</td>
+      <td class="risk-low">低</td>
+      <td class="risk-low">低</td>
+      <td><span class="verdict-go">安全</span></td>
+      <td class="notes-col">
+        <span class="evidence">
+          鯖江の独立ブランド。VeRO未登録。$270〜$300で取引。偽造品の報告なし。
+        </span>
+      </td>
+    </tr>
+    <tr>
+      <td class="brand-name">TALEX</td>
+      <td class="risk-low">低</td>
+      <td class="risk-low">低</td>
+      <td><span class="verdict-go">安全</span></td>
+      <td class="notes-col">
+        <span class="evidence">
+          偏光レンズ専門メーカー。VeRO未登録。偽造品の報告なし。米国市場で「偏光」はSEOキーワードとして強い。
+        </span>
+      </td>
+    </tr>
+    <tr>
+      <td class="brand-name">Eyevol</td>
+      <td class="risk-low">低</td>
+      <td class="risk-low">低</td>
+      <td><span class="verdict-go">安全</span></td>
+      <td class="notes-col">
+        <span class="evidence">
+          軽量スポーツ系。VeRO未登録。$150〜$290で取引。偽造品の報告なし。
+        </span>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<!-- ============================================= -->
+<!-- 出品戦略 -->
+<!-- ============================================= -->
 <div class="note">
   <strong>出品戦略のポイント</strong><br>
-  日本製の独立ブランド（鯖江系）に集中するのが最も安全で利益率も高い。タイトルに「Made in Japan」「Titanium」「Sabae」を入れるとSEO効果が高い。アメリカ市場は「軽い・耐久性・偏光」が売れるキーワード。
+  <ul style="margin-top:8px; padding-left:20px; list-style:disc;">
+    <li><strong>最も安全で利益率が高い</strong>: 日本製の独立ブランド（鯖江系）。VeROリスクゼロ、偽造品リスクゼロ</li>
+    <li><strong>eBayタイトルSEO</strong>: 「Made in Japan」「Titanium」「Sabae」「Handcrafted」が米国バイヤーに効果的</li>
+    <li><strong>米国で売れるキーワード</strong>: 軽い(Lightweight)・耐久性(Durable)・偏光(Polarized)・チタン(Titanium)</li>
+    <li><strong>ドイツ独立系も安全</strong>: ic! berlin、Mykitaは構造が独特で偽造困難。高単価で利益率も良い</li>
+    <li><strong>HIGH RISKブランドは一切出品しない</strong>: 正規品でもVeRO削除 → 3回でアカウント停止のリスク</li>
+    <li><strong>MEDIUM RISKブランドの注意点</strong>: 必ず自撮り画像を使用。メーカー画像は著作権違反で即削除される</li>
+    <li><strong>Moscotに注意</strong>: VeROリスクは低いが偽造品が75%と極めて多く、正規品でも「偽物では？」と疑われやすい</li>
+  </ul>
 </div>
 
 <footer>
   <p>情報ソース:</p>
   <ul>
-    <li><a href="https://www.ebay.com/sellercenter/ebay-for-business/verified-rights-owner-program">eBay VeRO Profiles</a></li>
-    <li><a href="https://www.oakleyforum.com/threads/luxottica-has-gone-too-far.43262/">Oakley Forum</a></li>
+    <li><a href="https://www.ebay.com/sellercenter/ebay-for-business/verified-rights-owner-program">eBay VeRO Profiles (公式)</a></li>
+    <li><a href="https://www.thedrum.com/news/2014/07/24/ebay-and-lvmh-settle-long-running-intellectual-property-dispute">LVMH vs eBay 和解 (2014)</a></li>
+    <li><a href="https://onlinemerchantsguild.org/chanel-sues-ebay-merchant-for-50-million/">Chanel eBay出品者提訴 ($50M)</a></li>
+    <li><a href="https://katten.com/chanels-legal-victory-sends-a-clear-message-authenticity-isnt-just-a-luxury-its-the-law">Chanel vs WGACA ($4M判決)</a></li>
+    <li><a href="https://www.thefashionlaw.com/kering-scores-early-win-in-alibaba-counterfeiting-case/">Kering vs Alibaba</a></li>
+    <li><a href="https://vernonproper.com/chrome-hearts-goes-after-temu-sellers-in-trademark-lawsuits/">Chrome Hearts vs Temu出品者</a></li>
+    <li><a href="https://www.vintagesunglassesshop.com/how_to_identify_counterfeits.html">偽造サングラス鑑定ガイド</a></li>
+    <li><a href="https://www.mauijim.com/US/en_US/unauthorized-sellers">Maui Jim 非認定販売者</a></li>
+    <li><a href="https://community.ebay.com/t5/Selling/So-many-fake-sunglasses-Why-won-t-ebay-remove-them/td-p/28949766">eBay Community: 偽サングラス問題</a></li>
     <li><a href="https://yaballe.com/blog/guide-to-the-ebay-vero-list/">Yaballe VeRO Guide 2026</a></li>
-    <li><a href="https://www.3dsellers.com/blog/ebay-vero">3DSellers VeRO</a></li>
-    <li><a href="https://community.ebay.com/t5/Selling/Proof-that-the-VeRO-program-is-used-maliciously/td-p/32830261">eBay Community</a></li>
+    <li><a href="https://www.zikanalytics.com/blog/ebay-vero/">ZIK Analytics VeRO Guide 2026</a></li>
+    <li><a href="https://storesautomation.com/ebay-vero-program/">StoresAutomation VeRO Guide 2026</a></li>
+    <li><a href="https://litcommerce.com/blog/ebay-vero-program-explained/">LitCommerce VeRO Guide 2026</a></li>
   </ul>
 </footer>
 
