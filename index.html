@@ -3,286 +3,72 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>eBay VeRO サングラスブランド リスク一覧</title>
-<style>
-  :root {
-    --red: #dc3545;
-    --yellow: #ffc107;
-    --green: #28a745;
-    --bg: #0d1117;
-    --card: #161b22;
-    --border: #30363d;
-    --text: #c9d1d9;
-    --heading: #f0f6fc;
-    --muted: #8b949e;
-  }
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-  body {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
-    background: var(--bg);
-    color: var(--text);
-    line-height: 1.6;
-    padding: 20px;
-    max-width: 1100px;
-    margin: 0 auto;
-  }
-  h1 {
-    color: var(--heading);
-    font-size: 1.8em;
-    margin-bottom: 8px;
-    border-bottom: 1px solid var(--border);
-    padding-bottom: 12px;
-  }
-  .subtitle {
-    color: var(--muted);
-    font-size: 0.9em;
-    margin-bottom: 24px;
-  }
-  .summary-box {
-    background: var(--card);
-    border: 1px solid var(--border);
-    border-radius: 8px;
-    padding: 16px 20px;
-    margin-bottom: 28px;
-  }
-  .summary-box h2 {
-    color: var(--heading);
-    font-size: 1.1em;
-    margin-bottom: 10px;
-  }
-  .summary-box ul {
-    list-style: none;
-    padding: 0;
-  }
-  .summary-box li {
-    padding: 4px 0;
-    padding-left: 20px;
-    position: relative;
-  }
-  .summary-box li::before {
-    position: absolute;
-    left: 0;
-  }
-  .summary-box li.safe::before { content: "\2705"; }
-  .summary-box li.warn::before { content: "\26A0\FE0F"; }
-  .summary-box li.danger::before { content: "\274C"; }
-
-  .section {
-    margin-bottom: 32px;
-  }
-  .section-header {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    margin-bottom: 12px;
-  }
-  .section-header h2 {
-    color: var(--heading);
-    font-size: 1.2em;
-  }
-  .badge {
-    display: inline-block;
-    padding: 2px 10px;
-    border-radius: 12px;
-    font-size: 0.75em;
-    font-weight: 600;
-    text-transform: uppercase;
-  }
-  .badge-high { background: var(--red); color: #fff; }
-  .badge-mid { background: var(--yellow); color: #000; }
-  .badge-low { background: var(--green); color: #fff; }
-
-  table {
-    width: 100%;
-    border-collapse: collapse;
-    background: var(--card);
-    border: 1px solid var(--border);
-    border-radius: 8px;
-    overflow: hidden;
-  }
-  thead th {
-    background: #1c2128;
-    color: var(--heading);
-    font-size: 0.85em;
-    text-align: left;
-    padding: 10px 14px;
-    border-bottom: 1px solid var(--border);
-  }
-  tbody td {
-    padding: 8px 14px;
-    border-bottom: 1px solid var(--border);
-    font-size: 0.9em;
-    vertical-align: top;
-  }
-  tbody tr:last-child td { border-bottom: none; }
-  tbody tr:hover { background: #1c2128; }
-  .brand-name { font-weight: 600; color: var(--heading); white-space: nowrap; }
-  .group-tag {
-    display: inline-block;
-    padding: 1px 6px;
-    border-radius: 4px;
-    font-size: 0.78em;
-    background: #30363d;
-    color: var(--muted);
-    white-space: nowrap;
-  }
-  .flag-jp::before { content: "\1F1EF\1F1F5 "; }
-  .flag-de::before { content: "\1F1E9\1F1EA "; }
-  .flag-us::before { content: "\1F1FA\1F1F8 "; }
-  .flag-uk::before { content: "\1F1EC\1F1E7 "; }
-  .flag-kr::before { content: "\1F1F0\1F1F7 "; }
-
-  .note {
-    background: #1c2128;
-    border-left: 3px solid var(--yellow);
-    padding: 12px 16px;
-    margin-top: 24px;
-    border-radius: 0 6px 6px 0;
-    font-size: 0.88em;
-  }
-  .note strong { color: var(--heading); }
-
-  footer {
-    margin-top: 40px;
-    padding-top: 16px;
-    border-top: 1px solid var(--border);
-    color: var(--muted);
-    font-size: 0.8em;
-  }
-  footer a { color: #58a6ff; text-decoration: none; }
-  footer a:hover { text-decoration: underline; }
-
-  @media (max-width: 700px) {
-    body { padding: 12px; }
-    h1 { font-size: 1.3em; }
-    table { font-size: 0.85em; }
-    thead th, tbody td { padding: 6px 8px; }
-  }
-</style>
+<title>eBay VeRO ブランドリスク一覧</title>
+<link rel="stylesheet" href="style.css">
+<script src="theme.js"></script>
 </head>
 <body>
 
-<h1>eBay VeRO サングラスブランド リスク一覧</h1>
-<p class="subtitle">調査日: 2026-03-19 | VeRO = Verified Rights Owner Program（eBayの知的財産保護プログラム）</p>
+<div class="topbar">
+  <nav>
+    <a href="index.html" class="active">TOP</a>
+    <a href="sunglasses.html">サングラス</a>
+    <a href="watches.html">時計</a>
+    <a href="bags.html">バッグ</a>
+    <a href="scarves.html">スカーフ</a>
+    <a href="jewelry.html">ジュエリー</a>
+  </nav>
+  <button class="theme-toggle" id="themeToggle"></button>
+</div>
+
+<h1>eBay VeRO ブランドリスク一覧</h1>
+<p class="subtitle">カテゴリ別のVeRO（知的財産保護プログラム）リスクをまとめたガイド | 調査日: 2026-03-19</p>
 
 <div class="summary-box">
-  <h2>判断の要点</h2>
+  <h2>このガイドについて</h2>
   <ul>
-    <li class="danger">EssilorLuxottica / LVMH / Kering グループは正規品の中古でも削除される報告あり</li>
-    <li class="warn">中リスクブランドは正規品であれば概ね問題ないが、画像の著作権に注意</li>
-    <li class="safe">日本の独立ブランド（鯖江系）やドイツ・米の独立ブランドはVeRO未登録で安全</li>
+    <li class="danger">高リスク: VeRO登録済み。正規品の中古でも削除される可能性がある</li>
+    <li class="warn">中リスク: 正規品であれば概ね問題ないが、画像や説明文に注意が必要</li>
+    <li class="safe">低リスク: VeRO未登録の独立ブランド。安全に出品できる</li>
   </ul>
 </div>
 
-<!-- HIGH RISK -->
-<div class="section">
-  <div class="section-header">
-    <h2>VeRO 高リスク（出品注意）</h2>
-    <span class="badge badge-high">HIGH</span>
-  </div>
-  <table>
-    <thead>
-      <tr><th>ブランド</th><th>所属グループ</th><th>リスク理由</th></tr>
-    </thead>
-    <tbody>
-      <tr><td class="brand-name">Ray-Ban</td><td><span class="group-tag">EssilorLuxottica</span></td><td>VeRO登録確認済み。正規品でも写真使用で削除報告多数</td></tr>
-      <tr><td class="brand-name">Oakley</td><td><span class="group-tag">EssilorLuxottica</span></td><td>VeRO登録確認済み。Oakley Forumで削除報告多数</td></tr>
-      <tr><td class="brand-name">Persol</td><td><span class="group-tag">EssilorLuxottica</span></td><td>Luxotticaグループ。同じ方針で取り締まり</td></tr>
-      <tr><td class="brand-name">Oliver Peoples</td><td><span class="group-tag">EssilorLuxottica</span></td><td>同上</td></tr>
-      <tr><td class="brand-name">Tom Ford</td><td><span class="group-tag">EssilorLuxottica</span></td><td>2023年にLuxotticaがアイウェア事業を買収</td></tr>
-      <tr><td class="brand-name">Chanel</td><td><span class="group-tag">Chanel Inc.</span></td><td>VeRO登録確認済み（eBay公式ページ）。最も厳格</td></tr>
-      <tr><td class="brand-name">Coach</td><td><span class="group-tag">Tapestry</span></td><td>VeRO登録確認済み。「ほぼ出品不可能」との報告あり</td></tr>
-      <tr><td class="brand-name">Burberry</td><td><span class="group-tag">Burberry Limited</span></td><td>VeRO登録確認済み（eBay公式ページ）</td></tr>
-      <tr><td class="brand-name">Cartier</td><td><span class="group-tag">Richemont</span></td><td>VeRO登録確認済み（eBay公式ページ）</td></tr>
-      <tr><td class="brand-name">Gucci</td><td><span class="group-tag">Kering</span></td><td>VeRO登録確認。偽造品が多く正規品でも疑われやすい</td></tr>
-      <tr><td class="brand-name">Dior</td><td><span class="group-tag">LVMH</span></td><td>LVMHグループは積極的にVeRO行使</td></tr>
-      <tr><td class="brand-name">Fendi</td><td><span class="group-tag">LVMH</span></td><td>同上</td></tr>
-      <tr><td class="brand-name">Celine</td><td><span class="group-tag">LVMH</span></td><td>同上</td></tr>
-      <tr><td class="brand-name">Saint Laurent</td><td><span class="group-tag">Kering</span></td><td>Keringグループ。Gucci同様に厳格</td></tr>
-      <tr><td class="brand-name">Bottega Veneta</td><td><span class="group-tag">Kering</span></td><td>同上</td></tr>
-      <tr><td class="brand-name">Prada</td><td><span class="group-tag">Prada Group</span></td><td>独自にVeRO行使。偽造品対策に積極的</td></tr>
-      <tr><td class="brand-name">Versace</td><td><span class="group-tag">Capri Holdings</span></td><td>高級ブランドとしてVeRO参加</td></tr>
-      <tr><td class="brand-name">Dolce &amp; Gabbana</td><td><span class="group-tag">独立</span></td><td>高級ブランドとしてVeRO参加</td></tr>
-      <tr><td class="brand-name">Bulgari</td><td><span class="group-tag">LVMH</span></td><td>LVMHグループ</td></tr>
-      <tr><td class="brand-name">Tiffany &amp; Co.</td><td><span class="group-tag">LVMH</span></td><td>「出品ほぼ不可能」との報告あり</td></tr>
-      <tr><td class="brand-name">Chrome Hearts</td><td><span class="group-tag">独立</span></td><td>偽造品が多く、取り締まりが非常に厳格</td></tr>
-    </tbody>
-  </table>
-</div>
-
-<!-- MID RISK -->
-<div class="section">
-  <div class="section-header">
-    <h2>VeRO 中リスク（正規品なら概ねOK）</h2>
-    <span class="badge badge-mid">MEDIUM</span>
-  </div>
-  <table>
-    <thead>
-      <tr><th>ブランド</th><th>備考</th></tr>
-    </thead>
-    <tbody>
-      <tr><td class="brand-name">Michael Kors</td><td>Capri Holdings。出品数は多いが、時折VeRO報告あり</td></tr>
-      <tr><td class="brand-name">Giorgio Armani</td><td>EssilorLuxotticaがライセンス製造。大量出品あるが注意</td></tr>
-      <tr><td class="brand-name">Emporio Armani</td><td>同上</td></tr>
-      <tr><td class="brand-name">Maui Jim</td><td>Kering Eyewear傘下。比較的穏やか</td></tr>
-      <tr><td class="brand-name">Police</td><td>De Rigo Group。VeRO報告は少ない</td></tr>
-      <tr><td class="brand-name">Carrera</td><td>Safilo Group。大手だがVeRO行使は少ない</td></tr>
-      <tr><td class="brand-name">Jean Paul Gaultier</td><td>ヴィンテージ市場が中心で問題は少ない</td></tr>
-      <tr><td class="brand-name">Gentle Monster</td><td>韓国ブランド。VeRO報告なし</td></tr>
-    </tbody>
-  </table>
-</div>
-
-<!-- LOW RISK -->
-<div class="section">
-  <div class="section-header">
-    <h2>VeRO 低リスク（安全）</h2>
-    <span class="badge badge-low">SAFE</span>
-  </div>
-  <table>
-    <thead>
-      <tr><th>ブランド</th><th>国</th><th>備考</th></tr>
-    </thead>
-    <tbody>
-      <tr><td class="brand-name"><span class="flag-jp"></span>EYEVAN 7285</td><td>日本</td><td>独立ブランド。VeRO未登録。$170〜$370で取引</td></tr>
-      <tr><td class="brand-name"><span class="flag-jp"></span>999.9 (Four Nines)</td><td>日本</td><td>独立ブランド。VeRO未登録。$140〜$210で取引</td></tr>
-      <tr><td class="brand-name"><span class="flag-jp"></span>MASUNAGA (増永眼鏡)</td><td>日本</td><td>独立ブランド。VeRO未登録。チタンモデル$180〜$700</td></tr>
-      <tr><td class="brand-name"><span class="flag-jp"></span>A.D.S.R.</td><td>日本</td><td>独立ブランド。VeRO未登録。$130〜$145で取引</td></tr>
-      <tr><td class="brand-name"><span class="flag-jp"></span>ayame</td><td>日本</td><td>独立ブランド。VeRO未登録。セルロイド製は高値$300〜$770</td></tr>
-      <tr><td class="brand-name"><span class="flag-jp"></span>Boston Club</td><td>日本</td><td>独立ブランド（鯖江）。VeRO未登録</td></tr>
-      <tr><td class="brand-name"><span class="flag-jp"></span>FACTORY900</td><td>日本</td><td>独立ブランド（鯖江）。VeRO未登録。$270〜$300で取引</td></tr>
-      <tr><td class="brand-name"><span class="flag-jp"></span>TALEX</td><td>日本</td><td>偏光レンズ専門。VeRO未登録</td></tr>
-      <tr><td class="brand-name"><span class="flag-jp"></span>Eyevol</td><td>日本</td><td>軽量スポーツ系。VeRO未登録。$150〜$290</td></tr>
-      <tr><td class="brand-name"><span class="flag-jp"></span>N.S.H</td><td>日本</td><td>独立ブランド。VeRO未登録</td></tr>
-      <tr><td class="brand-name"><span class="flag-jp"></span>TAKAHIROMIYASHITA TheSoloist.</td><td>日本</td><td>独立ブランド。VeRO未登録</td></tr>
-      <tr><td class="brand-name"><span class="flag-de"></span>Cazal</td><td>ドイツ</td><td>独立ブランド。ヴィンテージ市場で問題なし</td></tr>
-      <tr><td class="brand-name"><span class="flag-de"></span>ic! berlin</td><td>ドイツ</td><td>独立ブランド。VeRO報告なし</td></tr>
-      <tr><td class="brand-name"><span class="flag-de"></span>Mykita</td><td>ドイツ</td><td>独立ブランド。VeRO報告なし</td></tr>
-      <tr><td class="brand-name"><span class="flag-us"></span>Jacques Marie Mage</td><td>米国</td><td>独立ブランド。VeRO報告なし</td></tr>
-      <tr><td class="brand-name"><span class="flag-us"></span>Moscot</td><td>米国</td><td>独立ブランド。VeRO報告なし</td></tr>
-      <tr><td class="brand-name"><span class="flag-us"></span>Barton Perreira</td><td>米国</td><td>独立ブランド。VeRO報告なし</td></tr>
-      <tr><td class="brand-name"><span class="flag-uk"></span>Oliver Goldsmith</td><td>英国</td><td>独立ブランド。VeRO報告なし</td></tr>
-      <tr><td class="brand-name"><span class="flag-us"></span>TITMUS</td><td>米国</td><td>VeRO報告なし</td></tr>
-    </tbody>
-  </table>
+<div class="card-grid">
+  <a href="sunglasses.html" class="card-link">
+    <div class="card-icon">&#x1F576;</div>
+    <div class="card-title">サングラス</div>
+    <div class="card-desc">EssilorLuxottica系が高リスク。日本製独立ブランド（鯖江）が安全</div>
+  </a>
+  <a href="watches.html" class="card-link">
+    <div class="card-icon">&#x231A;</div>
+    <div class="card-title">時計</div>
+    <div class="card-desc">Rolex法務部は最も積極的。日本製セイコー系は安全</div>
+  </a>
+  <a href="bags.html" class="card-link">
+    <div class="card-icon">&#x1F45C;</div>
+    <div class="card-title">バッグ</div>
+    <div class="card-desc">LVMH・Kering・Chanelが三大リスク。日本ブランドが狙い目</div>
+  </a>
+  <a href="scarves.html" class="card-link">
+    <div class="card-icon">&#x1F9E3;</div>
+    <div class="card-title">スカーフ</div>
+    <div class="card-desc">Hermes・LVMH系に注意。日本の伝統工芸系が安全</div>
+  </a>
+  <a href="jewelry.html" class="card-link">
+    <div class="card-icon">&#x1F48D;</div>
+    <div class="card-title">ジュエリー</div>
+    <div class="card-desc">Tiffany vs eBay訴訟の前例あり。作家物・伝統工芸が安全</div>
+  </a>
 </div>
 
 <div class="note">
-  <strong>出品戦略のポイント</strong><br>
-  日本製の独立ブランド（鯖江系）に集中するのが最も安全で利益率も高い。<br>
-  タイトルに「Made in Japan」「Titanium」「Sabae」を入れるとSEO効果が高い。<br>
-  アメリカ市場は「軽い・耐久性・偏光」が売れるキーワード。
+  <strong>出品の基本方針</strong><br>
+  大手コングロマリット（LVMH, Kering, EssilorLuxottica, Richemont）傘下のブランドは避け、<br>
+  日本の独立ブランド・ニッチブランド・ヴィンテージ市場に特化するのが安全で利益率も高い。
 </div>
 
 <footer>
-  <p>情報源:
-    <a href="https://www.ebay.com/sellercenter/ebay-for-business/verified-rights-owner-program">eBay VeRO Profiles</a> |
-    <a href="https://www.oakleyforum.com/threads/luxottica-has-gone-too-far.43262/">Oakley Forum</a> |
-    <a href="https://yaballe.com/blog/guide-to-the-ebay-vero-list/">Yaballe VeRO Guide 2026</a> |
-    <a href="https://www.3dsellers.com/blog/ebay-vero">3DSellers VeRO</a> |
-    <a href="https://community.ebay.com/t5/Selling/Proof-that-the-VeRO-program-is-used-maliciously/td-p/32830261">eBay Community</a>
-  </p>
-  <p style="margin-top: 6px;">VeRO登録状況は変動します。出品前にeBayの最新VeROリストを確認してください。</p>
+  <p>VeRO登録状況は変動します。出品前に<a href="https://www.ebay.com/sellercenter/ebay-for-business/verified-rights-owner-program">eBayの最新VeROリスト</a>を確認してください。</p>
 </footer>
 
 </body>
