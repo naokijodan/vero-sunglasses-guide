@@ -58,6 +58,22 @@ body {
   color: #fff;
   border-color: var(--link);
 }
+.topbar nav a.nav-cites {
+  background: var(--red);
+  color: #fff;
+  border-color: var(--red);
+  font-weight: 700;
+  animation: cites-blink 1.5s ease-in-out infinite;
+}
+.topbar nav a.nav-cites:hover {
+  animation: none;
+  background: #a71d2a;
+  border-color: #a71d2a;
+}
+@keyframes cites-blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.4; }
+}
 .theme-toggle {
   background: var(--card);
   border: 1px solid var(--border);
