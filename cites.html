@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CITES（ワシントン条約）規制ガイド | eBay出品者向け</title>
+<link rel="stylesheet" href="style.css">
+<script src="theme.js"></script>
+<style>
+.cites-alert {
+  background: rgba(220,53,69,0.12);
+  border: 2px solid var(--red);
+  border-radius: 10px;
+  padding: 20px 24px;
+  margin-bottom: 28px;
+}
+.cites-alert h2 { color: var(--red); font-size: 1.15em; margin-bottom: 10px; }
+.cites-alert p { font-size: 0.92em; margin-bottom: 6px; }
+
+.category-section {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 20px 24px;
+  margin-bottom: 20px;
+}
+.category-section h2 {
+  color: var(--heading);
+  font-size: 1.1em;
+  margin-bottom: 12px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--border);
+}
+.category-section h3 {
+  color: var(--heading);
+  font-size: 0.95em;
+  margin: 12px 0 6px;
+}
+.category-section ul {
+  margin-left: 20px;
+  margin-bottom: 8px;
+}
+.category-section li {
+  font-size: 0.9em;
+  margin-bottom: 4px;
+}
+
+.material-tag {
+  display: inline-block;
+  padding: 2px 10px;
+  border-radius: 4px;
+  font-size: 0.82em;
+  font-weight: 600;
+  background: rgba(220,53,69,0.15);
+  color: var(--red);
+  margin: 2px 3px;
+}
+
+.process-flow {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 20px 24px;
+  margin-bottom: 20px;
+}
+.process-flow h2 {
+  color: var(--heading);
+  font-size: 1.1em;
+  margin-bottom: 12px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--border);
+}
+.flow-item {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  margin-bottom: 14px;
+  font-size: 0.9em;
+}
+.flow-icon {
+  flex-shrink: 0;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.85em;
+  font-weight: 700;
+  color: #fff;
+}
+.flow-icon.red { background: var(--red); }
+.flow-icon.yellow { background: var(--yellow); color: #000; }
+.flow-icon.green { background: var(--green); }
+.flow-content strong { color: var(--heading); }
+
+.links-section {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 20px 24px;
+  margin-bottom: 20px;
+}
+.links-section h2 {
+  color: var(--heading);
+  font-size: 1.1em;
+  margin-bottom: 12px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--border);
+}
+.links-section ul { list-style: none; padding: 0; }
+.links-section li {
+  padding: 8px 0;
+  border-bottom: 1px solid var(--border);
+  font-size: 0.9em;
+}
+.links-section li:last-child { border-bottom: none; }
+.links-section a { color: var(--link); text-decoration: none; }
+.links-section a:hover { text-decoration: underline; }
+
+.checklist {
+  background: rgba(40,167,69,0.08);
+  border: 1px solid var(--green);
+  border-radius: 10px;
+  padding: 20px 24px;
+  margin-bottom: 20px;
+}
+.checklist h2 { color: var(--green); font-size: 1.1em; margin-bottom: 12px; }
+.checklist ul { list-style: none; padding: 0; }
+.checklist li {
+  padding: 6px 0 6px 28px;
+  position: relative;
+  font-size: 0.9em;
+}
+.checklist li::before {
+  content: "\2610";
+  position: absolute;
+  left: 0;
+  font-size: 1.1em;
+}
+
+.excluded-gems {
+  background: rgba(255,193,7,0.08);
+  border-left: 4px solid var(--yellow);
+  border-radius: 0 8px 8px 0;
+  padding: 12px 16px;
+  margin: 10px 0;
+  font-size: 0.88em;
+}
+.excluded-gems strong { color: var(--heading); }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <nav>
+    <a href="index.html">TOP</a>
+    <a href="sunglasses.html">サングラス</a>
+    <a href="watches.html">時計</a>
+    <a href="bags.html">バッグ</a>
+    <a href="scarves.html">スカーフ</a>
+    <a href="jewelry.html">ジュエリー</a>
+    <a href="cites.html" class="active">CITES</a>
+  </nav>
+  <button class="theme-toggle" id="themeToggle"></button>
+</div>
+
+<h1>CITES（ワシントン条約）規制ガイド</h1>
+<p class="subtitle">eBay真贋保証サービス利用者向け | 出品禁止素材・CITES規制の完全ガイド</p>
+
+<!-- ===== ALERT ===== -->
+<div class="cites-alert">
+  <h2>eBay真贋保証サービスからの重要なお知らせ</h2>
+  <p>CITES（ワシントン条約）に違反する可能性のある素材を含む商品は、<strong>CITES許可証の有無にかかわらず、真贋保証プログラムの対象外</strong>です。</p>
+  <p>知らずに違反した場合でも法的責任を問われる可能性があり、プログラムからの除外措置が取られることがあります。</p>
+</div>
+
+<!-- ===== CITES OVERVIEW ===== -->
+<div class="summary-box">
+  <h2>CITESとは？</h2>
+  <ul>
+    <li class="danger">「絶滅のおそれのある野生動植物の種の国際取引に関する条約」の略称</li>
+    <li class="danger">国際的に保護対象となる動植物の輸出入を規制する条約</li>
+    <li class="warn">偽物やブランド品だけでなく、<strong>素材そのもの</strong>が規制対象になる</li>
+    <li class="warn">正規品であっても、規制素材が使われていれば出品不可</li>
+  </ul>
+</div>
+
+<!-- ===== WATCH ===== -->
+<div class="category-section">
+  <h2>&#x231A; 時計 &mdash; CITES規制対象</h2>
+  <p style="font-size:0.9em; margin-bottom:12px;">規制対象の素材を使ったストラップや文字盤がある時計は、<strong>CITES許可証の有無にかかわらずプログラム対象外</strong>です。</p>
+
+  <h3>ストラップ（ベルト）&mdash; 規制対象の動物革</h3>
+  <div style="margin: 8px 0 16px;">
+    <span class="material-tag">ワニ</span>
+    <span class="material-tag">クロコダイル</span>
+    <span class="material-tag">アナコンダ</span>
+    <span class="material-tag">ニシキヘビ</span>
+    <span class="material-tag">サメ（ガルーシャ）</span>
+    <span class="material-tag">マンタ</span>
+    <span class="material-tag">イーグルレイ</span>
+    <span class="material-tag">ゾウ</span>
+    <span class="material-tag">各種トカゲ</span>
+    <span class="material-tag">その他保護種</span>
+  </div>
+
+  <h3>文字盤 &mdash; 規制対象の素材</h3>
+  <div style="margin: 8px 0 16px;">
+    <span class="material-tag">マザーオブパール（白蝶貝・黒蝶貝）</span>
+    <span class="material-tag">その他保護種由来</span>
+  </div>
+
+  <div class="note" style="margin-top:12px;">
+    <strong>注意:</strong> マザーオブパール文字盤は高級時計に多く使われています。有名ブランドの正規品であっても、この素材の文字盤がある場合は真贋保証プログラムの対象外となります。
+  </div>
+</div>
+
+<!-- ===== HANDBAG ===== -->
+<div class="category-section">
+  <h2>&#x1F45C; バッグ &mdash; CITES規制対象</h2>
+  <p style="font-size:0.9em; margin-bottom:12px;">以下の素材で作られたバッグは規制対象です。</p>
+  <div style="margin: 8px 0 16px;">
+    <span class="material-tag">ワニ革</span>
+    <span class="material-tag">クロコダイル</span>
+    <span class="material-tag">保護種の毛皮</span>
+    <span class="material-tag">ファー（保護種由来）</span>
+    <span class="material-tag">エキゾチックレザー全般</span>
+  </div>
+  <div class="note" style="margin-top:12px;">
+    <strong>注意:</strong> Hermes Birkin/Kellyのクロコダイルモデル、各ブランドのパイソン・リザードレザー製品などが該当します。
+  </div>
+</div>
+
+<!-- ===== JEWELRY ===== -->
+<div class="category-section">
+  <h2>&#x1F48D; ジュエリー &mdash; CITES規制対象</h2>
+  <p style="font-size:0.9em; margin-bottom:12px;">保護対象の動植物由来のジェムストーンは規制対象です。</p>
+
+  <h3>CITES規制対象の素材</h3>
+  <div style="margin: 8px 0 16px;">
+    <span class="material-tag">赤珊瑚</span>
+    <span class="material-tag">黒珊瑚</span>
+    <span class="material-tag">象牙</span>
+    <span class="material-tag">べっ甲</span>
+    <span class="material-tag">コンクパール</span>
+    <span class="material-tag">アワビの貝殻</span>
+    <span class="material-tag">マザーオブパール（白蝶貝・黒蝶貝）</span>
+    <span class="material-tag">貝殻</span>
+  </div>
+
+  <div class="excluded-gems">
+    <strong>その他、真贋保証サービスから除外されているジェムストーン:</strong><br>
+    アンバー、コパル、ターコイズ、ジェット、マベパール、プラスチック、黄鉄鉱、マーカサイト、クリソコラ、ハウライト、マスグラバイト、ターフェアイト
+  </div>
+</div>
+
+<!-- ===== PROCESS FLOW ===== -->
+<div class="process-flow">
+  <h2>出品禁止素材が鑑定センターに届いた場合の処理</h2>
+
+  <div class="flow-item">
+    <div class="flow-icon red">1</div>
+    <div class="flow-content">
+      <strong>商品本体に禁止素材が使用されている場合</strong><br>
+      鑑定不合格となり、セラーへ返送されます。
+    </div>
+  </div>
+
+  <div class="flow-item">
+    <div class="flow-icon yellow">2</div>
+    <div class="flow-content">
+      <strong>一部パーツ（アクセサリー等）に禁止素材が使用されている場合</strong><br>
+      該当パーツは輸出不可のため、バイヤーの同意が得られた場合に限り、商品本体のみバイヤーへ発送されます。該当パーツは一定期間保管後、廃棄されます。
+    </div>
+  </div>
+
+  <div class="flow-item">
+    <div class="flow-icon green">3</div>
+    <div class="flow-content">
+      <strong>パーツの返送について</strong><br>
+      セラーの要望に基づき、該当パーツの返送可否（着払い）を確認してもらえます。
+    </div>
+  </div>
+</div>
+
+<!-- ===== CHECKLIST ===== -->
+<div class="checklist">
+  <h2>出品前チェックリスト</h2>
+  <ul>
+    <li>商品にCITES規制対象の素材（革・文字盤・宝石など）が含まれていないか？</li>
+    <li>ストラップの素材は何か？（ワニ革・パイソン等ではないか？）</li>
+    <li>文字盤にマザーオブパール（貝）が使われていないか？</li>
+    <li>ジュエリーに珊瑚・象牙・べっ甲が含まれていないか？</li>
+    <li>バッグの素材はエキゾチックレザーではないか？</li>
+    <li>商品がeBayのポリシーに準拠しているか？</li>
+  </ul>
+</div>
+
+<!-- ===== LINKS ===== -->
+<div class="links-section">
+  <h2>関連リンク</h2>
+  <ul>
+    <li><a href="https://cites.org/eng/disc/species.php" target="_blank" rel="noopener">CITES公式 &mdash; 保護されている種の一覧</a></li>
+    <li><a href="https://www.fws.gov/" target="_blank" rel="noopener">米国魚類野生生物局（U.S. Fish &amp; Wildlife Service）</a></li>
+    <li><a href="https://www.ebay.com/sellercenter/ebay-for-business/verified-rights-owner-program" target="_blank" rel="noopener">eBay VeROプログラム</a></li>
+    <li><a href="https://www.ebay.com/help/policies/prohibited-restricted-items/prohibited-restricted-items/en-us" target="_blank" rel="noopener">eBay出品禁止・制限商品ポリシー</a></li>
+  </ul>
+</div>
+
+<footer>
+  <p>この情報はeBay真贋保証サービスからの公式通知（2026年3月）に基づいています。規制内容は変更される場合があります。出品前に必ず最新情報をご確認ください。</p>
+</footer>
+
+</body>
+</html>
