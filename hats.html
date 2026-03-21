@@ -1,0 +1,740 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>eBay VeRO 帽子ブランド リスク一覧</title>
+<link rel="stylesheet" href="style.css">
+<script src="theme.js"></script>
+<style>
+.risk-high { color: var(--red); font-weight: 700; }
+.risk-mid  { color: var(--yellow); font-weight: 700; }
+.risk-low  { color: var(--green); font-weight: 700; }
+.verdict-stop  { background: rgba(220,53,69,0.15); color: var(--red); font-weight: 700; padding: 2px 8px; border-radius: 4px; }
+.verdict-warn  { background: rgba(255,193,7,0.15); color: var(--yellow); font-weight: 700; padding: 2px 8px; border-radius: 4px; }
+.verdict-go    { background: rgba(40,167,69,0.15); color: var(--green); font-weight: 700; padding: 2px 8px; border-radius: 4px; }
+.evidence { font-size: 0.82em; color: var(--muted); line-height: 1.5; }
+.evidence a { color: var(--link); text-decoration: none; }
+.evidence a:hover { text-decoration: underline; }
+td.notes-col { max-width: 400px; }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <nav>
+    <a href="index.html">TOP</a>
+    <a href="cites.html" class="nav-cites">禁止素材</a>
+    <a href="prohibited.html" class="nav-prohibited">禁止リスト</a>
+    <a href="figures.html">フィギュア</a>
+    <a href="games.html">ゲーム</a>
+    <a href="sunglasses.html">サングラス</a>
+    <a href="watches.html">時計</a>
+    <a href="bags.html">バッグ</a>
+    <a href="scarves.html">スカーフ</a>
+    <a href="jewelry.html">ジュエリー</a>
+    <a href="hats.html" class="active">帽子</a>
+  </nav>
+  <button class="theme-toggle" id="themeToggle"></button>
+</div>
+
+<h1>eBay 帽子・キャップ出品 リスク評価表（2軸分析）</h1>
+<p class="subtitle">調査日: 2026-03-22 / WebSearch による徹底調査に基づく</p>
+
+<div class="summary-box">
+  <h2>調査概要</h2>
+  <ul>
+    <li class="danger"><strong>VeROリスク</strong>: ブランド側がeBayのVeROプログラムで出品を削除するリスク。正規品でも削除される場合あり</li>
+    <li class="warn"><strong>偽造品リスク</strong>: 偽物が多く流通し、正規品でも疑われ、返品・クレーム・アカウント停止に繋がるリスク</li>
+    <li class="safe"><strong>総合判定</strong>: 両軸を総合し「出品回避」「要注意」「安全」の3段階で評価</li>
+  </ul>
+</div>
+
+<div class="summary-box">
+  <h2>重要な発見事項</h2>
+  <ul>
+    <li class="danger"><strong>New Era Cap Company</strong>: VeRO専用ポリシーPDFを公開。正規品78件が一括削除された事例あり。卸売請求書がないと異議申立て不可。Red Bullコラボは「全て偽造品」と公式断言</li>
+    <li class="danger"><strong>Nike</strong>: 2026年1月にVeROによるセラー停止処分が増加中。帽子を含む全カテゴリで最も積極的に取り締まり</li>
+    <li class="danger"><strong>スポーツリーグ（NFL/MLB/NBA/NHL）</strong>: New Era＋リーグ双方から取り締まり。チームロゴ入り帽子は偽造品が多く、正規品でも巻き添え削除されやすい</li>
+    <li class="warn"><strong>「Velcro」の使用禁止</strong>: 商標権侵害。帽子のストラップ説明で使っただけでVeRO削除される。「hook and loop fastener」と記載すること</li>
+    <li class="safe"><strong>ヴィンテージ・日本ブランド</strong>: VeRO未登録で偽造品もほぼ存在しない。利益率が高く最も安全な出品対象</li>
+  </ul>
+</div>
+
+<!-- ============================================= -->
+<!-- New Era グループ -->
+<!-- ============================================= -->
+<h2><span class="badge-high">HIGH RISK</span> New Era Cap Company</h2>
+<table>
+  <thead>
+    <tr>
+      <th>ブランド / 商品</th>
+      <th>VeROリスク</th>
+      <th>偽造品リスク</th>
+      <th>総合判定</th>
+      <th>根拠・備考</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td class="brand-name">New Era 59FIFTY / 9FIFTY</td>
+      <td class="risk-high">極高</td>
+      <td class="risk-high">極高</td>
+      <td><span class="verdict-stop">出品回避</span></td>
+      <td class="notes-col">
+        <span class="evidence">
+          <strong>VeRO専用ポリシーPDFを公開</strong>。正規小売店で購入した帽子でも「偽造品」として17件中78件を一括削除された事例あり。
+          卸売業者の請求書がないと異議申立てはほぼ不可能。
+          <br><a href="https://ir.ebaystatic.com/pictures/aw/pics/pdf/us/help/community/vpp/NewEraCapCompany.pdf">New Era VeROポリシー（PDF）</a>
+          / <a href="https://community.ebay.com/t5/Ask-a-Mentor/VERO-and-New-Era-removed-our-licensed-products/td-p/32524647">eBay: New Era正規品一括削除</a>
+        </span>
+      </td>
+    </tr>
+    <tr>
+      <td class="brand-name">New Era × Red Bull コラボ</td>
+      <td class="risk-high">極高</td>
+      <td class="risk-high">極高</td>
+      <td><span class="verdict-stop">出品回避</span></td>
+      <td class="notes-col">
+        <span class="evidence">
+          New Eraの公式見解: 「Red Bullキャップは購入用に販売されていない。アスリート向け配布品であり、販売されているものは<strong>ほぼ全て偽造品</strong>」。
+          出品＝ほぼ確実にVeRO削除。
+          <br><a href="https://ir.ebaystatic.com/pictures/aw/pics/pdf/us/help/community/vpp/NewEraCapCompany.pdf">New Era VeROポリシー（PDF）</a>
+        </span>
+      </td>
+    </tr>
+    <tr>
+      <td class="brand-name">New Era × Gucci / Chanel / LV / D&G</td>
+      <td class="risk-high">極高</td>
+      <td class="risk-high">極高</td>
+      <td><span class="verdict-stop">出品回避</span></td>
+      <td class="notes-col">
+        <span class="evidence">
+          New Era公式: 「Gucci、Chanel、Louis Vuitton、D&Gのキャップは<strong>製造していない＝全て偽造品</strong>」。
+          New EraのVeRO＋高級ブランドのVeROが同時に適用される最高リスク商品。
+        </span>
+      </td>
+    </tr>
+    <tr>
+      <td class="brand-name">MLBチームキャップ <span class="group-tag">New Era製</span></td>
+      <td class="risk-high">極高</td>
+      <td class="risk-high">高</td>
+      <td><span class="verdict-stop">出品回避</span></td>
+      <td class="notes-col">
+        <span class="evidence">
+          New Eraが公式キャップメーカー。New EraのVeRO＋MLBライセンスの二重取り締まり。
+          チームロゴ入り帽子は偽造品が非常に多く、正規品でも巻き添えで削除されやすい。
+        </span>
+      </td>
+    </tr>
+    <tr>
+      <td class="brand-name">NFL / NBA / NHLキャップ <span class="group-tag">New Era製</span></td>
+      <td class="risk-high">極高</td>
+      <td class="risk-high">高</td>
+      <td><span class="verdict-stop">出品回避</span></td>
+      <td class="notes-col">
+        <span class="evidence">
+          MLBと同様にNew Era＋各リーグの二重VeRO管轄。ライセンス商品は特に厳しく監視されている。
+        </span>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<!-- ============================================= -->
+<!-- Nike -->
+<!-- ============================================= -->
+<h2><span class="badge-high">HIGH RISK</span> Nike</h2>
+<table>
+  <thead>
+    <tr>
+      <th>ブランド / 商品</th>
+      <th>VeROリスク</th>
+      <th>偽造品リスク</th>
+      <th>総合判定</th>
+      <th>根拠・備考</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td class="brand-name">Nike キャップ全般</td>
+      <td class="risk-high">極高</td>
+      <td class="risk-high">高</td>
+      <td><span class="verdict-stop">出品回避</span></td>
+      <td class="notes-col">
+        <span class="evidence">
+          VeROの中で<strong>「最も積極的なブランドTop 10」の第1位</strong>。
+          2026年1月に「VeROがNikeの出品でセラーを停止処分にしている」という情報がSNSで拡散。
+          正規品でも「無許可の再販」として削除される可能性がある。帽子を含む全カテゴリで取り締まり。
+          <br><a href="https://www.3dsellers.com/blog/ebay-vero">3Dsellers: VeRO Top 10ブランド</a>
+        </span>
+      </td>
+    </tr>
+    <tr>
+      <td class="brand-name">Nike ACG / Jordan Brand キャップ</td>
+      <td class="risk-high">極高</td>
+      <td class="risk-high">高</td>
+      <td><span class="verdict-stop">出品回避</span></td>
+      <td class="notes-col">
+        <span class="evidence">
+          Nike傘下のサブブランドも同様にVeRO対象。Jordan Brandの偽造品は特に多い。
+        </span>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<!-- ============================================= -->
+<!-- ストリートウェア系 HIGH RISK -->
+<!-- ============================================= -->
+<h2><span class="badge-high">HIGH RISK</span> ストリートウェア系</h2>
+<table>
+  <thead>
+    <tr>
+      <th>ブランド</th>
+      <th>VeROリスク</th>
+      <th>偽造品リスク</th>
+      <th>総合判定</th>
+      <th>根拠・備考</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td class="brand-name">Supreme</td>
+      <td class="risk-high">高</td>
+      <td class="risk-high">極高</td>
+      <td><span class="verdict-stop">出品回避</span></td>
+      <td class="notes-col">
+        <span class="evidence">
+          偽造品が極めて多く、ボックスロゴキャップの正規品証明が困難。
+          eBay上のSupreme帽子の大部分が偽物との報告。正規品でも疑われて返品・クレームのリスクが高い。
+        </span>
+      </td>
+    </tr>
+    <tr>
+      <td class="brand-name">Carhartt</td>
+      <td class="risk-high">高</td>
+      <td class="risk-mid">中</td>
+      <td><span class="verdict-stop">出品回避</span></td>
+      <td class="notes-col">
+        <span class="evidence">
+          VeROリストには未掲載だが、eBayコミュニティで<strong>ビーニー帽の一括VeRO削除</strong>が複数報告（2023年）。
+          15ドル程度の安価な帽子でも容赦なく削除。再出品するとアカウント停止のリスク。
+          <br><a href="https://community.ebay.com/t5/Selling/Carhartt-Beanie-Hat-on-Vero-List/td-p/33622045">eBay: Carharttビーニー削除事例</a>
+        </span>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<!-- ============================================= -->
+<!-- 高級ファッション HIGH RISK -->
+<!-- ============================================= -->
+<h2><span class="badge-high">HIGH RISK</span> 高級ファッションブランド</h2>
+<table>
+  <thead>
+    <tr>
+      <th>ブランド</th>
+      <th>VeROリスク</th>
+      <th>偽造品リスク</th>
+      <th>総合判定</th>
+      <th>根拠・備考</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td class="brand-name">Gucci <span class="group-tag">Kering</span></td>
+      <td class="risk-high">極高</td>
+      <td class="risk-high">極高</td>
+      <td><span class="verdict-stop">出品回避</span></td>
+      <td class="notes-col">
+        <span class="evidence">
+          Kering傘下。Alibaba提訴など積極的なIP保護。帽子を含むアクセサリー全般で取り締まり。
+          New Eraは「Gucciキャップは製造していない＝偽造品」と明言。
+        </span>
+      </td>
+    </tr>
+    <tr>
+      <td class="brand-name">Chanel</td>
+      <td class="risk-high">極高</td>
+      <td class="risk-high">極高</td>
+      <td><span class="verdict-stop">出品回避</span></td>
+      <td class="notes-col">
+        <span class="evidence">
+          VeRO登録確認済み。eBay出品者を5600万ドルで提訴した事例あり。
+          帽子を含む全アクセサリーが取り締まり対象。
+        </span>
+      </td>
+    </tr>
+    <tr>
+      <td class="brand-name">Louis Vuitton <span class="group-tag">LVMH</span></td>
+      <td class="risk-high">極高</td>
+      <td class="risk-high">極高</td>
+      <td><span class="verdict-stop">出品回避</span></td>
+      <td class="notes-col">
+        <span class="evidence">
+          2008年にeBayを提訴。LVMH全体で最も攻撃的なIP保護。
+          New Eraも「LVキャップは製造していない」と明言。
+        </span>
+      </td>
+    </tr>
+    <tr>
+      <td class="brand-name">Burberry</td>
+      <td class="risk-high">高</td>
+      <td class="risk-high">高</td>
+      <td><span class="verdict-stop">出品回避</span></td>
+      <td class="notes-col">
+        <span class="evidence">
+          公式VeRO参加者。帽子を含むファッション全般で取り締まり。
+          チェック柄の偽造品が非常に多い。
+        </span>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<!-- ============================================= -->
+<!-- MEDIUM RISK -->
+<!-- ============================================= -->
+<h2><span class="badge-mid">MEDIUM RISK</span> 要注意ブランド</h2>
+<table>
+  <thead>
+    <tr>
+      <th>ブランド</th>
+      <th>VeROリスク</th>
+      <th>偽造品リスク</th>
+      <th>総合判定</th>
+      <th>根拠・備考</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td class="brand-name">Adidas</td>
+      <td class="risk-mid">中</td>
+      <td class="risk-mid">中</td>
+      <td><span class="verdict-warn">要注意</span></td>
+      <td class="notes-col">
+        <span class="evidence">
+          VeRO参加。ただしNikeほど積極的ではない。
+          正規品の中古であれば比較的安全だが、3ストライプのロゴ使用には注意。大量出品は避けること。
+        </span>
+      </td>
+    </tr>
+    <tr>
+      <td class="brand-name">Under Armour</td>
+      <td class="risk-mid">中</td>
+      <td class="risk-mid">中</td>
+      <td><span class="verdict-warn">要注意</span></td>
+      <td class="notes-col">
+        <span class="evidence">
+          ブランドアパレル全般でVeRO取り締まりの可能性。正規品の中古で少量出品なら比較的安全。
+        </span>
+      </td>
+    </tr>
+    <tr>
+      <td class="brand-name">Oakley</td>
+      <td class="risk-high">高</td>
+      <td class="risk-mid">中</td>
+      <td><span class="verdict-warn">要注意</span></td>
+      <td class="notes-col">
+        <span class="evidence">
+          公式VeRO参加者（EssilorLuxottica傘下）。サングラスが主な監視対象だが、帽子・アパレルも対象。
+        </span>
+      </td>
+    </tr>
+    <tr>
+      <td class="brand-name">Tommy Hilfiger</td>
+      <td class="risk-mid">中</td>
+      <td class="risk-mid">中</td>
+      <td><span class="verdict-warn">要注意</span></td>
+      <td class="notes-col">
+        <span class="evidence">
+          VeRO参加（Tommy Hilfiger Licensing BV名義）。正規品なら比較的安全だが、偽造品が多いカテゴリ。
+        </span>
+      </td>
+    </tr>
+    <tr>
+      <td class="brand-name">Abercrombie &amp; Fitch</td>
+      <td class="risk-mid">中</td>
+      <td class="risk-low">低</td>
+      <td><span class="verdict-warn">要注意</span></td>
+      <td class="notes-col">
+        <span class="evidence">
+          公式VeRO参加者。無許可の再販に厳しい。
+        </span>
+      </td>
+    </tr>
+    <tr>
+      <td class="brand-name">自動車ブランドのプロモ帽子<br><span class="group-tag">Subaru / BMW / Harley-Davidson等</span></td>
+      <td class="risk-mid">中</td>
+      <td class="risk-low">低</td>
+      <td><span class="verdict-warn">要注意</span></td>
+      <td class="notes-col">
+        <span class="evidence">
+          Subaru（富士重工業）は帽子のVeRO削除事例が複数確認。BMW、Harley-DavidsonもVeRO参加。
+          プロモーショナルグッズは商標権の問題が発生しやすい。
+        </span>
+      </td>
+    </tr>
+    <tr>
+      <td class="brand-name">企業プロモ帽子<br><span class="group-tag">Husqvarna / John Deere等</span></td>
+      <td class="risk-mid">中</td>
+      <td class="risk-low">低</td>
+      <td><span class="verdict-warn">要注意</span></td>
+      <td class="notes-col">
+        <span class="evidence">
+          Husqvarna帽子が出品5分後にVeRO削除された事例あり（2025年3月）。
+          企業ロゴ入りプロモ帽子は、そのブランドがVeROを行使する可能性がある。
+          <br><a href="https://community.ebay.com/t5/Selling/I-list-a-item-5-minutes-later-it-gets-taken-down-as-counterfeit/td-p/34991542">eBay: Husqvarna帽子即削除事例</a>
+        </span>
+      </td>
+    </tr>
+    <tr>
+      <td class="brand-name">BAPE (A Bathing Ape)</td>
+      <td class="risk-low">低</td>
+      <td class="risk-high">高</td>
+      <td><span class="verdict-warn">要注意</span></td>
+      <td class="notes-col">
+        <span class="evidence">
+          VeROリスクは低いが、偽造品が極めて多い。正規品でも「偽物では？」と疑われやすい。
+          Made in Japan品の証明ができれば安全度が上がる。購入証明を必ず保管すること。
+        </span>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<!-- ============================================= -->
+<!-- LOW RISK -->
+<!-- ============================================= -->
+<h2><span class="badge-low">LOW RISK</span> 比較的安全なブランド</h2>
+<table>
+  <thead>
+    <tr>
+      <th>ブランド</th>
+      <th>VeROリスク</th>
+      <th>偽造品リスク</th>
+      <th>総合判定</th>
+      <th>根拠・備考</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td class="brand-name">Kangol</td>
+      <td class="risk-low">低</td>
+      <td class="risk-low">低</td>
+      <td><span class="verdict-go">安全</span></td>
+      <td class="notes-col">
+        <span class="evidence">
+          VeRO報告なし。504ベレー、バケットハットが定番。$30〜$60。
+          Supreme × Kangolコラボは$100〜$227と高値だが、コラボ品はSupreme側のリスクに注意。
+        </span>
+      </td>
+    </tr>
+    <tr>
+      <td class="brand-name">Stussy</td>
+      <td class="risk-low">低</td>
+      <td class="risk-mid">中</td>
+      <td><span class="verdict-go">安全</span></td>
+      <td class="notes-col">
+        <span class="evidence">
+          VeRO報告なし。スナップバック、バケットハットが人気。$25〜$50。
+          ヴィンテージ品は$120+の高値。偽造品はやや存在するが、VeROリスクは低い。
+        </span>
+      </td>
+    </tr>
+    <tr>
+      <td class="brand-name">Brixton</td>
+      <td class="risk-low">低</td>
+      <td class="risk-low">低</td>
+      <td><span class="verdict-go">安全</span></td>
+      <td class="notes-col">
+        <span class="evidence">
+          独立系帽子ブランド。VeRO報告は確認されていない。
+        </span>
+      </td>
+    </tr>
+    <tr>
+      <td class="brand-name">Stetson</td>
+      <td class="risk-low">低</td>
+      <td class="risk-low">低</td>
+      <td><span class="verdict-go">安全</span></td>
+      <td class="notes-col">
+        <span class="evidence">
+          アメリカの伝統的帽子ブランド。VeRO報告は少ない。カウボーイハット、フェドーラが主力。
+        </span>
+      </td>
+    </tr>
+    <tr>
+      <td class="brand-name">Goorin Bros</td>
+      <td class="risk-low">低</td>
+      <td class="risk-low">低</td>
+      <td><span class="verdict-go">安全</span></td>
+      <td class="notes-col">
+        <span class="evidence">
+          アニマルファームトラッカーハットが人気。$25〜$45。VeRO報告なし。
+        </span>
+      </td>
+    </tr>
+    <tr>
+      <td class="brand-name">Richardson</td>
+      <td class="risk-low">低</td>
+      <td class="risk-low">低</td>
+      <td><span class="verdict-go">安全</span></td>
+      <td class="notes-col">
+        <span class="evidence">
+          112トラッカーキャップがeBayで最も売れている帽子の一つ。$10〜$25。
+          無地/ブランク品のため商標問題が発生しにくい。
+        </span>
+      </td>
+    </tr>
+    <tr>
+      <td class="brand-name">Patagonia</td>
+      <td class="risk-low">低</td>
+      <td class="risk-low">低</td>
+      <td><span class="verdict-go">安全</span></td>
+      <td class="notes-col">
+        <span class="evidence">
+          VeROリストに未確認。アウトドア系キャップ、トラッカーハットが人気。Gorpcoreトレンドで需要上昇中。
+        </span>
+      </td>
+    </tr>
+    <tr>
+      <td class="brand-name">Columbia</td>
+      <td class="risk-low">低</td>
+      <td class="risk-low">低</td>
+      <td><span class="verdict-go">安全</span></td>
+      <td class="notes-col">
+        <span class="evidence">
+          VeROリストに未確認。アウトドアハット、バケットハットが人気。Gorpcoreトレンドで需要上昇中。
+        </span>
+      </td>
+    </tr>
+    <tr>
+      <td class="brand-name">The North Face</td>
+      <td class="risk-low">低</td>
+      <td class="risk-mid">中</td>
+      <td><span class="verdict-go">安全</span></td>
+      <td class="notes-col">
+        <span class="evidence">
+          VeROリストに未確認だが、偽造品がやや存在する。正規品の中古であれば概ね安全。
+        </span>
+      </td>
+    </tr>
+    <tr>
+      <td class="brand-name">'47 Brand</td>
+      <td class="risk-low">低</td>
+      <td class="risk-low">低</td>
+      <td><span class="verdict-go">安全</span></td>
+      <td class="notes-col">
+        <span class="evidence">
+          MLBライセンスのクリーンアップキャップが人気。$20〜$35。
+          ただしMLBチームロゴ入りの場合はリーグ側のVeROに注意。
+        </span>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<!-- ============================================= -->
+<!-- 日本ブランド（推奨） -->
+<!-- ============================================= -->
+<h2><span class="badge-low">SAFE</span> 日本ブランド（推奨）</h2>
+<table>
+  <thead>
+    <tr>
+      <th>ブランド</th>
+      <th>VeROリスク</th>
+      <th>偽造品リスク</th>
+      <th>総合判定</th>
+      <th>根拠・備考</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td class="brand-name">Human Made</td>
+      <td class="risk-low">低</td>
+      <td class="risk-low">低</td>
+      <td><span class="verdict-go">安全</span></td>
+      <td class="notes-col">
+        <span class="evidence">
+          NIGOのブランド。2025年に東証上場し注目度急上昇。キャップ類は$50〜$120+。
+          VeRO未登録。偽造品は少なく、Made in Japan品は安全。
+        </span>
+      </td>
+    </tr>
+    <tr>
+      <td class="brand-name">UNDERCOVER</td>
+      <td class="risk-low">低</td>
+      <td class="risk-low">低</td>
+      <td><span class="verdict-go">安全</span></td>
+      <td class="notes-col">
+        <span class="evidence">
+          高橋盾のブランド。帽子類はファッション層に人気。$40〜$100+。VeRO未登録。
+        </span>
+      </td>
+    </tr>
+    <tr>
+      <td class="brand-name">WTAPS / NEIGHBORHOOD</td>
+      <td class="risk-low">低</td>
+      <td class="risk-low">低</td>
+      <td><span class="verdict-go">安全</span></td>
+      <td class="notes-col">
+        <span class="evidence">
+          日本の裏原ストリートウェア。限定リリースの帽子あり。$40〜$80。VeRO未登録。
+        </span>
+      </td>
+    </tr>
+    <tr>
+      <td class="brand-name">H.W. Dog &amp; Co.</td>
+      <td class="risk-low">低</td>
+      <td class="risk-low">低</td>
+      <td><span class="verdict-go">安全</span></td>
+      <td class="notes-col">
+        <span class="evidence">
+          東京・表参道のプレミアムハットブランド。伝統的な木型を使用したハンドメイド帽子。$100〜$250。
+          VeRO未登録。偽造品は存在しない。利益率が高い。
+        </span>
+      </td>
+    </tr>
+    <tr>
+      <td class="brand-name">Nine Tailor</td>
+      <td class="risk-low">低</td>
+      <td class="risk-low">低</td>
+      <td><span class="verdict-go">安全</span></td>
+      <td class="notes-col">
+        <span class="evidence">
+          高品質な日本製帽子。クラシックデザイン。$60〜$150。VeRO未登録。
+        </span>
+      </td>
+    </tr>
+    <tr>
+      <td class="brand-name">Override</td>
+      <td class="risk-low">低</td>
+      <td class="risk-low">低</td>
+      <td><span class="verdict-go">安全</span></td>
+      <td class="notes-col">
+        <span class="evidence">
+          日本三大帽子ブランドの一つ。$30〜$80。VeRO未登録。
+        </span>
+      </td>
+    </tr>
+    <tr>
+      <td class="brand-name">Bocodeco</td>
+      <td class="risk-low">低</td>
+      <td class="risk-low">低</td>
+      <td><span class="verdict-go">安全</span></td>
+      <td class="notes-col">
+        <span class="evidence">
+          ハンドメイドの高品質帽子。レトロ×モダンデザイン。$80〜$200。VeRO未登録。
+        </span>
+      </td>
+    </tr>
+    <tr>
+      <td class="brand-name">NPB限定 New Eraキャップ</td>
+      <td class="risk-mid">中</td>
+      <td class="risk-low">低</td>
+      <td><span class="verdict-warn">要注意</span></td>
+      <td class="notes-col">
+        <span class="evidence">
+          日本プロ野球限定デザインは海外コレクターに人気。$35〜$80。利益率50〜100%。
+          ただし<strong>New Era製のためVeROリスクあり</strong>。New Eraの取り締まり対象になる可能性を考慮すること。
+          eBayセラー「Pure Japan Select」が99.9%高評価で1,900件以上販売した成功事例あり。
+        </span>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<!-- ============================================= -->
+<!-- ヴィンテージ・安全カテゴリ -->
+<!-- ============================================= -->
+<h2><span class="badge-low">SAFE</span> ヴィンテージ・安全カテゴリ</h2>
+<table>
+  <thead>
+    <tr>
+      <th>カテゴリ</th>
+      <th>VeROリスク</th>
+      <th>偽造品リスク</th>
+      <th>総合判定</th>
+      <th>根拠・備考</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td class="brand-name">ヴィンテージ帽子（20年以上前）</td>
+      <td class="risk-low">低</td>
+      <td class="risk-low">低</td>
+      <td><span class="verdict-go">安全</span></td>
+      <td class="notes-col">
+        <span class="evidence">
+          偽造品の疑いが低く、VeRO対象になりにくい。コレクター需要が高い。
+          90年代のスナップバックは$50〜$500+で取引されることも。
+        </span>
+      </td>
+    </tr>
+    <tr>
+      <td class="brand-name">廃盤ブランド<br><span class="group-tag">Logo 7 / AJD / Sports Specialties等</span></td>
+      <td class="risk-low">低</td>
+      <td class="risk-low">低</td>
+      <td><span class="verdict-go">安全</span></td>
+      <td class="notes-col">
+        <span class="evidence">
+          製造終了ブランド。権利者が存在しないか、VeROを行使しない。
+          コレクター需要が高く、利益率も高い。
+        </span>
+      </td>
+    </tr>
+    <tr>
+      <td class="brand-name">ノーブランド / 無地帽子</td>
+      <td class="risk-low">低</td>
+      <td class="risk-low">低</td>
+      <td><span class="verdict-go">安全</span></td>
+      <td class="notes-col">
+        <span class="evidence">
+          商標権の問題がない。Yupoong / Flexfit系の無地スナップバックは$10〜$17で安定的に売れる。
+        </span>
+      </td>
+    </tr>
+    <tr>
+      <td class="brand-name">ハンドメイド / クラフト帽子</td>
+      <td class="risk-low">低</td>
+      <td class="risk-low">低</td>
+      <td><span class="verdict-go">安全</span></td>
+      <td class="notes-col">
+        <span class="evidence">
+          他社の知的財産を使用していなければ安全。オリジナルデザインで差別化可能。
+        </span>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<!-- ============================================= -->
+<!-- 出品時の注意事項 -->
+<!-- ============================================= -->
+<div class="summary-box" style="margin-top: 32px;">
+  <h2>帽子出品時の必須ルール</h2>
+  <ul>
+    <li class="danger"><strong>「Velcro」は絶対に使わない</strong>: 商標権侵害で即VeRO削除。「hook and loop fastener（面ファスナー）」と記載する</li>
+    <li class="danger"><strong>自分で撮影した写真のみ使用</strong>: ブランド公式サイトやメーカーの画像は著作権侵害で即削除</li>
+    <li class="danger"><strong>購入証明を必ず保管</strong>: レシート、請求書を保管。VeRO異議申立て時に必要</li>
+    <li class="warn"><strong>同一ブランドの大量出品を避ける</strong>: ブランド側の監視ボットに検知されやすくなる</li>
+    <li class="warn"><strong>中古品（Used/Pre-owned）で出品</strong>: 新品よりもVeRO対象になりにくい傾向がある</li>
+    <li class="warn"><strong>商品説明は自分の言葉で書く</strong>: ブランドサイトからのコピペは著作権侵害</li>
+    <li class="safe"><strong>VeRO通知を受けたら絶対に再出品しない</strong>: 再出品はアカウント停止に直結する。まず権利者に連絡して正規品の証拠を提出</li>
+  </ul>
+</div>
+
+<div class="note">
+  <strong>帽子出品の基本方針</strong><br>
+  New Era・Nike・スポーツリーグライセンス品は避け、日本ブランド（Human Made, UNDERCOVER, WTAPS等）・ヴィンテージ品・独立ブランド（Kangol, Stetson, Goorin Bros等）に注力するのが安全で利益率も高い。<br>
+  2026年のトレンドはバケットハット（特にクロシェ素材）とGorpcore系アウトドアハット。
+</div>
+
+<footer>
+  <p>VeRO登録状況は変動します。出品前に<a href="https://www.ebay.com/sellercenter/ebay-for-business/verified-rights-owner-program">eBayの最新VeROリスト</a>を確認してください。</p>
+</footer>
+
+</body>
+</html>
