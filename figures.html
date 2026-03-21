@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>eBay フィギュア・アニメグッズ 出品リスクガイド</title>
+<link rel="stylesheet" href="style.css">
+<script src="theme.js"></script>
+<style>
+.cites-alert {
+  background: rgba(220,53,69,0.12);
+  border: 2px solid var(--red);
+  border-radius: 10px;
+  padding: 20px 24px;
+  margin-bottom: 28px;
+}
+.cites-alert h2 { color: var(--red); font-size: 1.15em; margin-bottom: 10px; }
+.cites-alert p { font-size: 0.92em; margin-bottom: 6px; }
+
+.category-section {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 20px 24px;
+  margin-bottom: 20px;
+}
+.category-section h2 {
+  color: var(--heading);
+  font-size: 1.1em;
+  margin-bottom: 12px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--border);
+}
+.category-section h3 {
+  color: var(--heading);
+  font-size: 0.95em;
+  margin: 12px 0 6px;
+}
+.category-section ul {
+  margin-left: 20px;
+  margin-bottom: 8px;
+}
+.category-section li {
+  font-size: 0.9em;
+  margin-bottom: 4px;
+}
+
+.process-flow {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 20px 24px;
+  margin-bottom: 20px;
+}
+.process-flow h2 {
+  color: var(--heading);
+  font-size: 1.1em;
+  margin-bottom: 12px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--border);
+}
+.flow-item {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  margin-bottom: 14px;
+  font-size: 0.9em;
+}
+.flow-icon {
+  flex-shrink: 0;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.85em;
+  font-weight: 700;
+  color: #fff;
+}
+.flow-icon.red { background: var(--red); }
+.flow-icon.yellow { background: var(--yellow); color: #000; }
+.flow-icon.green { background: var(--green); }
+.flow-content strong { color: var(--heading); }
+
+.risk-table { width: 100%; border-collapse: collapse; margin-bottom: 24px; font-size: 0.9em; }
+.risk-table th { background: var(--th-bg); text-align: left; padding: 8px 10px; border-bottom: 2px solid var(--border); font-size: 0.85em; }
+.risk-table td { padding: 7px 10px; border-bottom: 1px solid var(--border); vertical-align: top; }
+.risk-table tr:hover { background: var(--card-hover); }
+.r-high { color: var(--red); font-weight: 700; }
+.r-mid  { color: var(--yellow); font-weight: 700; }
+.r-low  { color: var(--green); font-weight: 700; }
+
+.option-table { width: 100%; border-collapse: collapse; margin-bottom: 24px; font-size: 0.9em; }
+.option-table th { background: var(--th-bg); text-align: left; padding: 8px 10px; border-bottom: 2px solid var(--border); font-size: 0.85em; }
+.option-table td { padding: 7px 10px; border-bottom: 1px solid var(--border); vertical-align: top; }
+.option-table tr:hover { background: var(--card-hover); }
+
+.links-section {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 20px 24px;
+  margin-bottom: 20px;
+}
+.links-section h2 {
+  color: var(--heading);
+  font-size: 1.1em;
+  margin-bottom: 12px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--border);
+}
+.links-section ul { list-style: none; padding: 0; }
+.links-section li {
+  padding: 8px 0;
+  border-bottom: 1px solid var(--border);
+  font-size: 0.9em;
+}
+.links-section li:last-child { border-bottom: none; }
+.links-section a { color: var(--link); text-decoration: none; }
+.links-section a:hover { text-decoration: underline; }
+
+.checklist {
+  background: rgba(40,167,69,0.08);
+  border: 1px solid var(--green);
+  border-radius: 10px;
+  padding: 20px 24px;
+  margin-bottom: 20px;
+}
+.checklist h2 { color: var(--green); font-size: 1.1em; margin-bottom: 12px; }
+.checklist ul { list-style: none; padding: 0; }
+.checklist li {
+  padding: 6px 0 6px 28px;
+  position: relative;
+  font-size: 0.9em;
+}
+.checklist li::before {
+  content: "\2610";
+  position: absolute;
+  left: 0;
+  font-size: 1.1em;
+}
+
+.bootleg-note {
+  background: rgba(255,193,7,0.08);
+  border-left: 4px solid var(--yellow);
+  border-radius: 0 8px 8px 0;
+  padding: 12px 16px;
+  margin: 10px 0 20px;
+  font-size: 0.88em;
+}
+.bootleg-note strong { color: var(--heading); }
+.bootleg-note ul { margin-left: 18px; margin-top: 8px; }
+.bootleg-note li { margin-bottom: 4px; }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <nav>
+    <a href="index.html">TOP</a>
+    <a href="cites.html" class="nav-cites">禁止素材</a>
+    <a href="figures.html" class="active">フィギュア</a>
+    <a href="games.html">ゲーム</a>
+    <a href="prohibited.html">禁止リスト</a>
+    <a href="sunglasses.html">サングラス</a>
+    <a href="watches.html">時計</a>
+    <a href="bags.html">バッグ</a>
+    <a href="scarves.html">スカーフ</a>
+    <a href="jewelry.html">ジュエリー</a>
+  </nav>
+  <button class="theme-toggle" id="themeToggle"></button>
+</div>
+
+<h1>eBay フィギュア・アニメグッズ 出品リスクガイド</h1>
+<p class="subtitle">パテントトロール訴訟・VeRO・偽造品リスクの総合ガイド</p>
+
+<!-- ===== ALERT ===== -->
+<div class="cites-alert">
+  <h2>パテントトロール訴訟に注意</h2>
+  <p>eBayで日本のアニメ・ゲーム関連商品を出品すると、米国の商標トロールから訴訟を起こされるリスクがあります。</p>
+  <p><strong>アカウント凍結・資金凍結・高額賠償</strong>の可能性があり、正規品を販売していても標的になります。</p>
+</div>
+
+<!-- ===== OVERVIEW ===== -->
+<div class="summary-box">
+  <h2>パテントトロール訴訟とは？</h2>
+  <ul>
+    <li class="danger">製品の製造・販売を行わず、商標権侵害を主張して和解金を要求する組織・個人</li>
+    <li class="danger">日本のアニメキャラクターの米国商標を取得し、eBayセラーを大量訴訟</li>
+    <li class="warn">Schedule A訴訟：数百人のセラーを1件の訴状にまとめて訴える手法</li>
+    <li class="warn">21日以内に応答しないと欠席判決 &rarr; 商標1件あたり最大200万ドルの賠償</li>
+    <li class="danger">2013年〜2025年にイリノイ州だけで約4,207件提訴、2013年比900%増</li>
+  </ul>
+</div>
+
+<!-- ===== PROCESS FLOW ===== -->
+<div class="process-flow">
+  <h2>訴訟の流れ</h2>
+
+  <div class="flow-item">
+    <div class="flow-icon red">1</div>
+    <div class="flow-content">
+      <strong>eBayから「M999 Warning」またはアカウント凍結の通知メールが届く</strong>
+    </div>
+  </div>
+
+  <div class="flow-item">
+    <div class="flow-icon red">2</div>
+    <div class="flow-content">
+      <strong>PayPal/Payoneerの資金も同時に凍結される</strong>
+    </div>
+  </div>
+
+  <div class="flow-item">
+    <div class="flow-icon yellow">3</div>
+    <div class="flow-content">
+      <strong>裁判所の案件番号が通知される（PACERで確認可能）</strong>
+    </div>
+  </div>
+
+  <div class="flow-item">
+    <div class="flow-icon yellow">4</div>
+    <div class="flow-content">
+      <strong>21日以内に応答しなければ欠席判決</strong>
+    </div>
+  </div>
+
+  <div class="flow-item">
+    <div class="flow-icon red">5</div>
+    <div class="flow-content">
+      <strong>欠席判決の場合、商標1件あたり5万〜200万ドルの賠償命令</strong>
+    </div>
+  </div>
+</div>
+
+<!-- ===== TARGET CHARACTERS ===== -->
+<div class="category-section">
+  <h2>訴訟対象キャラクター・ブランド</h2>
+  <table class="risk-table">
+    <thead>
+      <tr>
+        <th style="width:18%">キャラクター</th>
+        <th style="width:14%">権利者</th>
+        <th>被害状況</th>
+        <th style="width:8%">リスク</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>ゴジラ (Godzilla)</td>
+        <td>Toho Co., Ltd.</td>
+        <td>2024年に169名を提訴。商標1件あたり200万ドル請求</td>
+        <td class="r-high">極高</td>
+      </tr>
+      <tr>
+        <td>ナルト (Naruto)</td>
+        <td>TV Tokyo</td>
+        <td>301名に欠席判決。各5万ドル賠償。別件で47名に各10万ドル。16件以上全勝</td>
+        <td class="r-high">極高</td>
+      </tr>
+      <tr>
+        <td>エヴァンゲリオン (Evangelion)</td>
+        <td>Khara Inc.</td>
+        <td>2022年にSchedule A訴訟。正規品でもアカウント凍結の報告</td>
+        <td class="r-high">極高</td>
+      </tr>
+      <tr>
+        <td>初音ミク (Hatsune Miku)</td>
+        <td>Crypton Future Media</td>
+        <td>2020年に日本人セラーが訴えられた事例</td>
+        <td class="r-high">高</td>
+      </tr>
+      <tr>
+        <td>BIGFOOT</td>
+        <td>Bigfoot 4X4, Inc.</td>
+        <td>3,000ドルの和解金要求の事例</td>
+        <td class="r-mid">中</td>
+      </tr>
+      <tr>
+        <td>ミッフィー (Miffy)</td>
+        <td>Mercis BV</td>
+        <td>標的リストに含まれる</td>
+        <td class="r-mid">中</td>
+      </tr>
+      <tr>
+        <td>ケアベア (Care Bears)</td>
+        <td>&mdash;</td>
+        <td>2024年に日本人セラーへの訴訟報告</td>
+        <td class="r-mid">中</td>
+      </tr>
+      <tr>
+        <td>ペルソナ (Persona)</td>
+        <td>Atlus (SEGA)</td>
+        <td>訴訟対象リストに含まれる（具体的事例は未確認）</td>
+        <td class="r-mid">中</td>
+      </tr>
+      <tr>
+        <td>新女神転生 (Shin Megami Tensei)</td>
+        <td>Atlus (SEGA)</td>
+        <td>訴訟対象リストに含まれる</td>
+        <td class="r-mid">中</td>
+      </tr>
+      <tr>
+        <td>Digital Devil Saga</td>
+        <td>Atlus (SEGA)</td>
+        <td>訴訟対象リストに含まれる</td>
+        <td class="r-mid">中</td>
+      </tr>
+      <tr>
+        <td>ビートルズ (Beatles)</td>
+        <td>Apple Corps</td>
+        <td>偽造品として新品中古とも対象</td>
+        <td class="r-high">高</td>
+      </tr>
+      <tr>
+        <td>トランスフォーマー (Transformers)</td>
+        <td>Hasbro</td>
+        <td>VeROで積極取締。非正規品にブランド名使用で削除</td>
+        <td class="r-high">高</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- ===== OPTIONS WHEN SUED ===== -->
+<div class="category-section">
+  <h2>訴えられた場合の選択肢</h2>
+  <table class="option-table">
+    <thead>
+      <tr>
+        <th style="width:22%">選択肢</th>
+        <th style="width:28%">コスト</th>
+        <th>リスク</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>裁判で争う</strong></td>
+        <td>弁護士費用200〜300万円</td>
+        <td>勝てば回収だが負ければさらに大きな賠償</td>
+      </tr>
+      <tr>
+        <td><strong>和解金を支払う</strong></td>
+        <td>800〜3,000ドル程度</td>
+        <td>罪を認める書面に署名が必要。再標的の可能性</td>
+      </tr>
+      <tr>
+        <td><strong>アカウント放棄</strong></td>
+        <td>0円</td>
+        <td>凍結資金は失われる。欠席判決の可能性</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- ===== VeRO MEASURES ===== -->
+<div class="summary-box">
+  <h2>VeRO対策</h2>
+  <ul>
+    <li class="safe">自分で撮影した写真のみ使用する（公式画像・Amazon画像は著作権違反）</li>
+    <li class="safe">正規品であることを証明できる書類を保持する</li>
+    <li class="warn">出品取り下げではなく「Delete（完全削除）」を実行する</li>
+    <li class="warn">ブラックリスト（このページの訴訟対象リスト）を定期的に確認する</li>
+    <li class="safe">海外知財訴訟費用保険への加入を検討する（特許庁が保険料の1/2を補助）</li>
+  </ul>
+</div>
+
+<!-- ===== BOOTLEG NOTE ===== -->
+<div class="bootleg-note">
+  <strong>偽物（ブートレグ）に関する注意</strong>
+  <ul>
+    <li>中国製の安価なコピーフィギュアがeBayで大量流通</li>
+    <li>Good Smile Company正規品にはホログラフィックシール付き</li>
+    <li>MyFigureCollection.net で既知のブートレグ情報を確認可能</li>
+    <li>日本から正規品を出品する場合は自撮り写真＋正規品である旨を明記</li>
+  </ul>
+</div>
+
+<!-- ===== LINKS ===== -->
+<div class="links-section">
+  <h2>関連リンク</h2>
+  <ul>
+    <li><a href="https://sellerdefender.com/" target="_blank" rel="noopener">SellerDefender &mdash; 商標訴訟データベース</a></li>
+    <li><a href="https://pacer.uscourts.gov/" target="_blank" rel="noopener">PACER &mdash; 米国連邦裁判所訴訟記録</a></li>
+    <li><a href="https://www.jpo.go.jp/" target="_blank" rel="noopener">特許庁 &mdash; 海外知財訴訟費用保険</a></li>
+    <li><a href="https://www.ebay.com/sellercenter/ebay-for-business/verified-rights-owner-program" target="_blank" rel="noopener">eBay VeROプログラム</a></li>
+    <li><a href="https://myfigurecollection.net/" target="_blank" rel="noopener">MyFigureCollection &mdash; ブートレグ情報</a></li>
+  </ul>
+</div>
+
+<footer>
+  <p>この情報は2026年3月時点の調査に基づいています。訴訟状況は変動します。</p>
+</footer>
+
+</body>
+</html>

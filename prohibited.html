@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>eBay 出品禁止・制限リスト | VeROガイド</title>
+<link rel="stylesheet" href="style.css">
+<script src="theme.js"></script>
+<style>
+.cites-alert {
+  background: rgba(220,53,69,0.12);
+  border: 2px solid var(--red);
+  border-radius: 10px;
+  padding: 20px 24px;
+  margin-bottom: 28px;
+}
+.cites-alert h2 { color: var(--red); font-size: 1.15em; margin-bottom: 10px; }
+.cites-alert p { font-size: 0.92em; margin-bottom: 6px; }
+
+.category-section {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 20px 24px;
+  margin-bottom: 20px;
+}
+.category-section h2 {
+  color: var(--heading);
+  font-size: 1.1em;
+  margin-bottom: 12px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--border);
+}
+.category-section h3 {
+  color: var(--heading);
+  font-size: 0.95em;
+  margin: 12px 0 6px;
+}
+.category-section ul {
+  margin-left: 20px;
+  margin-bottom: 8px;
+}
+.category-section li {
+  font-size: 0.9em;
+  margin-bottom: 4px;
+}
+
+.material-tag {
+  display: inline-block;
+  padding: 2px 10px;
+  border-radius: 4px;
+  font-size: 0.82em;
+  font-weight: 600;
+  background: rgba(220,53,69,0.15);
+  color: var(--red);
+  margin: 2px 3px;
+}
+
+.process-flow {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 20px 24px;
+  margin-bottom: 20px;
+}
+.process-flow h2 {
+  color: var(--heading);
+  font-size: 1.1em;
+  margin-bottom: 12px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--border);
+}
+.flow-item {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  margin-bottom: 14px;
+  font-size: 0.9em;
+}
+.flow-icon {
+  flex-shrink: 0;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.85em;
+  font-weight: 700;
+  color: #fff;
+}
+.flow-icon.red { background: var(--red); }
+.flow-icon.yellow { background: var(--yellow); color: #000; }
+.flow-icon.green { background: var(--green); }
+.flow-content strong { color: var(--heading); }
+
+.links-section {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 20px 24px;
+  margin-bottom: 20px;
+}
+.links-section h2 {
+  color: var(--heading);
+  font-size: 1.1em;
+  margin-bottom: 12px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--border);
+}
+.links-section ul { list-style: none; padding: 0; }
+.links-section li {
+  padding: 8px 0;
+  border-bottom: 1px solid var(--border);
+  font-size: 0.9em;
+}
+.links-section li:last-child { border-bottom: none; }
+.links-section a { color: var(--link); text-decoration: none; }
+.links-section a:hover { text-decoration: underline; }
+
+.checklist {
+  background: rgba(40,167,69,0.08);
+  border: 1px solid var(--green);
+  border-radius: 10px;
+  padding: 20px 24px;
+  margin-bottom: 20px;
+}
+.checklist h2 { color: var(--green); font-size: 1.1em; margin-bottom: 12px; }
+.checklist ul { list-style: none; padding: 0; }
+.checklist li {
+  padding: 6px 0 6px 28px;
+  position: relative;
+  font-size: 0.9em;
+}
+.checklist li::before {
+  content: "\2610";
+  position: absolute;
+  left: 0;
+  font-size: 1.1em;
+}
+
+.excluded-gems {
+  background: rgba(255,193,7,0.08);
+  border-left: 4px solid var(--yellow);
+  border-radius: 0 8px 8px 0;
+  padding: 12px 16px;
+  margin: 10px 0;
+  font-size: 0.88em;
+}
+.excluded-gems strong { color: var(--heading); }
+
+.maker-table { width: 100%; border-collapse: collapse; margin-bottom: 24px; font-size: 0.88em; }
+.maker-table th { background: var(--th-bg); text-align: left; padding: 8px 10px; border-bottom: 2px solid var(--border); font-size: 0.85em; }
+.maker-table td { padding: 7px 10px; border-bottom: 1px solid var(--border); vertical-align: top; }
+.maker-table tr:hover { background: var(--card-hover); }
+.reason-tag { display: inline-block; padding: 2px 8px; border-radius: 4px; font-size: 0.78em; font-weight: 600; margin: 1px 2px; }
+.reason-ban { background: rgba(220,53,69,0.15); color: var(--red); }
+.reason-image { background: rgba(88,166,255,0.15); color: var(--link); }
+.reason-trademark { background: rgba(255,193,7,0.15); color: var(--yellow); }
+.reason-counterfeit { background: rgba(128,0,128,0.15); color: #b366cc; }
+.condition-all { color: var(--red); font-weight: 600; }
+.condition-new { color: var(--yellow); }
+.battery-box { background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 20px 24px; margin-bottom: 20px; }
+.battery-box h2 { color: var(--heading); font-size: 1.1em; margin-bottom: 12px; padding-bottom: 8px; border-bottom: 1px solid var(--border); }
+.battery-rule { display: flex; gap: 10px; align-items: flex-start; margin-bottom: 10px; padding: 8px 12px; background: var(--card-hover); border-radius: 6px; font-size: 0.9em; }
+.battery-rule .rule-icon { font-size: 1.2em; flex-shrink: 0; }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <nav>
+    <a href="index.html">TOP</a>
+    <a href="cites.html" class="nav-cites">禁止素材</a>
+    <a href="figures.html">フィギュア</a>
+    <a href="games.html">ゲーム</a>
+    <a href="prohibited.html" class="active">禁止リスト</a>
+    <a href="sunglasses.html">サングラス</a>
+    <a href="watches.html">時計</a>
+    <a href="bags.html">バッグ</a>
+    <a href="scarves.html">スカーフ</a>
+    <a href="jewelry.html">ジュエリー</a>
+  </nav>
+  <button class="theme-toggle" id="themeToggle"></button>
+</div>
+
+<h1>eBay 出品禁止・制限リスト</h1>
+<p class="subtitle">メーカー別・ジャンル別の出品禁止リスト＆リチウムバッテリー規則 | 2026年3月時点</p>
+
+<!-- ===== SUMMARY ===== -->
+<div class="summary-box">
+  <h2>このページについて</h2>
+  <ul>
+    <li class="danger">eBayのVeROプログラムで出品が削除されるメーカーの一覧です</li>
+    <li class="warn">「画像禁止」のメーカーは自分で撮影した写真を使えば出品できる場合があります</li>
+    <li class="warn">「出品禁止」のメーカーは一切の出品が不可です</li>
+    <li class="danger">訴訟関連ブランドは、商品名に含まれるだけで訴訟の標的になる可能性があります</li>
+  </ul>
+</div>
+
+<!-- ===== LEGEND ===== -->
+<div class="note" style="margin-bottom: 20px;">
+  <strong>凡例 &mdash; 理由の分類:</strong><br>
+  <span class="reason-tag reason-ban">出品禁止</span> = 全面禁止<br>
+  <span class="reason-tag reason-image">画像禁止</span> = 公式画像の使用不可（自撮りならOKの場合あり）<br>
+  <span class="reason-tag reason-trademark">商標権</span> = 商標権侵害で削除<br>
+  <span class="reason-tag reason-counterfeit">偽造品</span> = 偽造品対策で削除<br><br>
+  <strong>商品の状態:</strong>
+  <span class="condition-all">新品中古とも</span> = 全面 /
+  <span class="condition-new">新品</span> = 新品のみ
+</div>
+
+<!-- ===== MAKER TABLE ===== -->
+<div class="category-section">
+  <h2>出品禁止メーカー一覧</h2>
+  <table class="maker-table">
+    <thead>
+      <tr>
+        <th>メーカー名</th>
+        <th>英語名</th>
+        <th>理由</th>
+        <th>商品の状態</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>ホルベイン</td>
+        <td>HOLBEIN</td>
+        <td><span class="reason-tag reason-ban">出品禁止</span></td>
+        <td><span class="condition-new">新品</span></td>
+      </tr>
+      <tr>
+        <td>ダイソン</td>
+        <td>Dyson</td>
+        <td><span class="reason-tag reason-image">画像禁止</span></td>
+        <td><span class="condition-new">新品</span></td>
+      </tr>
+      <tr>
+        <td>シャトー・ラ・フルール・ペトリュス</td>
+        <td>French Chateau La Fleur Petrus</td>
+        <td><span class="reason-tag reason-ban">出品禁止</span></td>
+        <td><span class="condition-new">新品</span></td>
+      </tr>
+      <tr>
+        <td>デノン</td>
+        <td>Denon</td>
+        <td><span class="reason-tag reason-image">画像禁止</span></td>
+        <td><span class="condition-new">新品</span></td>
+      </tr>
+      <tr>
+        <td>ユーエム工業</td>
+        <td>U.M. KOGYO</td>
+        <td><span class="reason-tag reason-trademark">商標権</span></td>
+        <td><span class="condition-new">新品</span></td>
+      </tr>
+      <tr>
+        <td>HP（ヒューレット・パッカード）</td>
+        <td>Hewlett Packard</td>
+        <td><span class="reason-tag reason-trademark">商標権</span></td>
+        <td><span class="condition-new">新品</span></td>
+      </tr>
+      <tr>
+        <td>ニコン</td>
+        <td>NIKON</td>
+        <td><span class="reason-tag reason-image">画像禁止</span></td>
+        <td><span class="condition-new">新品</span></td>
+      </tr>
+      <tr>
+        <td>富士フィルム</td>
+        <td>FUJIFILM</td>
+        <td><span class="reason-tag reason-image">画像禁止</span></td>
+        <td><span class="condition-new">新品</span></td>
+      </tr>
+      <tr>
+        <td>ビートルズ</td>
+        <td>Beatles</td>
+        <td><span class="reason-tag reason-counterfeit">偽造品</span></td>
+        <td><span class="condition-all">新品中古とも</span></td>
+      </tr>
+      <tr>
+        <td>マーク・ジェイコブス</td>
+        <td>MARC JACOBS</td>
+        <td><span class="reason-tag reason-counterfeit">偽造品</span></td>
+        <td><span class="condition-new">新品</span></td>
+      </tr>
+      <tr>
+        <td>レゴ</td>
+        <td>LEGO</td>
+        <td><span class="reason-tag reason-counterfeit">偽造品</span></td>
+        <td><span class="condition-new">新品</span></td>
+      </tr>
+      <tr>
+        <td>ニンテンドースイッチ</td>
+        <td>Nintendo Switch</td>
+        <td><span class="reason-tag reason-trademark">商標権</span></td>
+        <td><span class="condition-all">新品中古とも</span></td>
+      </tr>
+      <tr>
+        <td>オーディオテクニカ</td>
+        <td>audio technica</td>
+        <td><span class="reason-tag reason-image">画像禁止</span></td>
+        <td><span class="condition-new">新品</span></td>
+      </tr>
+      <tr>
+        <td>ナイキ</td>
+        <td>NIKE</td>
+        <td><span class="reason-tag reason-trademark">商標権</span></td>
+        <td><span class="condition-all">新品中古とも</span></td>
+      </tr>
+      <tr>
+        <td>Bahco</td>
+        <td>Bahco</td>
+        <td><span class="reason-tag reason-trademark">商標権</span></td>
+        <td><span class="condition-new">新品</span></td>
+      </tr>
+      <tr>
+        <td>スコッティ・キャメロン</td>
+        <td>Scotty Cameron</td>
+        <td><span class="reason-tag reason-counterfeit">偽造品</span></td>
+        <td><span class="condition-new">新品</span></td>
+      </tr>
+      <tr>
+        <td>Puffin Coolers</td>
+        <td>Puffin Coolers</td>
+        <td><span class="reason-tag reason-trademark">商標権</span></td>
+        <td><span class="condition-all">新品中古とも</span></td>
+      </tr>
+      <tr>
+        <td>タニタ</td>
+        <td>tanita</td>
+        <td><span class="reason-tag reason-trademark">商標権</span></td>
+        <td><span class="condition-all">新品中古とも</span></td>
+      </tr>
+      <tr>
+        <td>トランスフォーマー</td>
+        <td>Transformer</td>
+        <td><span class="reason-tag reason-trademark">商標権</span></td>
+        <td><span class="condition-all">新品中古とも</span></td>
+      </tr>
+      <tr>
+        <td>Fossil</td>
+        <td>Fossil</td>
+        <td><span class="reason-tag reason-image">画像禁止</span></td>
+        <td><span class="condition-new">新品</span></td>
+      </tr>
+      <tr>
+        <td>TUMI</td>
+        <td>TUMI</td>
+        <td><span class="reason-tag reason-counterfeit">偽造品</span></td>
+        <td><span class="condition-new">新品</span></td>
+      </tr>
+      <tr>
+        <td>ユニクロ</td>
+        <td>UNIQLO</td>
+        <td><span class="reason-tag reason-image">画像禁止</span></td>
+        <td><span class="condition-new">新品</span></td>
+      </tr>
+      <tr>
+        <td>シマノ</td>
+        <td>Shimano</td>
+        <td><span class="reason-tag reason-trademark">商標権</span></td>
+        <td><span class="condition-new">新品</span></td>
+      </tr>
+      <tr>
+        <td>FLUKE</td>
+        <td>FLUKE</td>
+        <td><span class="reason-tag reason-image">画像禁止</span></td>
+        <td><span class="condition-new">新品</span></td>
+      </tr>
+      <tr>
+        <td>TEAC</td>
+        <td>TEAC</td>
+        <td><span class="reason-tag reason-image">画像禁止</span></td>
+        <td><span class="condition-new">新品</span></td>
+      </tr>
+      <tr>
+        <td>Refa</td>
+        <td>refa</td>
+        <td><span class="reason-tag reason-image">画像禁止</span></td>
+        <td><span class="condition-all">新品中古とも</span></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- ===== LAWSUIT BRANDS ===== -->
+<div class="cites-alert">
+  <h2>訴訟関連ブランド &mdash; 他メーカー商品でもこの文言が入っているものは出品しないでください</h2>
+  <table class="maker-table">
+    <thead>
+      <tr>
+        <th>ブランド名</th>
+        <th>英語名</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td>BIGFOOT</td><td>BIGFOOT</td></tr>
+      <tr><td>ゴジラ</td><td>GODZILLA</td></tr>
+      <tr><td>初音ミク</td><td>Hatsune Miku</td></tr>
+      <tr><td>ペルソナ</td><td>Persona</td></tr>
+      <tr><td>エヴァンゲリオン</td><td>EVANGELION</td></tr>
+      <tr><td>新・女神転生</td><td>SHIN MEGAMI TENSEI</td></tr>
+      <tr><td>DIGITAL DEVIL SAGA</td><td>DIGITAL DEVIL SAGA</td></tr>
+      <tr><td>ナルト</td><td>NARUTO</td></tr>
+      <tr><td>ミッフィー</td><td>Miffy</td></tr>
+      <tr><td>ナイキ</td><td>NIKE</td></tr>
+      <tr><td>アトラス社の全商品</td><td>Atlus (<a href="https://www.atlus.co.jp/title/" target="_blank" rel="noopener" style="color: inherit; text-decoration: underline;">https://www.atlus.co.jp/title/</a>)</td></tr>
+      <tr><td>マインクラフト</td><td>minecraft</td></tr>
+      <tr><td>ホンダ</td><td>HONDA</td></tr>
+      <tr><td>カシオ</td><td>CASIO</td></tr>
+    </tbody>
+  </table>
+  <p style="font-size: 0.88em; margin-top: 8px;"><strong>新品中古とも対象。</strong>商品名・説明文にこれらのワードが含まれているだけで訴訟の標的になる可能性があります。</p>
+</div>
+
+<!-- ===== PROHIBITED GENRES ===== -->
+<div class="category-section">
+  <h2>出品禁止ジャンル</h2>
+  <table class="maker-table">
+    <thead>
+      <tr>
+        <th>ジャンル</th>
+        <th>理由</th>
+        <th>備考</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>アニメ系抱きまくらカバー</td>
+        <td>アダルト関連に該当</td>
+        <td>2021年7月以降、全面禁止</td>
+      </tr>
+      <tr>
+        <td>モデルガン</td>
+        <td>武器に該当</td>
+        <td>オレンジプラグ未装着の日本製は出品不可</td>
+      </tr>
+      <tr>
+        <td>サプリメント</td>
+        <td>英語での成分表記がない</td>
+        <td>FDA規制。英語ラベルなしは税関で差押え</td>
+      </tr>
+      <tr>
+        <td>万年筆（インクあり）</td>
+        <td>インク成分表を求められる</td>
+        <td>インクを抜いた状態なら発送可能</td>
+      </tr>
+      <tr>
+        <td>プリンターインク</td>
+        <td>インク成分表を求められる</td>
+        <td>バイヤーが書類を提出すれば通関可能な場合あり</td>
+      </tr>
+      <tr>
+        <td>アニメ系3Dマウスパッド</td>
+        <td>アダルト関連に該当</td>
+        <td>性的示唆のあるデザインは全面禁止</td>
+      </tr>
+      <tr>
+        <td>サングラス・メガネ</td>
+        <td>FDA医療機器規制</td>
+        <td>Drop Ball Test証明書・外国製造者番号が必要</td>
+      </tr>
+      <tr>
+        <td>香水</td>
+        <td>可燃性液体・空輸不可</td>
+        <td>日本からの発送は実質不可能</td>
+      </tr>
+      <tr>
+        <td>ジッポー・ライター</td>
+        <td>空輸不可</td>
+        <td>燃料を抜いても配送拒否されるケースあり</td>
+      </tr>
+      <tr>
+        <td>化粧品</td>
+        <td>FDA許可が必要</td>
+        <td>個人セラーがFDA認証を取得するのは非現実的</td>
+      </tr>
+      <tr>
+        <td>アルコール類</td>
+        <td>空輸不可・出品制限</td>
+        <td>承認済みセラーのワインのみ可。それ以外は全面禁止</td>
+      </tr>
+      <tr>
+        <td>医薬品</td>
+        <td>出品不可</td>
+        <td>FDA未承認薬の販売は刑事罰の対象</td>
+      </tr>
+      <tr>
+        <td>医療機器</td>
+        <td>出品不可</td>
+        <td>処方箋が必要な機器は販売禁止</td>
+      </tr>
+      <tr>
+        <td>オイル</td>
+        <td>可燃性液体・空輸不可</td>
+        <td>釣り用リールのメンテナンスオイルも含む</td>
+      </tr>
+      <tr>
+        <td>ペン類（インク入り）</td>
+        <td>インク成分表を求められる</td>
+        <td>通関で問題になる可能性</td>
+      </tr>
+      <tr>
+        <td>エンジンRCカー</td>
+        <td>危険物・空輸不可</td>
+        <td>エンジン・燃料は危険物分類</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- ===== LITHIUM BATTERY ===== -->
+<div class="battery-box">
+  <h2>リチウムバッテリーの発送ルール</h2>
+
+  <div class="battery-rule">
+    <span class="rule-icon">&#x2705;</span>
+    <div>1つの箱に2つまではOK &mdash; 3つ目からは別の箱に入れる</div>
+  </div>
+  <div class="battery-rule">
+    <span class="rule-icon">&#x2705;</span>
+    <div>機器に内蔵または付属できるものはOK &mdash; 本体の外に出ているものは機器に取り付ける</div>
+  </div>
+  <div class="battery-rule">
+    <span class="rule-icon">&#x274C;</span>
+    <div>予備バッテリー（単体）の発送は不可</div>
+  </div>
+  <div class="battery-rule">
+    <span class="rule-icon">&#x26A0;&#xFE0F;</span>
+    <div>バッテリー単体の発送は書類（UN38.3テストレポート等）と追加送料が必要</div>
+  </div>
+  <div class="battery-rule">
+    <span class="rule-icon">&#x26A0;&#xFE0F;</span>
+    <div>2026年1月〜: 充電率30%を超えるリチウムイオン電池は航空輸送不可（機器同梱の場合）</div>
+  </div>
+
+  <div class="note" style="margin-top: 14px;">
+    <strong>リチウム電池の容量制限:</strong> イオン単電池20Wh以下、イオン組電池100Wh以下、金属単電池リチウム含有量1g以下、金属組電池リチウム含有量2g以下
+  </div>
+</div>
+
+<!-- ===== LINKS ===== -->
+<div class="links-section">
+  <h2>関連リンク</h2>
+  <ul>
+    <li><a href="https://www.ebay.com/help/policies/prohibited-restricted-items/prohibited-restricted-items?id=4207" target="_blank" rel="noopener">eBay出品禁止・制限商品ポリシー</a></li>
+    <li><a href="https://www.ebay.com/sellercenter/ebay-for-business/verified-rights-owner-program" target="_blank" rel="noopener">eBay VeROプログラム</a></li>
+    <li><a href="https://www.ebay.com/help/policies/prohibited-restricted-items/hazardous-materials-policy?id=4335" target="_blank" rel="noopener">eBay危険物ポリシー</a></li>
+    <li><a href="https://www.post.japanpost.jp/int/use/restriction/restriction02.pdf" target="_blank" rel="noopener">日本郵便 リチウム電池の郵送条件</a></li>
+    <li><a href="https://www.fda.gov/" target="_blank" rel="noopener">FDA公式サイト</a></li>
+  </ul>
+</div>
+
+<footer>
+  <p>この情報は2026年3月時点の調査に基づいています。規制内容は変更される場合があります。出品前に必ず最新情報をご確認ください。</p>
+</footer>
+
+</body>
+</html>
