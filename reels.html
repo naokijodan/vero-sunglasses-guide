@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>釣りリール ブランド・モデル辞書</title>
+<link rel="stylesheet" href="style.css">
+<script src="theme.js"></script>
+<style>
+.brand-table { width: 100%; border-collapse: collapse; margin-bottom: 24px; font-size: 0.9em; }
+.brand-table th { background: var(--th-bg); text-align: left; padding: 8px 10px; border-bottom: 2px solid var(--border); font-size: 0.85em; }
+.brand-table td { padding: 7px 10px; border-bottom: 1px solid var(--border); vertical-align: top; }
+.brand-table tr:hover { background: var(--card-hover); }
+.category-label { font-size: 1.1em; font-weight: 700; color: var(--heading); margin: 28px 0 12px; padding-bottom: 6px; border-bottom: 2px solid var(--border); }
+.model-list { display: flex; flex-wrap: wrap; gap: 4px; }
+.model-tag { background: var(--card); border: 1px solid var(--border); border-radius: 4px; padding: 2px 8px; font-size: 0.85em; white-space: nowrap; }
+.summary-box { background: var(--card); border: 1px solid var(--border); border-radius: 8px; padding: 16px; margin: 16px 0 24px; }
+.summary-box h2 { font-size: 1em; color: var(--heading); margin-bottom: 8px; }
+.summary-box li { margin-bottom: 4px; font-size: 0.9em; }
+.stat-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 12px; margin: 16px 0 24px; }
+.stat-card { background: var(--card); border: 1px solid var(--border); border-radius: 8px; padding: 12px 16px; text-align: center; }
+.stat-card .num { font-size: 1.8em; font-weight: 700; color: var(--link); }
+.stat-card .label { font-size: 0.8em; color: var(--muted); }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <nav>
+    <a href="index.html">TOP</a>
+    <a href="cites.html" class="nav-cites">禁止素材</a>
+    <a href="prohibited.html" class="nav-prohibited">禁止リスト</a>
+    <a href="figures.html">フィギュア</a>
+    <a href="games.html">ゲーム</a>
+    <a href="sunglasses.html">サングラス</a>
+    <a href="watches.html">時計</a>
+    <a href="bags.html">バッグ</a>
+    <a href="scarves.html">スカーフ</a>
+    <a href="jewelry.html">ジュエリー</a>
+    <a href="hats.html">帽子</a>
+    <a href="reels.html" class="active">リール</a>
+  </nav>
+  <button class="theme-toggle" id="themeToggle"></button>
+</div>
+
+<h1>釣りリール ブランド・モデル辞書</h1>
+<p class="subtitle">一括シートV3 ブランド辞書登録データ &mdash; 親ブランド49件 + サブブランド（モデルライン）35件</p>
+
+<!-- ===== STATS ===== -->
+<div class="stat-grid">
+  <div class="stat-card"><div class="num">49</div><div class="label">親ブランド</div></div>
+  <div class="stat-card"><div class="num">35</div><div class="label">サブブランド</div></div>
+  <div class="stat-card"><div class="num">84</div><div class="label">合計エントリ</div></div>
+  <div class="stat-card"><div class="num">9</div><div class="label">対応国</div></div>
+</div>
+
+<!-- ===== SUMMARY ===== -->
+<div class="summary-box">
+  <h2>国別ブランド数</h2>
+  <ul>
+    <li><strong>日本 (15):</strong> Shimano, Daiwa, Gamakatsu, Ryobi, Megabass, Prox, ZPI, Nissin, Tailwalk, Evergreen, Major Craft, Studio Ocean Mark, Smith, Valleyhill, PALMS</li>
+    <li><strong>USA (18):</strong> Penn, Zebco, Pflueger, Quantum, Lew's, 13 Fishing, Fin-Nor, Accurate, Avet, Seigler, Van Staal, Shakespeare, Orvis, Lamson, Ross, Sage, Redington, Cortland, Heddon, South Bend, Ocean City, Langley</li>
+    <li><strong>スウェーデン (3):</strong> Abu Garcia, Danielsson, Loop</li>
+    <li><strong>UK (4):</strong> Hardy, Greys, Allcock, J.W. Young</li>
+    <li><strong>フランス (2):</strong> Mitchell, Pezon et Michel</li>
+    <li><strong>ドイツ (1):</strong> DAM</li>
+    <li><strong>フィンランド (1):</strong> Vision</li>
+    <li><strong>台湾 (2):</strong> Okuma, Tica</li>
+    <li><strong>中国 (1):</strong> KastKing</li>
+  </ul>
+</div>
+
+<!-- ==================== SHIMANO ==================== -->
+<div class="category-label">Shimano（シマノ）&mdash; 日本 / サブブランド16件</div>
+<table class="brand-table">
+  <thead>
+    <tr>
+      <th style="width:18%">モデルライン</th>
+      <th style="width:14%">日本語名</th>
+      <th style="width:14%">カテゴリ</th>
+      <th>備考</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td colspan="4" style="font-weight:700; background:var(--th-bg);">スピニングリール (7)</td></tr>
+    <tr><td>Stella</td><td>ステラ</td><td>スピニング</td><td>フラッグシップ</td></tr>
+    <tr><td>Twin Power</td><td>ツインパワー</td><td>スピニング</td><td>ハイエンド</td></tr>
+    <tr><td>Vanquish</td><td>ヴァンキッシュ</td><td>スピニング</td><td>軽量モデル</td></tr>
+    <tr><td>Stradic</td><td>ストラディック</td><td>スピニング</td><td>ミドルクラス</td></tr>
+    <tr><td>Exsence</td><td>エクスセンス</td><td>スピニング</td><td>シーバス特化</td></tr>
+    <tr><td>Sephia</td><td>セフィア</td><td>スピニング</td><td>エギング特化</td></tr>
+    <tr><td>Soare</td><td>ソアレ</td><td>スピニング</td><td>ライトゲーム特化</td></tr>
+    <tr><td colspan="4" style="font-weight:700; background:var(--th-bg);">ベイトリール (6)</td></tr>
+    <tr><td>Scorpion</td><td>スコーピオン</td><td>ベイト</td><td>バス釣り定番</td></tr>
+    <tr><td>Metanium</td><td>メタニウム</td><td>ベイト</td><td>ハイエンド</td></tr>
+    <tr><td>Antares</td><td>アンタレス</td><td>ベイト</td><td>フラッグシップ</td></tr>
+    <tr><td>Calcutta</td><td>カルカッタ</td><td>ベイト</td><td>丸型リール</td></tr>
+    <tr><td>Bantam</td><td>バンタム</td><td>ベイト</td><td>復刻モデル</td></tr>
+    <tr><td>Aldebaran</td><td>アルデバラン</td><td>ベイト</td><td>軽量フィネス</td></tr>
+    <tr><td colspan="4" style="font-weight:700; background:var(--th-bg);">電動リール (3)</td></tr>
+    <tr><td>ForceMaster</td><td>フォースマスター</td><td>電動</td><td>ハイエンド電動</td></tr>
+    <tr><td>BeastMaster</td><td>ビーストマスター</td><td>電動</td><td>フラッグシップ電動</td></tr>
+    <tr><td>Plays</td><td>プレイズ</td><td>電動</td><td>エントリー電動</td></tr>
+  </tbody>
+</table>
+
+<!-- ==================== DAIWA ==================== -->
+<div class="category-label">Daiwa（ダイワ）&mdash; 日本 / サブブランド15件</div>
+<table class="brand-table">
+  <thead>
+    <tr>
+      <th style="width:18%">モデルライン</th>
+      <th style="width:14%">日本語名</th>
+      <th style="width:14%">カテゴリ</th>
+      <th>備考</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td colspan="4" style="font-weight:700; background:var(--th-bg);">スピニングリール (6)</td></tr>
+    <tr><td>Exist</td><td>イグジスト</td><td>スピニング</td><td>フラッグシップ</td></tr>
+    <tr><td>Certate</td><td>セルテート</td><td>スピニング</td><td>ハイエンド</td></tr>
+    <tr><td>Luvias</td><td>ルビアス</td><td>スピニング</td><td>軽量モデル</td></tr>
+    <tr><td>Saltiga</td><td>ソルティガ</td><td>スピニング</td><td>SW最上位</td></tr>
+    <tr><td>Caldia</td><td>カルディア</td><td>スピニング</td><td>ミドルクラス</td></tr>
+    <tr><td>Emeraldas</td><td>エメラルダス</td><td>スピニング</td><td>エギング特化</td></tr>
+    <tr><td colspan="4" style="font-weight:700; background:var(--th-bg);">ベイトリール (6)</td></tr>
+    <tr><td>Steez</td><td>スティーズ</td><td>ベイト</td><td>フラッグシップ</td></tr>
+    <tr><td>Zillion</td><td>ジリオン</td><td>ベイト</td><td>ハイエンド</td></tr>
+    <tr><td>Tatula</td><td>タトゥーラ</td><td>ベイト</td><td>ミドルクラス</td></tr>
+    <tr><td>Ryoga</td><td>リョウガ</td><td>ベイト</td><td>丸型リール</td></tr>
+    <tr><td>Alphas</td><td>アルファス</td><td>ベイト</td><td>コンパクト</td></tr>
+    <tr><td>Millionaire</td><td>ミリオネア</td><td>ベイト</td><td>クラシック</td></tr>
+    <tr><td colspan="4" style="font-weight:700; background:var(--th-bg);">電動リール (3)</td></tr>
+    <tr><td>Seaborg</td><td>シーボーグ</td><td>電動</td><td>フラッグシップ電動</td></tr>
+    <tr><td>Tanacom</td><td>タナコン</td><td>電動</td><td>ミドルクラス電動</td></tr>
+    <tr><td>Leobritz</td><td>レオブリッツ</td><td>電動</td><td>エントリー電動</td></tr>
+  </tbody>
+</table>
+
+<!-- ==================== ABU GARCIA ==================== -->
+<div class="category-label">Abu Garcia（アブガルシア）&mdash; スウェーデン / サブブランド4件</div>
+<table class="brand-table">
+  <thead>
+    <tr>
+      <th style="width:18%">モデルライン</th>
+      <th style="width:14%">日本語名</th>
+      <th style="width:14%">カテゴリ</th>
+      <th>備考</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td>Ambassadeur</td><td>アンバサダー</td><td>ベイト</td><td>伝説的丸型リール。ヴィンテージ市場で高値</td></tr>
+    <tr><td>Revo</td><td>レボ</td><td>ベイト</td><td>現行主力シリーズ</td></tr>
+    <tr><td>Cardinal</td><td>カーディナル</td><td>スピニング</td><td>クラシックモデル</td></tr>
+    <tr><td>Roxani</td><td>ロキサーニ</td><td>ベイト</td><td>エントリーモデル</td></tr>
+  </tbody>
+</table>
+
+<!-- ==================== OTHER JAPAN ==================== -->
+<div class="category-label">その他 日本ブランド (12)</div>
+<table class="brand-table">
+  <thead>
+    <tr>
+      <th style="width:18%">ブランド</th>
+      <th style="width:18%">日本語名</th>
+      <th>備考</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td>Gamakatsu</td><td>がまかつ</td><td>釣り針で世界的に有名。リールも展開</td></tr>
+    <tr><td>Ryobi</td><td>リョービ</td><td>電動工具でも知られる。海外市場で人気</td></tr>
+    <tr><td>Megabass</td><td>メガバス</td><td>ルアー・ロッドで有名。リールも展開</td></tr>
+    <tr><td>Prox</td><td>プロックス</td><td>コスパ重視のブランド</td></tr>
+    <tr><td>ZPI</td><td>ジーピーアイ</td><td>カスタムパーツ・チューニング専門</td></tr>
+    <tr><td>Nissin</td><td>宇崎日新</td><td>渓流竿・へら竿で定評</td></tr>
+    <tr><td>Tailwalk</td><td>テイルウォーク</td><td>エイテック社のブランド</td></tr>
+    <tr><td>Evergreen</td><td>エバーグリーン</td><td>バスフィッシング専門</td></tr>
+    <tr><td>Major Craft</td><td>メジャークラフト</td><td>コスパの高いロッド・リール</td></tr>
+    <tr><td>Studio Ocean Mark</td><td>スタジオオーシャンマーク</td><td>ハンドル・カスタムパーツ専門</td></tr>
+    <tr><td>Smith</td><td>スミス</td><td>トラウトフィッシングで人気</td></tr>
+    <tr><td>Valleyhill</td><td>バレーヒル</td><td>ソルト・フレッシュ両対応</td></tr>
+    <tr><td>PALMS</td><td>パームス</td><td>ライトゲーム・トラウト</td></tr>
+  </tbody>
+</table>
+
+<!-- ==================== USA ==================== -->
+<div class="category-label">アメリカブランド (18)</div>
+<table class="brand-table">
+  <thead>
+    <tr>
+      <th style="width:18%">ブランド</th>
+      <th style="width:18%">日本語名</th>
+      <th>備考</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td>Penn</td><td>ペン</td><td>ソルトウォーターの老舗。大物釣りで世界的に有名</td></tr>
+    <tr><td>Zebco</td><td>ゼブコ</td><td>スピンキャストリールの代名詞。入門者向け</td></tr>
+    <tr><td>Pflueger</td><td>プルーガー</td><td>1881年創業の老舗。Presidentシリーズが人気</td></tr>
+    <tr><td>Quantum</td><td>クアンタム</td><td>ミドルレンジのリール</td></tr>
+    <tr><td>Lew's</td><td>ルーズ</td><td>バスフィッシング用ベイトリールで人気</td></tr>
+    <tr><td>13 Fishing</td><td>サーティーンフィッシング</td><td>新興ブランド。独創的なデザイン</td></tr>
+    <tr><td>Fin-Nor</td><td>フィンノール</td><td>大型スピニング・オフショア向け</td></tr>
+    <tr><td>Accurate</td><td>アキュレート</td><td>ハイエンド・ツインドラグシステム</td></tr>
+    <tr><td>Avet</td><td>アベット</td><td>ハイエンド・コンベンショナルリール</td></tr>
+    <tr><td>Seigler</td><td>セイグラー</td><td>ハンドメイド・ハイエンドリール</td></tr>
+    <tr><td>Van Staal</td><td>ヴァンスタール</td><td>防水性能が高いソルトウォーター向け</td></tr>
+    <tr><td>Shakespeare</td><td>シェイクスピア</td><td>入門者向けリール。グローバル展開</td></tr>
+    <tr><td>Orvis</td><td>オービス</td><td>フライフィッシングの名門</td></tr>
+    <tr><td>Lamson</td><td>ラムソン</td><td>フライリール専門。軽量・高精度</td></tr>
+    <tr><td>Ross</td><td>ロス</td><td>フライリール。コロラド州製</td></tr>
+    <tr><td>Sage</td><td>セージ</td><td>フライロッド・リールのプレミアムブランド</td></tr>
+    <tr><td>Redington</td><td>レディントン</td><td>フライフィッシング入門〜中級</td></tr>
+    <tr><td>Cortland</td><td>コートランド</td><td>フライライン・リールの老舗</td></tr>
+  </tbody>
+</table>
+
+<!-- ==================== USA VINTAGE ==================== -->
+<div class="category-label">アメリカ ヴィンテージブランド (4)</div>
+<table class="brand-table">
+  <thead>
+    <tr>
+      <th style="width:18%">ブランド</th>
+      <th style="width:18%">日本語名</th>
+      <th>備考</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td>Heddon</td><td>ヘドン</td><td>ルアーの元祖。ヴィンテージリールもコレクターズアイテム</td></tr>
+    <tr><td>South Bend</td><td>サウスベンド</td><td>1890年代創業。ヴィンテージ市場で人気</td></tr>
+    <tr><td>Ocean City</td><td>オーシャンシティ</td><td>ヴィンテージ・コンベンショナルリール</td></tr>
+    <tr><td>Langley</td><td>ラングレー</td><td>ヴィンテージ・スピンキャストリール</td></tr>
+  </tbody>
+</table>
+
+<!-- ==================== EUROPE ==================== -->
+<div class="category-label">ヨーロッパブランド (8)</div>
+<table class="brand-table">
+  <thead>
+    <tr>
+      <th style="width:18%">ブランド</th>
+      <th style="width:12%">国</th>
+      <th style="width:16%">日本語名</th>
+      <th>備考</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td>Danielsson</td><td>スウェーデン</td><td>ダニエルソン</td><td>フライリール。精密加工</td></tr>
+    <tr><td>Loop</td><td>スウェーデン</td><td>ループ</td><td>フライフィッシング専門</td></tr>
+    <tr><td>Hardy</td><td>UK</td><td>ハーディ</td><td>1872年創業。フライリールの最高峰</td></tr>
+    <tr><td>Greys</td><td>UK</td><td>グレイズ</td><td>Hardy傘下。コスパの高いフライリール</td></tr>
+    <tr><td>Allcock</td><td>UK</td><td>オールコック</td><td>ヴィンテージ。コレクターズアイテム</td></tr>
+    <tr><td>J.W. Young</td><td>UK</td><td>J.W.ヤング</td><td>ヴィンテージ・センターピンリール</td></tr>
+    <tr><td>Mitchell</td><td>フランス</td><td>ミッチェル</td><td>スピニングリールの先駆者。Mitchell 300は伝説</td></tr>
+    <tr><td>Pezon et Michel</td><td>フランス</td><td>ペゾンエミシェル</td><td>ヴィンテージ・フライリール</td></tr>
+    <tr><td>DAM</td><td>ドイツ</td><td>ダム</td><td>ヨーロッパの老舗釣具メーカー</td></tr>
+    <tr><td>Vision</td><td>フィンランド</td><td>ビジョン</td><td>北欧のフライフィッシングブランド</td></tr>
+  </tbody>
+</table>
+
+<!-- ==================== ASIA OTHER ==================== -->
+<div class="category-label">アジアブランド（日本以外）(3)</div>
+<table class="brand-table">
+  <thead>
+    <tr>
+      <th style="width:18%">ブランド</th>
+      <th style="width:12%">国</th>
+      <th style="width:16%">日本語名</th>
+      <th>備考</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td>Okuma</td><td>台湾</td><td>オクマ</td><td>コスパが高い。グローバル展開</td></tr>
+    <tr><td>Tica</td><td>台湾</td><td>ティカ</td><td>サーフ・ソルト向けリール</td></tr>
+    <tr><td>KastKing</td><td>中国</td><td>キャストキング</td><td>Amazon中心の低価格帯。入門者向け</td></tr>
+  </tbody>
+</table>
+
+<footer>
+  <p style="font-size:0.85em; color:var(--muted); margin-top:32px;">
+    このページは一括シートV3のブランド辞書（Config_IS.gs）に登録されているデータの一覧です。<br>
+    最終更新: 2026-03-26
+  </p>
+</footer>
+
+</body>
+</html>
